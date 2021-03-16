@@ -1,0 +1,16 @@
+# Pseudo Code for Tic Tac Toe
+
+1. Draw the board
+2. Get 'x' input
+3. 
+
+How does the computer know where to place the piece?
+1. Check all the empty spots
+    1a. Choose random spot and put O
+2. Check if you can block the player
+
+3. Check if it can move towards a win
+
+def check_potential_win()
+    
+end
