@@ -7,7 +7,10 @@ def showboard(board)
   end
 end
 
-def showsimpboard(board)
+#############################################################################
+# A debug method used to draw a simpler version of the board
+#############################################################################
+def showsimpleboard(board)
   print "\n"
   print "\t\t|---------------| \n"
   for i in 0..2
@@ -28,6 +31,7 @@ end
 # A method to check win states
 #############################################################################
 def checkwin(board)
+
   # All win states:
   # Row A, Row B, Row C
   # Column 1, Column 2, Column 3
@@ -114,6 +118,60 @@ def checkemptysquares(board)
 end
 
 #############################################################################
+# A method that creates behaviour trees
+#############################################################################
+def predictonemoveahead(board)
+  tmpboard = Array.new
+  tmpboard[0] = board[0].dup
+  tmpboard[1] = board[1].dup
+  tmpboard[2] = board[2].dup
+  
+  predictwin = computerpredictwinchangeref(board, val)
+  
+  return -1
+end
+
+
+####################################################################################
+# A method that predicts a win state but changes the array passed to it by reference
+####################################################################################
+def computerpredictwinchangeref(board, val)
+  potentialnextmove = checkemptysquares(board)
+  
+  for i in 0..potentialnextmove.length-1
+    
+    board[potentialnextmove[i][0]][potentialnextmove[i][1]] = val
+    
+    if (checkwin(tmpboard)!=false)
+      print "\nWin found\n"
+      return potentialnextmove[i]
+    end
+  end
+  return -1
+end
+
+#####################################################################################
+# A method that predicts a lose state but changes the array passed to it by reference
+#####################################################################################
+def computerpredictlosschangeref(board, val)
+  # Change the val
+  if (val == 0)
+    val = 1
+  elsif val == 1
+    val = 0
+  end
+  
+  potentialnextmove = checkemptysquares(board)
+  for i in 0..potentialnextmove.length-1
+    board[potentialnextmove[i][0]][potentialnextmove[i][1]] = val
+    if (checkwin(tmpboard)!=false)
+      return potentialnextmove[i]
+    end
+  end
+  return -1
+end
+
+#############################################################################
 # A method that predicts a lose state
 #############################################################################
 def computerpredictloss(board, val)
@@ -129,7 +187,7 @@ def computerpredictloss(board, val)
   tmpboard[0] = board[0].dup
   tmpboard[1] = board[1].dup
   tmpboard[2] = board[2].dup
-  showsimpboard(tmpboard)
+  showsimpleboard(tmpboard)
   emptysquares = checkemptysquares(board)
   print emptysquares
   print "\n"
@@ -137,7 +195,7 @@ def computerpredictloss(board, val)
     print "\nChecking potential loss at square: "
     print emptysquares[i]
     tmpboard[emptysquares[i][0]][emptysquares[i][1]] = val
-    showsimpboard(tmpboard)
+    showsimpleboard(tmpboard)
     if (checkwin(tmpboard)!=false)
       print "\nLoss found\n"
       return emptysquares[i]
@@ -160,7 +218,7 @@ def computerpredictwin(board, val)
   tmpboard[0] = board[0].dup
   tmpboard[1] = board[1].dup
   tmpboard[2] = board[2].dup
-  showsimpboard(tmpboard)
+  showsimpleboard(tmpboard)
   emptysquares = checkemptysquares(board)
   print emptysquares
   print "\n"
@@ -168,7 +226,7 @@ def computerpredictwin(board, val)
     print "\nChecking potential win at square: "
     print emptysquares[i]
     tmpboard[emptysquares[i][0]][emptysquares[i][1]] = val
-    showsimpboard(tmpboard)
+    showsimpleboard(tmpboard)
     if (checkwin(tmpboard)!=false)
       print "\nWin found\n"
       return emptysquares[i]
