@@ -14,3 +14,149 @@ How does the computer know where to place the piece?
 def check_potential_win()
     
 end
+
+  Enter Player 1 Name: Pranit
+
+                Enter Player 2 Name: NoPranit
+
+
+                Welcome Pranit and NoPranit!
+
+
+
+                Tossing coin now...
+
+                The result of the coin toss is:
+
+                                                          -------
+                                                        /         \
+                                                        |    T    |
+                                                        \         /
+                                                          --------
+
+                Pranit is 'O'. NoPranit is 'X'.
+
+                NoPranit goes first
+                                             1   2   3
+                                           |---|---|---|
+                                         A |   |   |   |
+                                           |---|---|---|
+                                         B |   |   |   |
+                                           |---|---|---|
+                                         C |   |   |   |
+                                           |---|---|---|
+
+                NoPranit, please enter a command: A1
+
+                You entered: "A1"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X |   |   |
+                                           |---|---|---|
+                                         B |   |   |   |
+                                           |---|---|---|
+                                         C |   |   |   |
+                                           |---|---|---|
+
+                Pranit, please enter a command: C3
+
+                You entered: "C3"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X |   |   |
+                                           |---|---|---|
+                                         B |   |   |   |
+                                           |---|---|---|
+                                         C |   |   | O |
+                                           |---|---|---|
+
+                NoPranit, please enter a command: B2
+
+                You entered: "B2"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X |   |   |
+                                           |---|---|---|
+                                         B |   | X |   |
+                                           |---|---|---|
+                                         C |   |   | O |
+                                           |---|---|---|
+
+                Pranit, please enter a command: B1
+
+                You entered: "B1"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X |   |   |
+                                           |---|---|---|
+                                         B | O | X |   |
+                                           |---|---|---|
+                                         C |   |   | O |
+                                           |---|---|---|
+
+                NoPranit, please enter a command: B3
+
+                You entered: "B3"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X |   |   |
+                                           |---|---|---|
+                                         B | O | X | X |
+                                           |---|---|---|
+                                         C |   |   | O |
+                                           |---|---|---|
+
+                Pranit, please enter a command: C2
+
+                You entered: "C2"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X |   |   |
+                                           |---|---|---|
+                                         B | O | X | X |
+                                           |---|---|---|
+                                         C |   | O | O |
+                                           |---|---|---|
+
+                NoPranit, please enter a command: A3
+
+                You entered: "A3"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X |   | X |
+                                           |---|---|---|
+                                         B | O | X | X |
+                                           |---|---|---|
+                                         C |   | O | O |
+                                           |---|---|---|
+
+                Pranit, please enter a command: A2
+
+                You entered: "A2"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X | O | X |
+                                           |---|---|---|
+                                         B | O | X | X |
+                                           |---|---|---|
+                                         C |   | O | O |
+                                           |---|---|---|
+
+                NoPranit, please enter a command: C1
+
+                You entered: "C1"
+                                        |-----------------|
+                                        | Game is a draw! |
+                                        |-----------------|
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X | O | X |
+                                           |---|---|---|
+                                         B | O | X | X |
+                                           |---|---|---|
+                                         C | X | O | O |
+                                           |---|---|---|
+
+                                        |------------------------|
+                                        |     NoPranit won!      |
+                                        |------------------------|
