@@ -1,3 +1,20 @@
+START: Draw the board
+
+X-INPUT: Get 'x' coordinates [x,y]
+Check if [x,y] is empty
+If empty then 
+  insert X
+  draw board
+
+
+
+
+
+
+
+
+
+
 # Pseudo Code for Tic Tac Toe
 
 1. Draw the board
