@@ -13,7 +13,7 @@ def commandparser(commands, board, command)
       when "C"
         commands[0] = 2
       when "H"
-        showhelp()
+        showhelp(board)
         commands[1] = -2
         return commands      
       else

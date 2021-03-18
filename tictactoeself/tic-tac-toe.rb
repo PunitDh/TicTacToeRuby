@@ -19,6 +19,9 @@ commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
 player1 = {player: 1, name: "Player 1", val: -1, str: ""}
 player2 = {player: 2, name: "Player 2", val: -1, str: ""}
 
+# Initialise move number
+movenumber = Array.new
+
 # Create the board display
 board_display = ["     1   2   3  ",
                  "   |---|---|---|",
@@ -54,11 +57,14 @@ showtitlescreen(board_display)
 
 # Choose One-Player or Two-Player Mode
 playermode = -1
-until (playermode == 1 or playermode == 2)
+until (playermode == 1 or playermode == 2 or playermode == "")
   print "\n\t\tChoose (1)-player or (2)-player mode: "
   playermodeget = gets.chomp
   playermode = playermodeget.to_i
-  if (playermode < 1 or playermode > 2)
+  if (playermode == "")
+    playermode = 1
+    puts "\n\t\tAutomatically selecting (1)-player mode...\n"
+  elsif (playermode < 1 or playermode > 2)
     puts "\n\t\t\"#{playermodeget}\" is not a valid player mode. Enter 1 or 2.\n"
   end
 end
@@ -66,11 +72,17 @@ end
 # Get player 1 name
 print "\n\t\tEnter #{player1[:name]} Name: "
 player1[:name] = gets.chomp
+if player1[:name] == ""
+  player1[:name] = "Player 1"
+end
 
 # If two-player mode, get second player's name, or else use "Computer"
 if (playermode == 2)
   print "\n\t\tEnter #{player2[:name]} Name: "
   player2[:name] = gets.chomp
+  if player2[:name] == ""
+    player2[:name] = "Player 2"
+  end
 elsif playermode == 1
   player2[:name] = "Computer"
 end
@@ -129,11 +141,13 @@ tmp = gets
 
 if playermode == 1 and currentplayer[:name] == "Computer"
   computer_response = computerresponse(board, currentplayer[:val])
+  movenumber.push(computer_response)
   computer_response_command = arraytocommandsparser(computer_response, commands)
   print "\n\n\t\tComputer's first move: "
   print "\"#{computer_response_command.join()}\"\n"
   computer_response_display = arraytodisplayparser(computer_response)
   board[computer_response[0]][computer_response[1]] = currentplayer[:val]
+  
   board_display[computer_response_display[0]][computer_response_display[1]] = currentplayer[:str]
 
   # Swap turns
@@ -150,7 +164,7 @@ showboard(board_display)
 # Game loop
 begin 
   print "\n\t\t#{currentplayer[:name]}, please enter a command: "
-  command = gets.chomp
+  command = gets.chomp.upcase
   puts "\n\t\tYou entered: \"#{command}\""
   
   cmd_parse = commandparser(commands, board_display, command)
@@ -161,12 +175,13 @@ begin
   end
 
   if (cmd_parse[0] == -1 or cmd_parse[0] == -1)
-    puts "\n\t\t\"#{command}\" is not a valid command. Enter \"H\" for help"
+    puts "\n\t\t\"#{command}\" is not a valid command. Enter \"H\" for help."
   else
     if (board[cmd_parse[0]][cmd_parse[1]].nil?)
+      movenumber.push(cmd_parse)
       board[cmd_parse[0]][cmd_parse[1]] = currentplayer[:val]
       board_display[display_parse[0]][display_parse[1]] = currentplayer[:str]
-      showboard(board_display)
+      # showboard(board_display)
       if (checkgameend(board))
         break
       end
@@ -174,6 +189,7 @@ begin
       if (playermode == 1)
         currentplayer = player2
         computer_response = computerresponse(board, currentplayer[:val])
+        movenumber.push(computer_response)
         computer_response_command = arraytocommandsparser(computer_response, commands)
         print "\n\t\tComputer responds: "
         print "\"#{computer_response_command.join()}\"\n"
@@ -185,6 +201,8 @@ begin
       if (checkgameend(board))
         break
       end
+
+      
       showboard(board_display)
       
       # Swap turns
@@ -201,6 +219,8 @@ begin
 end while (checkwin(board) == false and checkdraw(board) == false)
 
 # Game end state
+#gamenumber = File.read
+File.write('./gameresults.txt', movenumber.to_s + "\n", mode: 'a')
 puts ""
 winner = checkwin(board)
 if (winner!=false)

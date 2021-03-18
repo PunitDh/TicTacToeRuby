@@ -6,22 +6,17 @@ def showboard(board)
       puts "\t\t\t\t\t" + board[i]
     end
   end
-  
-#############################################################################
-# A method to draw the board
-#############################################################################
-def swapturn(val)
-  return (val-1).abs
-end
 
 #############################################################################
 # A method that shows "Help" feature
 #############################################################################
 def showhelp(board)
+  puts "\n\\t\t****** HELP ***************************************************************"
+  puts "\nThis is the tic-tac-toe board..."
   showboard(board)
-  puts "\t\tEnter the following text commands: A1, A2, A3, B1, B2, B3, C1, C2, C3.\n\n\t\tThey correspond to each cell on the board..."
-  puts "\t\t\"H\" displays Help"
-  puts "\n\t\tPress Ctrl + C to exit the game at any time"
+  puts "\n\n\t\tEnter the following text commands: \n\n\t\t\t\"A1\", \"A2\", \"A3\", \"B1\", \"B2\", \"B3\", \"C1\", \"C2\", \"C3\".\n\n\t\tThey correspond to each cell on the board..."
+  puts "\n\t\t\"H\" displays Help"
+  puts "\t\tPress Ctrl + C to exit the game at any time"
 end
   
 #############################################################################
@@ -65,13 +60,13 @@ def showtitlescreen(board)
   print "\n\n\t\tWho gets \'X\' and who gets \'O\' is determined by a coin toss..."
   tmp = gets
 
-  print "\n\n\t\tYou play by giving the following text commands: A1, A2, A3, B1, B2, B3, C1, C2, C3.\n\n\t\tThey correspond to each cell on the board..."
+  print "\n\n\t\tYou play by giving the following text commands:\n\n\t\t\t \"A1\", \"A2\", \"A3\", \"B1\", \"B2\", \"B3\", \"C1\", \"C2\", \"C3\"."#\n\n\t\tThey correspond to each cell on the board..."
   tmp = gets
 
   print "\n\t\tYou can enter the text command \"H\" for Help if you get stuck or lost..."
   tmp = gets
 
-  print "\n\t\tPress Ctrl+C or Cmd+C to exit at any time..."
+  print "\n\t\tPress Ctrl+C or Cmd+C to exit the game at any time..."
   tmp = gets
 
   print "\n\n\t\tLet's get started..."
