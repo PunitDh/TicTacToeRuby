@@ -1,0 +1,1063 @@
+
+                Punit is 'X'. Computer is 'O'.
+
+                Punit goes first...
+                                             1   2   3
+                                           |---|---|---|
+                                         A |   |   |   |
+                                           |---|---|---|
+                                         B |   |   |   |
+                                           |---|---|---|
+                                         C |   |   |   |
+                                           |---|---|---|
+
+                Punit, please enter a command: A1
+
+                You entered: "A1"
+
+                Checking square for computer: [0, 1]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |  0 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 1]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for computer: [0, 2]
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [0, 1]
+                |---------------|
+                |  1 |  1 |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 1]
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for computer: [1, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [0, 1]
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for computer: [1, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [0, 1]
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                The opponent can block my win with this move
+
+                Checking square for computer: [1, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [0, 1]
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for computer: [2, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square for opponent: [0, 1]
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square for opponent: [1, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for computer: [2, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                Checking square for opponent: [0, 1]
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for computer: [2, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                Checking square for opponent: [0, 1]
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+Best moves for the opponent:
+[[1, 0], [1, 1], [2, 0], [2, 2], [0, 1], [0, 2]]
+Best moves for the computer:
+[]
+
+                Generate random response...
+
+                Computer responds: "A2"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X | O |   |
+                                           |---|---|---|
+                                         B |   |   |   |
+                                           |---|---|---|
+                                         C |   |   |   |
+                                           |---|---|---|
+
+                Punit, please enter a command: B2
+
+                You entered: "B2"
+
+                Checking square for computer: [0, 2]
+                |---------------|
+                |  1 |  0 |  0  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                With this I can block the opponent's win
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |  0 |  0  |
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |  0 |  0  |
+                |---------------|
+                |    |  1 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |  0 |  0  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |  0 |  0  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |  0 |  0  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                This will make the opponent (Player 1) win
+                Danger! Potential opponent fork detected!
+
+                Checking square for computer: [1, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |  0 |  1  |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                This will make the opponent (Player 1) win
+                Danger! Potential opponent fork detected!
+
+                Checking square for computer: [1, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |  0 |  1  |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  1 |  1 |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                This will make the opponent (Player 1) win
+                Danger! Potential opponent fork detected!
+
+                Checking square for computer: [2, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |  0 |  1  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                The opponent can block my win with this move
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                This will make the opponent (Player 1) win
+                Danger! Potential opponent fork detected!
+
+                Checking square for computer: [2, 1]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |  0 |  1  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                The opponent can block my win with this move
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                The opponent can block my win with this move
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                The opponent can block my win with this move
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                The opponent can block my win with this move
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [2, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+                This will make the opponent (Player 1) win
+                The opponent can block my win with this move
+                Danger! Potential opponent fork detected!
+
+                Checking square for computer: [2, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                With this I can block the opponent's win
+
+                Checking square for opponent: [0, 2]
+                |---------------|
+                |  1 |  0 |  1  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [1, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [1, 2]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+
+                Checking square for opponent: [2, 0]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                This is a good move for the opponent (Player 1)
+                Danger! Potential opponent fork detected!
+
+                Checking square for opponent: [2, 1]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+Best moves for the opponent:
+[[1, 0], [1, 2], [2, 0], [2, 1], [2, 2], [0, 2]]
+Best moves for the computer:
+[[0, 2], [2, 2]]
+
+                Generate random response...
+
+                Computer responds: "B1"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X | O |   |
+                                           |---|---|---|
+                                         B | O | X |   |
+                                           |---|---|---|
+                                         C |   |   |   |
+                                           |---|---|---|
+
+                Punit, please enter a command: C3
+
+                You entered: "C3"
+
+                                             1   2   3
+                                           |---|---|---|
+                                         A | X | O |   |
+                                           |---|---|---|
+                                         B | O | X |   |
+                                           |---|---|---|
+                                         C |   |   | X |
+                                           |---|---|---|
+                                        |---------------------|
+                                        |     Punit won!      |
+                                        |---------------------|

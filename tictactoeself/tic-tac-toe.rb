@@ -20,7 +20,7 @@ player1 = {player: 1, name: "Player 1", val: -1, str: ""}
 player2 = {player: 2, name: "Player 2", val: -1, str: ""}
 
 # Initialise move number
-movenumber = Array.new
+moverecord = Array.new
 
 # Create the board display
 board_display = ["     1   2   3  ",
@@ -57,17 +57,19 @@ showtitlescreen(board_display)
 
 # Choose One-Player or Two-Player Mode
 playermode = -1
-until (playermode == 1 or playermode == 2 or playermode == "")
+
+begin
   print "\n\t\tChoose (1)-player or (2)-player mode: "
   playermodeget = gets.chomp
   playermode = playermodeget.to_i
-  if (playermode == "")
+  if (playermodeget.length == 0)
     playermode = 1
     puts "\n\t\tAutomatically selecting (1)-player mode...\n"
+    break
   elsif (playermode < 1 or playermode > 2)
     puts "\n\t\t\"#{playermodeget}\" is not a valid player mode. Enter 1 or 2.\n"
   end
-end
+end while not (playermode == 1 or playermode == 2 or playermodeget.length == 0)
 
 # Get player 1 name
 print "\n\t\tEnter #{player1[:name]} Name: "
@@ -141,7 +143,7 @@ tmp = gets
 
 if playermode == 1 and currentplayer[:name] == "Computer"
   computer_response = computerresponse(board, currentplayer[:val])
-  movenumber.push(computer_response)
+  moverecord.push(computer_response)
   computer_response_command = arraytocommandsparser(computer_response, commands)
   print "\n\n\t\tComputer's first move: "
   print "\"#{computer_response_command.join()}\"\n"
@@ -178,7 +180,7 @@ begin
     puts "\n\t\t\"#{command}\" is not a valid command. Enter \"H\" for help."
   else
     if (board[cmd_parse[0]][cmd_parse[1]].nil?)
-      movenumber.push(cmd_parse)
+      moverecord.push(cmd_parse)
       board[cmd_parse[0]][cmd_parse[1]] = currentplayer[:val]
       board_display[display_parse[0]][display_parse[1]] = currentplayer[:str]
       # showboard(board_display)
@@ -189,7 +191,7 @@ begin
       if (playermode == 1)
         currentplayer = player2
         computer_response = computerresponse(board, currentplayer[:val])
-        movenumber.push(computer_response)
+        moverecord.push(computer_response)
         computer_response_command = arraytocommandsparser(computer_response, commands)
         print "\n\t\tComputer responds: "
         print "\"#{computer_response_command.join()}\"\n"
@@ -216,11 +218,12 @@ begin
       puts "\n\t\t\"#{command}\" is not an empty space"
     end
   end
-end while (checkwin(board) == false and checkdraw(board) == false)
+# end while (checkwin(board) == false and checkdraw(board) == false)
+end while !(checkgameend(board))
 
 # Game end state
 #gamenumber = File.read
-File.write('./gameresults.txt', movenumber.to_s + "\n", mode: 'a')
+File.write('./gameresults.txt', moverecord.to_s + "\n", mode: 'a')
 puts ""
 winner = checkwin(board)
 if (winner!=false)

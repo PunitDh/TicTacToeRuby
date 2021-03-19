@@ -12,6 +12,8 @@ def checkwin(board)
   #board.map do ||
   #end
   tmparray = Array.new
+  tmparray[0] = Array.new
+  tmparray[1] = Array.new
 
   for i in 0..2
     # Check each column
@@ -31,24 +33,12 @@ def checkwin(board)
     # Diagonal C1, B2, A3
     tmparray[1].push(board[2-i][i])
   end
-
-    # Diagonal A1, B2, C3
-    tmparray[0] = Array.new
-    for i in 0..2
-      tmparray[0].push(board[i][i])
-    end
-    if (tmparray[0].compact.length > 0 and tmparray[0].uniq.length == 1)
-      return tmparray[0][0]
-    end
-
-    # Diagonal C1, B2, A3
-    tmparray[1] = Array.new
-    for i in 0..2
-      tmparray[1].push(board[2-i][i])
-    end
-    if (tmparray[1].compact.length > 0 and tmparray[1].uniq.length == 1)
-      return tmparray[1][0]
-    end
+  
+  if (tmparray[0].compact.length > 0 and tmparray[0].uniq.length == 1)  # Diagonal A1, B2, C3
+    return tmparray[0][0]
+  elsif (tmparray[1].compact.length > 0 and tmparray[1].uniq.length == 1)  # Diagonal C1, B2, A3
+    return tmparray[1][0]
+  end
 
   return false
 end
@@ -57,14 +47,7 @@ end
   # A method to check draw states
   #############################################################################
   def checkdraw(board)
-    for i in 0..2
-      for j in 0..2
-        if board[i][j]==nil
-          return false
-        end
-      end
-    end
-    return true
+    return (checkemptysquares(board).length == 0)
   end
   
   #############################################################################
