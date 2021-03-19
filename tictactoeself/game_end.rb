@@ -1,5 +1,5 @@
 #############################################################################
-# A method to check win states
+# A method to check win states and returns the winner
 #############################################################################
 def checkwin(board)
 

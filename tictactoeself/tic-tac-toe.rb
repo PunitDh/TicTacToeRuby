@@ -1,7 +1,7 @@
 require "./game_end.rb"
 require "./print.rb"
 require "./parser.rb"
-require "./ai.rb"
+require "./artificial-intelligence.rb"
 
 #############################################################################
 #############################################################################
@@ -145,7 +145,7 @@ if playermode == 1 and currentplayer[:name] == "Computer"
   computer_response = computerresponse(board, currentplayer[:val])
   moverecord.push(computer_response)
   computer_response_command = arraytocommandsparser(computer_response, commands)
-  print "\n\n\t\tComputer's first move: "
+  print "\n\n\t\tComputer's  (#{player2[:str]}) first move: "
   print "\"#{computer_response_command.join()}\"\n"
   computer_response_display = arraytodisplayparser(computer_response)
   board[computer_response[0]][computer_response[1]] = currentplayer[:val]
@@ -167,7 +167,7 @@ showboard(board_display)
 begin 
   print "\n\t\t#{currentplayer[:name]}, please enter a command: "
   command = gets.chomp.upcase
-  puts "\n\t\tYou entered: \"#{command}\""
+  puts "\n\t\tYou (#{currentplayer[:str]}) entered: \"#{command}\""
   
   cmd_parse = commandparser(commands, board_display, command)
   display_parse = displayparser(commands, command)
@@ -193,7 +193,7 @@ begin
         computer_response = computerresponse(board, currentplayer[:val])
         moverecord.push(computer_response)
         computer_response_command = arraytocommandsparser(computer_response, commands)
-        print "\n\t\tComputer responds: "
+        print "\n\t\tComputer (#{currentplayer[:str]}) responds: "
         print "\"#{computer_response_command.join()}\"\n"
         computer_response_display = arraytodisplayparser(computer_response)
         board[computer_response[0]][computer_response[1]] = currentplayer[:val]

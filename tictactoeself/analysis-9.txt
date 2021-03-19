@@ -1,0 +1,4743 @@
+
+                *****************************************************************************
+                *                                                                           *
+                *             Welcome to Tic-Tac-Toe Version 1.0 by Punit Dh                *
+                *                                                                           *
+                *****************************************************************************
+
+
+
+                                                     1   2   3
+                                                   |---|---|---|
+                                                 A |   |   |   |
+                                                   |---|---|---|
+                                                 B |   |   |   |
+                                                   |---|---|---|
+                                                 C |   |   |   |
+                                                   |---|---|---|
+
+
+
+
+                                        Press ENTER or RETURN to START THE GAME
+
+
+                Welcome to Tic-Tac-Toe...
+
+                You can player in either 1-player or 2-player mode...(Press ENTER)
+
+
+                'X' always goes first...
+
+
+                Who gets 'X' and who gets 'O' is determined by a coin toss...
+
+
+                You play by giving the following text commands:
+
+                         "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3".
+
+                You can enter the text command "H" for Help if you get stuck or lost...
+
+                Press Ctrl+C or Cmd+C to exit the game at any time...
+
+
+                Let's get started...
+
+                Choose (1)-player or (2)-player mode:
+
+                Automatically selecting (1)-player mode...
+
+                Enter Player 1 Name:
+
+
+                Welcome Player 1!
+
+
+
+                Tossing coin now...(Press ENTER to see coin toss results)
+
+                The result of the coin toss is:
+
+                                                          -------
+                                                        /         \
+                                                        |    T    |
+                                                        \         /
+                                                          --------
+
+                Player 1 is 'O'. Computer is 'X'.
+
+                Computer goes first...
+
+                [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+
+                Checking square: [0, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [0, 1]
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [0, 2]
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 0]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 2]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [2, 0]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                Checking square: [2, 1]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                Checking square: [2, 2]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+
+                Checking square: [0, 0]
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [0, 1]
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [0, 2]
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 0]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 2]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [2, 0]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [2, 1]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                Checking square: [2, 2]
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+        (1): "A1"
+                (0): "A2"
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A3"
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "B3"
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C3"
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+        (1): "A2"
+                (0): "A1"
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "A3"
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "B1"
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "B2"
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "B3"
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C1"
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C2"
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C3"
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+        (1): "A3"
+                (0): "A1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C1"
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C3"
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+        (1): "B1"
+                (0): "A1"
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "A2"
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "A3"
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "B2"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "B3"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C1"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C2"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C3"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+        (1): "B2"
+                (0): "A1"
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "A2"
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A3"
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C3"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+        (1): "B3"
+                (0): "A1"
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A3"
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "B1"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C3"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+        (1): "C1"
+                (0): "A1"
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A3"
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C3"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+        (1): "C2"
+                (0): "A1"
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A3"
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C3"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+        (1): "C3"
+                (0): "A1"
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "A3"
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                (0): "C2"
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+
+                        --(1): "A1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "A3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                Best moves for the computer (2):
+
+                OK moves for the computer (2):
+                        "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3",
+                Bad moves for the computer (2):
+
+
+                [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+
+
+                Computer's  (X) first move: "A3"
+                                             1   2   3
+                                           |---|---|---|
+                                         A |   |   | X |
+                                           |---|---|---|
+                                         B |   |   |   |
+                                           |---|---|---|
+                                         C |   |   |   |
+                                           |---|---|---|
+
+                Player 1, please enter a command: A1
+
+                You (O) entered: "A1"
+
+                [[0, 1], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+
+                Checking square: [0, 1]
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 0]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 2]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [2, 0]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                Checking square: [2, 1]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                Checking square: [2, 2]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                [[0, 1], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+
+                Checking square: [0, 1]
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 0]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 2]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [2, 0]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [2, 1]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                Checking square: [2, 2]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+        (1): "A2"
+                (0): "B1"
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C1"
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C3"
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+        (1): "B1"
+                (0): "A2"
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                (0): "C1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C3"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+        (1): "B2"
+        This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C3"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+        (1): "B3"
+        This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (0): "B1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (0): "B2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (0): "C1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (0): "C2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (0): "C3"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+        (1): "C1"
+        This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C3"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+        (1): "C2"
+                (0): "A2"
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C3"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C3"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+        (1): "C3"
+        This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B3"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B3"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                Best moves for the computer (2):
+                        "A2", "B1", "B2", "B3", "C1", "C2", "C3",
+                OK moves for the computer (2):
+                        "A2", "B1", "B2", "B3", "C1", "C2", "C3",
+                Bad moves for the computer (2):
+
+
+                [[0, 1], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+
+                Computer (X) responds: "C3"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | O |   | X |
+                                           |---|---|---|
+                                         B |   |   |   |
+                                           |---|---|---|
+                                         C |   |   | X |
+                                           |---|---|---|
+
+                Player 1, please enter a command: B3
+
+                You (O) entered: "B3"
+
+                [[0, 1], [1, 0], [1, 1], [2, 0], [2, 1]]
+
+                Checking square: [0, 1]
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                Checking square: [1, 0]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                Checking square: [2, 0]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+
+                Checking square: [2, 1]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |  1 |  1  |
+                |---------------|
+
+                [[0, 1], [1, 0], [1, 1], [2, 0], [2, 1]]
+
+                Checking square: [0, 1]
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                Checking square: [1, 0]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  0 |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                Checking square: [2, 0]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+
+                Checking square: [2, 1]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+
+        (1): "A2"
+                (0): "B1"
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |  0 |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                Danger! Potential opponent fork detected!
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |  0 |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+        (1): "B1"
+                (0): "A2"
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |  0 |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                (0): "C2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+        (1): "B2"
+        This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |  1 |  0  |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "C2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                (0): "C2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |    |  0 |  1  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+        (1): "C1"
+        With this I can fork the opponent
+
+        This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |    |  0  |
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  0 |  0  |
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (0): "C2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  1 |  0 |  1  |
+                |---------------|
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+        (1): "C2"
+        This is a good move for me (the computer)
+
+                (0): "A2"
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |  1 |  1  |
+                |---------------|
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |    |  0  |
+                |---------------|
+                |    |  1 |  1  |
+                |---------------|
+
+                Danger! Potential opponent fork detected!
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (0): "B2"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  0 |  0  |
+                |---------------|
+                |    |  1 |  1  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "C1"DETERGENT: 1
+
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (0): "C1"
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+
+                This is a good move for the opponent (Player 1)
+
+                        --(1): "A2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                        --(1): "B1"DETERGENT: false
+
+                        --(1): "B2"DETERGENT: false
+
+                        -- This is a good move for me (the computer)
+
+                Best moves for the computer (2):
+                        "A2", "B1", "B2", "C1", "C2",
+                OK moves for the computer (2):
+                        "A2", "B1", "B2", "C1", "C2",
+                Bad moves for the computer (2):
+                        "A2", "C2",
+
+                [[0, 1], [1, 0], [1, 1], [2, 0], [2, 1]]
+
+                Computer (X) responds: "C2"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | O |   | X |
+                                           |---|---|---|
+                                         B |   |   | O |
+                                           |---|---|---|
+                                         C |   | X | X |
+                                           |---|---|---|
+
+                Player 1, please enter a command: C1
+
+                You (O) entered: "C1"
+
+                [[0, 1], [1, 0], [1, 1]]
+
+                Checking square: [0, 1]
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+
+                Checking square: [1, 0]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |    |  1 |  0  |
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+
+                [[0, 1], [1, 0], [1, 1]]
+
+                Checking square: [0, 1]
+                |---------------|
+                |  0 |  0 |  1  |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+
+                Checking square: [1, 0]
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+                |  0 |    |  0  |
+                |---------------|
+                |  0 |  1 |  1  |
+                |---------------|
+
+                Game end scenario found
+
+                Computer (X) responds: "B1"
+                                             1   2   3
+                                           |---|---|---|
+                                         A | O |   | X |
+                                           |---|---|---|
+                                         B | X |   | O |
+                                           |---|---|---|
+                                         C | O | X | X |
+                                           |---|---|---|
+
+                Player 1, please enter a command: B2
+
+                You (O) entered: "B2"
+
+        (1): "A2"
+                Best moves for the computer (2):
+
+                OK moves for the computer (2):
+
+                Bad moves for the computer (2):
+                        Generating random square......
+
+
+                [[0, 1]]
+
+                Computer (X) responds: "A2"
+
+                                             1   2   3
+                                           |---|---|---|
+                                         A | O | X | X |
+                                           |---|---|---|
+                                         B | X | O | O |
+                                           |---|---|---|
+                                         C | O | X | X |
+                                           |---|---|---|
+                                        |-----------------|
+                                        | Game is a draw! |
+                                        |-----------------|

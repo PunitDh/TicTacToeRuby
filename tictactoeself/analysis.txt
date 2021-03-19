@@ -857,7 +857,7 @@ Best moves for the computer:
                 |---------------|
                 |  1 |  0 |  1  |
                 |---------------|
-                This move will make me (the computer) win
+                This move will make me (the computer) win    +20 points
                 With this I can block the opponent's win
 Best moves for the opponent:
 [[1, 1]]

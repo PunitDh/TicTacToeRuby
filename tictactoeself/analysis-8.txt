@@ -1,0 +1,1423 @@
+ You (X) entered: "A1"
+[[0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+
+                [[0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+
+                Checking square: [0, 1]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [0, 2]
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [2, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [2, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  0 |     |
+                |---------------|
+
+                Checking square: [2, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  0  |
+                |---------------|
+
+                [[0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
+
+                Checking square: [0, 1]
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [0, 2]
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [1, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+                |    |    |     |
+                |---------------|
+
+                Checking square: [2, 0]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+
+                Checking square: [2, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |  1 |     |
+                |---------------|
+
+                Checking square: [2, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |    |    |     |
+                |---------------|
+                |    |    |  1  |
+                |---------------|
+
+        Checking (0) square for computer: "A2"
+                (X): "A3"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                (X): "B1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                (X): "B2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- (O): "C3"
+                (X): "B3"
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                (X): "C1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                (X): "C2"
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- (O): "C3"
+                (X): "C3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+        Checking (0) square for computer: "A3"
+                (X): "A2"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "B1"
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B3"
+                        -- (O): "A2"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- (O): "C3"
+                (X): "C1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "C2"
+                        -- (O): "A2"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "C3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+        Checking (0) square for computer: "B1"
+                (X): "A2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- (O): "C3"
+                (X): "A3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- (O): "C3"
+                (X): "B2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- (O): "C3"
+                (X): "B3"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- (O): "B2"
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- (O): "C3"
+                (X): "C1"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- (O): "C3"
+                (X): "C2"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C3"
+                (X): "C3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C2"
+        Checking (0) square for computer: "B2"
+                (X): "A2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- (O): "C3"
+                (X): "A3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                (X): "B1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                (X): "B3"
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                (X): "C1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                (X): "C2"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                (X): "C3"
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+        Checking (0) square for computer: "B3"
+                (X): "A2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "A3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "B1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- (O): "C3"
+                (X): "B1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "C1"
+                        -- (O): "C2"
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "C1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "C2"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "C3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- (O): "C2"
+        Checking (0) square for computer: "C1"
+                (X): "A2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "A3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- (O): "B3"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B1"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B3"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B3"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "C2"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C3"
+                (X): "C3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C2"
+        Checking (0) square for computer: "C2"
+                (X): "A2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "A3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B3"
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "C1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C3"
+                (X): "C3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C1"
+        Checking (0) square for computer: "C3"
+                (X): "A2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                (X): "A3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- (O): "B3"
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                (X): "B1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                (X): "B2"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                (X): "B3"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- (O): "C1"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                (X): "C1"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                (X): "C2"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B1"
+                        -- (O): "B2"
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C1"
+                Best moves for the computer (2):
+
+                OK moves for the computer (2):
+                        "A2", "A2", "A2", "A2", "A2", "A2", "A2", "A2",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						 Player 1, please enter a command: B1
+
+                You (X) entered: "B1"
+[[0, 1], [0, 2], [1, 1], [1, 2], [2, 1], [2, 2]]
+
+                [[0, 1], [0, 2], [1, 1], [1, 2], [2, 1], [2, 2]]
+
+                Checking square: [0, 1]
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [0, 2]
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |  0 |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [1, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |  0  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [2, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |  0 |     |
+                |---------------|
+
+                Checking square: [2, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |  0  |
+                |---------------|
+
+                [[0, 1], [0, 2], [1, 1], [1, 2], [2, 1], [2, 2]]
+
+                Checking square: [0, 1]
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [0, 2]
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [1, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |  1 |     |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [1, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |  1  |
+                |---------------|
+                |  0 |    |     |
+                |---------------|
+
+                Checking square: [2, 1]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |  1 |     |
+                |---------------|
+
+                Checking square: [2, 2]
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  1 |    |     |
+                |---------------|
+                |  0 |    |  1  |
+                |---------------|
+
+        Checking (0) square for computer: "A2"
+                (X): "A3"
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B2"
+                Danger! Potential opponent fork detected!
+
+        Checking (0) square for computer: "A3"
+        This is a good move for me (the computer)
+
+                (X): "A2"
+                        -- (O): "B2"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- (O): "B3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (X): "B2"
+                Danger! Potential opponent fork detected!
+
+        Checking (0) square for computer: "B2"
+        This is a good move for me (the computer)
+
+                (X): "A2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (X): "A3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- (O): "C2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B3"
+                        -- (O): "A2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- (O): "C2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (X): "C2"
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "C3"
+                        -- (O): "A2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+        Checking (0) square for computer: "B3"
+                (X): "A2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (X): "A3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "B2"
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "B2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                (X): "C2"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This is a good move for me (the computer)
+
+                (X): "C3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+        Checking (0) square for computer: "C2"
+        This is a good move for me (the computer)
+
+                (X): "A2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (X): "A3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C3"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (X): "B2"
+                Danger! Potential opponent fork detected!
+
+        Checking (0) square for computer: "C3"
+        This is a good move for me (the computer)
+
+                (X): "A2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (X): "A3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (X): "B2"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (X): "B3"
+                This is a good move for the opponent (Player 1)
+
+                        -- (O): "A2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "A3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "C2"
+                        -- This move will make me (the computer) win
+
+                        -- With this I can fork the opponent
+
+                (X): "C2"
+                        -- (O): "A2"
+                        -- (O): "A3"
+                        -- With this I can fork the opponent
+
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B2"
+                        -- This is a good move for me (the computer)
+
+                        -- (O): "B3"
+                        -- This is a good move for me (the computer)
+
+                Best moves for the computer (2):
+                        "A2", "A3", "A3", "A3", "A3", "A3",
+                OK moves for the computer (2):
+                        "A2", "A2", "A2", "A3", "A3", "A3",
+
+                [[0, 1], [0, 2], [1, 1], [1, 2], [2, 1], [2, 2]]
