@@ -10,42 +10,54 @@ def computerresponse(board, val)
   if (emptysquares.length == 9)
      bestsquare = (rand()*(emptysquares.length)).floor()
   else
-    predictwin = computerpredictmove(board, val)
-    if (predictwin != -1)
-      return predictwin
-    end
+    # predictwin = computerpredictwin(board, val)
+    # if (predictwin != -1)
+    #   return predictwin
+    # end
 
-    predictloss = computerpredictmove(board, swapturn(val))
-    if predictloss != -1
-      return predictloss
-    end
+    # predictloss = computerpredictwin(board, swapturn(val))
+    # if predictloss != -1
+    #   return predictloss
+    # end
 
     # qq = computerpredictbestmove(board, val)
     # r = (rand()*(qq.length)).floor() 
     # bestsquare = qq[r]
     # bestsquare = emptysquares.index(bestsquare)
 
-    bestsquare = computerpredictbestmove(board, val)
+    bestsquare = emptysquares.index(computerpredictbestmove(board, val))
     bestsquare = emptysquares.index(bestsquare)
   end
 
   return emptysquares[bestsquare]
 end
 
+
 ################################################################################################
 # A method that predicts the board - NO DEBUG MODE
 ################################################################################################
-def computerpredictbestmove(board, val, n=1)
+def computerpredictbestmove(board, val, n=5)
   tmpboard = Array.new
-  tmpboard[0] = Array.new
-  tmpboard[1] = Array.new
-  tmpboard[2] = Array.new
+  for w in 0..n-1
+    tmpboard[w] = Array.new
+  end
+  # tmpboard[0] = Array.new
+  # tmpboard[1] = Array.new
+  # tmpboard[2] = Array.new
+  # tmpboard[3] = Array.new
+  # tmpboard[4] = Array.new
   emptysquares = Array.new
   best_moves = Array.new
   ok_moves = Array.new
   bad_moves = Array.new
+  kwek=0
+
+  ########## FIRST ITERATION (SELF) ######################
 
   emptysquares[0] = checkemptysquares(board)
+  
+  print emptysquares
+
   for i in 0..emptysquares[0].length-1
     tmpboard[0][0] = board[0].dup
     tmpboard[0][1] = board[1].dup
@@ -53,13 +65,27 @@ def computerpredictbestmove(board, val, n=1)
     emptysquares[0] = checkemptysquares(tmpboard[0])
     tmpboard[0][emptysquares[0][i][0]][emptysquares[0][i][1]] = val
 
-    if (checkfork(tmpboard[0],val))
-      best_moves.push(emptysquares[0][i])
+    kwek+=1
+
+    if (checkwin(tmpboard[0]))
+      return emptysquares[0][i]
+      # best_moves.push(emptysquares[0][i])
     end
 
-    if (checkpotentialwin(tmpboard[0],val))
-      ok_moves.push(emptysquares[0][i])
-    end
+    # if (checkwin(tmpboard[0])==swapturn(val))
+    #   return emptysquares[0][i]
+    #   # best_moves.push(emptysquares[0][i])
+    # end
+    # if (checkfork(tmpboard[0],val))
+    #   best_moves.push(emptysquares[0][i])
+    # end
+
+    # if (checkpotentialwin(tmpboard[0],val))
+    #   ok_moves.push(emptysquares[0][i])
+    # end
+
+
+    ########## SECOND ITERATION ######################
 
     emptysquares[1] = checkemptysquares(tmpboard[0])
     for j in 0..emptysquares[1].length-1
@@ -67,16 +93,26 @@ def computerpredictbestmove(board, val, n=1)
       tmpboard[1][1] = tmpboard[0][1].dup
       tmpboard[1][2] = tmpboard[0][2].dup
       tmpboard[1][emptysquares[1][j][0]][emptysquares[1][j][1]] = swapturn(val)
-
-      predictloss = checkwin(tmpboard[1])
-      if (predictloss==swapturn(val))
-        bad_moves.push(emptysquares[0][i])
+      
+      if (checkwin(tmpboard[1])==swapturn(val))
+        return emptysquares[1][j]
+        # d = best_moves.index(emptysquares[1][j])
+        # if (!d.nil?)
+        #   best_moves.delete_at(d)
+        # end
+        # bad_moves.push(emptysquares[0][i])
       end
 
       if (checkfork(tmpboard[1],swapturn(val)))
-        puts "\n\n\t\tFORK DETECTED:\n\n\t\t"
-        bad_moves.push(emptysquares[0][i])
+        puts "\t\tFORK DETECTED: #{emptysquares[0][i]} #{emptysquares[1][j]}"
+        d = best_moves.index(emptysquares[0][i])
+            if (!d.nil?)
+              best_moves.delete_at(d)
+            end
+        # bad_moves.push(emptysquares[0][i])
       end
+
+      ########## THIRD ITERATION (SELF) ######################
 
       emptysquares[2] = checkemptysquares(tmpboard[1])
       for k in 0..emptysquares[2].length-1
@@ -84,41 +120,188 @@ def computerpredictbestmove(board, val, n=1)
         tmpboard[2][1] = tmpboard[1][1].dup
         tmpboard[2][2] = tmpboard[1][2].dup
         tmpboard[2][emptysquares[2][k][0]][emptysquares[2][k][1]] = val
+        
+        kwek+=1
 
-        checkwinner = checkwin(tmpboard[2])
-        if (checkwinner==val)
-          best_moves.push(emptysquares[0][i])
+        if (checkwin(tmpboard[2])==val)
+          best_moves.push(emptysquares[2][k])
         end
   
         if (checkfork(tmpboard[2],val))
-          best_moves.push(emptysquares[0][i])
+           best_moves.push(emptysquares[2][k])
         end
         
         if (checkpotentialwin(tmpboard[2],val))
-          ok_moves.push(emptysquares[0][i])
+          best_moves.push(emptysquares[2][k])
+        end
+
+
+        ########## FOURTH ITERATION ######################
+
+        emptysquares[3] = checkemptysquares(tmpboard[2])
+        for l in 0..emptysquares[3].length-1
+          tmpboard[3][0] = tmpboard[2][0].dup
+          tmpboard[3][1] = tmpboard[2][1].dup
+          tmpboard[3][2] = tmpboard[2][2].dup
+          tmpboard[3][emptysquares[3][l][0]][emptysquares[3][l][1]] = swapturn(val)
+
+          kwek+=1
+
+          if (checkwin(tmpboard[3])==swapturn(val))
+            d = best_moves.index(emptysquares[3][l])
+            if (!d.nil?)
+              best_moves.delete_at(d)
+            end
+            # bad_moves.push(emptysquares[0][i])
+          end
+    
+          if (checkfork(tmpboard[3],swapturn(val)))
+            puts "\t\tFORK DETECTED: #{emptysquares[0][i]} #{emptysquares[1][j]} #{emptysquares[2][k]} #{emptysquares[3][l]}\n\n\t\t"
+            d = best_moves.index(emptysquares[3][l])
+            if (!d.nil?)
+              best_moves.delete_at(d)
+            end
+            # bad_moves.push(emptysquares[3][l])
+          end
+
+          ########## FIFTH ITERATION (SELF) ######################
+          emptysquares[4] = checkemptysquares(tmpboard[3])
+          for m in 0..emptysquares[4].length-1
+            tmpboard[4][0] = tmpboard[3][0].dup
+            tmpboard[4][1] = tmpboard[3][1].dup
+            tmpboard[4][2] = tmpboard[3][2].dup
+            tmpboard[4][emptysquares[4][m][0]][emptysquares[4][m][1]] = val
+            
+            kwek+=1
+
+            if (checkwin(tmpboard[4])==val)
+              best_moves.push(emptysquares[4][m])
+            end
+      
+            if (checkfork(tmpboard[4],val))
+              best_moves.push(emptysquares[4][m])
+            end
+            
+            # if (checkpotentialwin(tmpboard[4],val))
+            #   ok_moves.push(emptysquares[0][i])
+            # end
+          end
         end
       end
     end
   end
 
-  for z in 0..bad_moves.length-1
-    best_moves.delete(bad_moves[z])
-  end
+  
 
+  print "\n\t\tTook #{kwek} iterations...\n"
+  # # print best_moves
+  # for z in 0..bad_moves.length-1
+  #   best_moves.delete(bad_moves[z])
+  # end
+
+  File.write('./bestmoves.txt', best_moves.to_s + "\n", mode: 'a')
+  
   if best_moves.length > 0
     return largestoccuring(best_moves)
-  elsif ok_moves.length > 0
-    return largestoccuring(ok_moves)
   else
     emptysquares = checkemptysquares(board)
     return emptysquares[(rand()*(emptysquares.length)).floor()]
   end
 end
 
+
+
+
+# ################################################################################################
+# # A method that predicts the board - NO DEBUG MODE
+# ################################################################################################
+# def computerpredictbestmove(board, val, n=5)
+#   tmpboard = Array.new
+#   for w in 0..n-1
+#     tmpboard[w] = Array.new
+#   end
+#   # tmpboard[0] = Array.new
+#   # tmpboard[1] = Array.new
+#   # tmpboard[2] = Array.new
+#   # tmpboard[3] = Array.new
+#   # tmpboard[4] = Array.new
+#   emptysquares = Array.new
+#   best_moves = Array.new
+#   ok_moves = Array.new
+#   bad_moves = Array.new
+
+
+
+
+#   n0 = Array.new
+#   n1 = Array.new
+#   ########## FIRST ITERATION (SELF) ######################
+
+#   emptysquares = checkemptysquares(board)
+  
+#   n0 = computerpredictwin(board, val)
+  
+#   if (n0[1] != -1)
+#     return n0[1]
+#   end
+#   # for i in 0..n0[0].length-1
+#   #   print n0[0][i]
+#   #   puts "\n"
+#   # end
+
+#   # print n0
+
+#   for i in 0..n0[0].length-1
+#     n1[i] = computerpredictwin(n0[0][i], swapturn(val))
+
+#     puts "\n\n\t\t:This is the result:\t"
+#     print n1[i][1]
+#   end
+
+#   for i in 0..n1.length-1
+#     for j in 0..n1[i].length-1
+#       print n1[i][0]
+#       puts ""
+#     end
+#   end
+#   # print n1
+#   # for j in 0..n1[0].length-1
+#   #   print n1[0][j]
+#   #   puts "BUMBA\n"
+#   # end
+  
+
+#   print "\n\t\tTook iterations...\n"
+#   # print best_moves
+#   for z in 0..bad_moves.uniq.length-1
+#     best_moves.delete(bad_moves[z])
+#   end
+
+#   File.write('./bestmoves.txt', best_moves.to_s + "\n", mode: 'a')
+  
+#   if best_moves.length > 0
+#     return largestoccuring(best_moves)
+#   # elsif ok_moves.length > 0
+#   #   return largestoccuring(ok_moves)
+#   else
+#     puts "\n\t\tI'm A PUTZ WHO HAS NO OTHER MOVES LEFT\n"
+#     emptysquares = checkemptysquares(board)
+#     return emptysquares[(rand()*(emptysquares.length)).floor()]
+#   end
+# end
+
+
+
+
+
+
+
+
+
 ################################################################################################
 # A method that predicts the next move NO DEBUG MODE
 ################################################################################################
-def computerpredictmove(board, val)
+def computerpredictwin(board, val)
   # Check for an empty square
   tmpboard = Array.new
   emptysquares = checkemptysquares(board)
@@ -329,7 +512,7 @@ end
   # def computerpredictmove(board, val)
   #   tmpboard = Array.new
   #   emptysquares = checkemptysquares(board)
-  #   possiblemoves = Array.new
+  #   emptysquares = Array.new
 
   #   for i in 0..emptysquares.length-1
   
@@ -345,7 +528,7 @@ end
   #     end
 
   #     # if (checkfork(tmpboard))
-  #     #   possiblemoves.push(emptysquares[i])
+  #     #   emptysquares.push(emptysquares[i])
   #     # end
 
   #   end

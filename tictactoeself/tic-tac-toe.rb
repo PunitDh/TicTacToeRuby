@@ -103,6 +103,7 @@ tmp = gets
 
 # Generate a random value
 randtoss = (rand()*2)
+# randtoss = 1.54
 
 # Display the coin toss
 if (randtoss < 1)
@@ -233,11 +234,13 @@ if (winner!=false)
     winnername = player2[:name]
   end
   showboard(board_display)
+  puts ""
   puts "\t\t\t\t\t|-----" + "-"*(winnername.length+5) + "------|"
   puts "\t\t\t\t\t|     #{winnername} won!      |"
   puts "\t\t\t\t\t|-----" + "-"*(winnername.length+5) + "------|"
 elsif (checkdraw(board)!=false)
   showboard(board_display)
+  puts ""
   puts "\t\t\t\t\t|-----------------|"
   puts "\t\t\t\t\t| Game is a draw! |"
   puts "\t\t\t\t\t|-----------------|"
