@@ -5,7 +5,52 @@ def showboard(board)
     for i in 0..7
       puts "\t\t\t\t\t" + board[i]
     end
+end
+
+
+
+
+def chooseplayermode()
+  begin
+    print "\n\t\tChoose (1)-player or (2)-player mode: "
+    playermodeget = gets.chomp
+    playermode = playermodeget.to_i
+    if (playermodeget.length == 0)
+      playermode = 1
+      puts "\n\t\tAutomatically selecting (1)-player mode...\n"
+      break
+    elsif (playermode < 1 or playermode > 2)
+      puts "\n\t\t\"#{playermodeget}\" is not a valid player mode. Enter 1 or 2:\n"
+    end
+  end while not (playermode == 1 or playermode == 2 or playermodeget.length == 0)
+  return playermode
+end
+
+def getplayernames(playermode)
+  player = Array.new
+  player[0] = {name: "Player 1", val: -1, str: ""}
+  player[1] = {name: "Player 2", val: -1, str: ""}
+
+  # Get player 1 name
+  print "\n\t\tEnter #{player[0][:name]} Name: "
+  player[0][:name] = gets.chomp
+  if player[0][:name] == ""
+    player[0][:name] = "Player 1"
   end
+
+  # If two-player mode, get second player's name, or else use "Computer"
+  if (playermode == 2)
+    print "\n\t\tEnter #{player[1][:name]} Name: "
+    player[1][:name] = gets.chomp
+    if player[1][:name] == ""
+      player[1][:name] = "Player 2"
+    end
+  elsif playermode == 1
+    player[1][:name] = "Computer"
+  end
+
+  return player
+end
 
 #############################################################################
 # A method that shows "Help" feature
@@ -51,7 +96,7 @@ def showtitlescreen(board)
   print "\n\n\n\n\t\t\t\t\tPress ENTER or RETURN to START THE GAME"
   tmp = gets
 
-  print "\n\n\t\tWelcome to Tic-Tac-Toe...\n\n\t\tYou can player in either 1-player or 2-player mode...(Press ENTER)"
+  print "\n\n\t\tWelcome to Tic-Tac-Toe...\n\n\t\tYou can player in either single or multiplayer mode...(Press ENTER)"
   tmp = gets
 
   print "\n\n\t\t\'X\' always goes first..."
