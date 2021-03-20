@@ -102,8 +102,8 @@ print "\n\n\n\t\tTossing coin now...(Press ENTER to see coin toss results)"
 tmp = gets
 
 # Generate a random value
-randtoss = (rand()*2)
-# randtoss = 1.54
+# randtoss = (rand()*2)
+randtoss = 1.54
 
 # Display the coin toss
 if (randtoss < 1)
