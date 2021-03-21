@@ -361,28 +361,28 @@ for i in 0..7
   puts "\t\t\t\t\t\t" + board_display[i]
 }
 print "\n\n\n\n\t\t\t\t\tPress ENTER or RETURN to continue"
-tmp = gets
+tmpgets
 
 print "\n\n\t\tWelcome to Tic-Tac-Toe...\n\n\t\tYou can player in either 1-player or 2-player mode..."
-tmp = gets
+tmpgets
 
 print "\n\n\t\t\'X\' always goes first..."
-tmp = gets
+tmpgets
 
 print "\n\n\t\tWho gets \'X\' and who gets \'O\' is determined by a coin toss..."
-tmp = gets
+tmpgets
 
 print "\n\n\t\tYou play by giving the following text commands: A1, A2, A3, B1, B2, B3, C1, C2, C3.\n\n\t\tThey correspond to each cell on the board..."
-tmp = gets
+tmpgets
 
 print "\n\t\tYou can enter the text command \"D\" to display the board,\n\t\tor the text command \"H\" for Help if you get stuck..."
-tmp = gets
+tmpgets
 
 print "\n\t\tPress Ctrl+C or Cmd+C to exit at any time..."
-tmp = gets
+tmpgets
 
 print "\n\n\t\tLet's get started..."
-tmp = gets
+tmpgets
 
 // Choose One-Player or Two-Player Mode
 playermode = -1
@@ -414,10 +414,10 @@ if playermode == 1
 elsif playermode == 2
   print "\n\n\t\tWelcome //{player1[:name]} and //{player2[:name]}!"
 }
-tmp = gets
+tmpgets
 
 print "\n\n\n\t\tTossing coin now..."
-tmp = gets
+tmpgets
 
 // Randomly select a person to be first player: The "X" player
 player1[:val] = (rand()*2)
@@ -450,7 +450,7 @@ else
   player2[:val] = 0  // The 0 represents O
 }
 
-tmp = gets
+tmpgets
 
 if player2[:val] == 1
   currentplayer = player2
@@ -462,7 +462,7 @@ puts "\n\t\t//{player1[:name]} is \'//{player1[:str]}\'. //{player2[:name]} is \
 
 // Determining who goes first
 print "\t\t//{currentplayer[:name]} goes first"
-tmp = gets
+tmpgets
 
 // Set current player to player 1
 // currentplayer = player1

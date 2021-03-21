@@ -26,7 +26,7 @@
 #       return predictwin
 #     end
 
-#     predictloss = computerpredictwin(board, swapturn(val))
+#     predictloss = computerpredictwin(board, otherval(val))
 #     if predictloss != -1
 #       return predictloss
 #     end
@@ -74,10 +74,10 @@
 #   end
 
 #   while (emptysquares > 0)
-#     minimaxrecursion(tmpboard, swapturn(val))
+#     minimaxrecursion(tmpboard, otherval(val))
 #   end
 
-#   val = swapturn(val)
+#   val = otherval(val)
 #   return tmpboard
 
 # end
@@ -126,7 +126,7 @@
 #       # best_moves.push(emptysquares[0][i])
 #     end
 
-#     # if (checkwin(tmpboard[0])==swapturn(val))
+#     # if (checkwin(tmpboard[0])==otherval(val))
 #     #   return emptysquares[0][i]
 #     #   # best_moves.push(emptysquares[0][i])
 #     # end
@@ -146,9 +146,9 @@
 #       tmpboard[1][0] = tmpboard[0][0].dup
 #       tmpboard[1][1] = tmpboard[0][1].dup
 #       tmpboard[1][2] = tmpboard[0][2].dup
-#       tmpboard[1][emptysquares[1][j][0]][emptysquares[1][j][1]] = swapturn(val)
+#       tmpboard[1][emptysquares[1][j][0]][emptysquares[1][j][1]] = otherval(val)
       
-#       if (checkwin(tmpboard[1])==swapturn(val))
+#       if (checkwin(tmpboard[1])==otherval(val))
         
 #         return emptysquares[1][j]
 #         # d = best_moves.index(emptysquares[1][j])
@@ -159,7 +159,7 @@
 #       end
 
       
-#       if (checkfork(tmpboard[1],swapturn(val)))
+#       if (checkfork(tmpboard[1],otherval(val)))
 
 
 #         ff = minimax_score[0].index(emptysquares[0][i])
@@ -219,11 +219,11 @@
 #           tmpboard[3][0] = tmpboard[2][0].dup
 #           tmpboard[3][1] = tmpboard[2][1].dup
 #           tmpboard[3][2] = tmpboard[2][2].dup
-#           tmpboard[3][emptysquares[3][l][0]][emptysquares[3][l][1]] = swapturn(val)
+#           tmpboard[3][emptysquares[3][l][0]][emptysquares[3][l][1]] = otherval(val)
 
 #           iterations+=1
 
-#           # if (checkwin(tmpboard[3])==swapturn(val))
+#           # if (checkwin(tmpboard[3])==otherval(val))
 #           #   d = best_moves.index(emptysquares[0][i])
 #           #   if (!d.nil?)
 #           #     best_moves.delete_at(d)
@@ -234,7 +234,7 @@
 #           #   # bad_moves.push(emptysquares[0][i])
 #           # end
     
-#           # if (checkfork(tmpboard[3],swapturn(val)))
+#           # if (checkfork(tmpboard[3],otherval(val)))
 #           #   # puts "\t\tFORK DETECTED: #{emptysquares[0][i]} #{emptysquares[1][j]} #{emptysquares[2][k]} #{emptysquares[3][l]}\t\t"
 #           #   d = best_moves.index(emptysquares[0][i])
 #           #   if (!d.nil?)
@@ -244,7 +244,7 @@
 #           #   # break
 #           #   # bad_moves.push(emptysquares[3][l])
 #           # end
-#           if (checkwin(tmpboard[3])==swapturn(val))
+#           if (checkwin(tmpboard[3])==otherval(val))
 #             ff = minimax_score[0].index(emptysquares[0][i])
 #             if (!ff.nil?)
 #               minimax_score[1][ff] -= scorediff
@@ -254,7 +254,7 @@
             
 #           end
 
-#           if(checkfork(tmpboard[3],swapturn(val)))
+#           if(checkfork(tmpboard[3],otherval(val)))
 #             ff = minimax_score[0].index(emptysquares[0][i])
 #             if (!ff.nil?)
 #               minimax_score[1][ff] -= scorediff
@@ -302,11 +302,11 @@
 #             #   tmpboard[5][0] = tmpboard[4][0].dup
 #             #   tmpboard[5][1] = tmpboard[4][1].dup
 #             #   tmpboard[5][2] = tmpboard[4][2].dup
-#             #   tmpboard[5][emptysquares[5][q][0]][emptysquares[5][q][1]] = swapturn(val)
+#             #   tmpboard[5][emptysquares[5][q][0]][emptysquares[5][q][1]] = otherval(val)
 
 #             #   iterations+=1
 
-#             #   if (checkwin(tmpboard[5])==swapturn(val))
+#             #   if (checkwin(tmpboard[5])==otherval(val))
 #             #     d = best_moves.index(emptysquares[5][q])
 #             #     if (!d.nil?)
 #             #       best_moves.delete_at(d)
@@ -318,7 +318,7 @@
 #             #     # bad_moves.push(emptysquares[0][i])
 #             #   end
         
-#             #   if (checkfork(tmpboard[5],swapturn(val)))
+#             #   if (checkfork(tmpboard[5],otherval(val)))
 #             #     # puts "\t\tFORK DETECTED: #{emptysquares[0][i]} #{emptysquares[1][j]} #{emptysquares[2][k]} #{emptysquares[3][l]} #{emptysquares[4][m]} #{emptysquares[5][q]}"
 #             #     d = best_moves.index(emptysquares[5][q])
 #             #     if (!d.nil?)
@@ -578,7 +578,7 @@
   #   # print n0
   
   #   for i in 0..n0[0].length-1
-  #     n1[i] = computerpredictwin(n0[0][i], swapturn(val))
+  #     n1[i] = computerpredictwin(n0[0][i], otherval(val))
   
   #     puts "\n\n\t\t:This is the result:\t"
   #     print n1[i][1]
@@ -641,12 +641,12 @@
   #   for i in 0..2
   #     # Check each column
   #     tmpboard = board.transpose
-  #     if (tmpboard[i].uniq.length == 2 and tmpboard[i].compact.length == 3 and tmpboard[i].count(val) < tmpboard[i].count(swapturn(val)))
+  #     if (tmpboard[i].uniq.length == 2 and tmpboard[i].compact.length == 3 and tmpboard[i].count(val) < tmpboard[i].count(otherval(val)))
   #       return true
   #     end
   
   #     # Check each row
-  #     if (board[i].uniq.length == 2 and board[i].compact.length == 3 and tmpboard[i].count(val) < tmpboard[i].count(swapturn(val)))
+  #     if (board[i].uniq.length == 2 and board[i].compact.length == 3 and tmpboard[i].count(val) < tmpboard[i].count(otherval(val)))
   #         return true
   #     end
   
@@ -657,9 +657,9 @@
   #     tmparray[1].push(board[2-i][i])
   #   end
 	
-  #   if (tmparray[0].uniq.length == 2 and tmparray[0].compact.length == 3 and tmpboard[i].count(val) > tmpboard[i].count(swapturn(val)))  # Diagonal A1, B2, C3
+  #   if (tmparray[0].uniq.length == 2 and tmparray[0].compact.length == 3 and tmpboard[i].count(val) > tmpboard[i].count(otherval(val)))  # Diagonal A1, B2, C3
   #     return true
-  #   elsif (tmparray[1].uniq.length == 2 and tmparray[1].compact.length == 3 and tmpboard[i].count(val) > tmpboard[i].count(swapturn(val)))  # Diagonal C1, B2, A3
+  #   elsif (tmparray[1].uniq.length == 2 and tmparray[1].compact.length == 3 and tmpboard[i].count(val) > tmpboard[i].count(otherval(val)))  # Diagonal C1, B2, A3
   #     return true
   #   end
   
@@ -889,8 +889,8 @@
   #       tmpboard[1][0] = tmpboard[0][0].dup
   #       tmpboard[1][1] = tmpboard[0][1].dup
   #       tmpboard[1][2] = tmpboard[0][2].dup
-  #       tmpboard[1][emptysquares[1][j][0]][emptysquares[1][j][1]] = swapturn(val)
-  #       print "\n\t\t(#{swapturn(val)}): "             #debug
+  #       tmpboard[1][emptysquares[1][j][0]][emptysquares[1][j][1]] = otherval(val)
+  #       print "\n\t\t(#{otherval(val)}): "             #debug
   
   
   #       print "\""
@@ -902,20 +902,20 @@
   #       predictloss = checkwin(tmpboard[1])
   #       # print "DETERGENT: "
   #       # puts predictloss
-  #         if (predictloss==swapturn(val))
+  #         if (predictloss==otherval(val))
   #           puts "\n\t\t\tThis move will make me lose"
   #           bad_moves.push(emptysquares[0][i])
   #           # break
   #         end
   
-  #       if (checkfork(tmpboard[1],swapturn(val)))
+  #       if (checkfork(tmpboard[1],otherval(val)))
   #         # best_moves.delete(emptysquares[i])
   #         bad_moves.push(emptysquares[0][i])
   #         puts "\n\t\tDanger! Potential opponent fork detected!"
   #         # break
   #       end
 		
-  #       if (checkpotentialwin(tmpboard[1],swapturn(val)))
+  #       if (checkpotentialwin(tmpboard[1],otherval(val)))
   #         puts "\n\t\tThis is a good move for the opponent (Player 1)"
   #       end
 		

@@ -1,15 +1,19 @@
 ###############################################################################################
 # A method that lets the computer play
 ################################################################################################
-def computermove(board, val, str, moverecord, commands, board_display)
-  computer_response = computerresponse(board, val)
-  print moverecord.length == 0 ? "\n\n\t\tComputer's  (#{str}) first move: " : "\n\t\tComputer (#{str}) responds: "
+def computermove(board, currentplayer, moverecord, commands, board_display)
+  # currentplayer   = game[:currentplayer]
+  # moverecord      = game[:moverecord]
+  # commands        = game[:commands]
+
+  computer_response = computerresponse(board, currentplayer[:val])
+  print moverecord.length == 0 ? "\n\n\t\tComputer's  (#{currentplayer[:str]}) first move: " : "\n\t\tComputer (#{currentplayer[:str]}) responds: "
   moverecord.push(computer_response)
   computer_response_command = arraytocommandsparser(computer_response, commands)
   print "\"#{computer_response_command.join()}\"\n"
   computer_response_display = arraytodisplayparser(computer_response)
-  board[computer_response[0]][computer_response[1]] = val
-  board_display[computer_response_display[0]][computer_response_display[1]] = str
+  board[computer_response[0]][computer_response[1]] = currentplayer[:val]
+  board_display[computer_response_display[0]][computer_response_display[1]] = currentplayer[:str]
 end
 
 
@@ -30,7 +34,7 @@ def computerresponse(board, val)
     #   return predictwin
     # end
 
-    # predictloss = computerpredictwin(board, swapturn(val))
+    # predictloss = computerpredictwin(board, otherval(val))
     # if predictloss != -1
     #   return predictloss
     # end
@@ -94,7 +98,7 @@ def minimax(board, val, maximising_player = true)
         tmpboard[2] = board[2].dup
         tmpboard[i][j] = val
         
-        board_state = minimax(tmpboard, swapturn(val), !maximising_player)
+        board_state = minimax(tmpboard, otherval(val), !maximising_player)
         $foo += 1
         
         if (maximising_player)
@@ -138,8 +142,19 @@ def findemptysquares(board)
 end
 
 ################################################################################################
+# A method that returns the opponent's piece
+################################################################################################
+def otherval(val)
+	return (val-1).abs
+end
+
+################################################################################################
 # A method that swaps turns and returns the opponent's piece
 ################################################################################################
-def swapturn(val)
-	return (val-1).abs
+def swapturn(currentplayer, player)
+  if currentplayer == player[0]
+    return player[1]
+  elsif currentplayer == player[1]
+    return player[0]
+  end
 end

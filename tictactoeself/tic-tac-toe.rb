@@ -1,109 +1,70 @@
 require "./game_end.rb"
-require "./print.rb"
+require "./init.rb"
 require "./parser.rb"
 require "./artificial-intelligence.rb"
 require "pry"
 
-#############################################################################
-#############################################################################
-# START THE GAME
-#############################################################################
-#############################################################################
+####################################################################################
+###############################                      ###############################
+##########################         START THE GAME         ##########################
+###############################                      ###############################
+####################################################################################
 
-# Initialise an empty board
+# Initialise
 board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
-
-# Initialise commands
 commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
-
-# Initialise players
-player = Array.new
-player[0] = {name: "Player 1", val: -1, str: ""}
-player[1] = {name: "Player 2", val: -1, str: ""}
-
-# Initialise move number
 moverecord = Array.new
+board_display = displayboard()
 
-# Create the board display
-board_display = ["     1   2   3  ",
-                 "   |---|---|---|",
-                 " A |   |   |   |",
-                 "   |---|---|---|",
-                 " B |   |   |   |",
-                 "   |---|---|---|",
-                 " C |   |   |   |",
-                 "   |---|---|---|"]
-
-showtitlescreen(board_display)
-
-
+# Show title screen and get player info
+showtitlescreen()
 playermode = chooseplayermode()
-
 player = getplayernames(playermode)
+currentplayer = cointoss(player)
+game = {"board": board, "playermode": playermode, "player": player, "currentplayer": currentplayer, "moverecord": moverecord, "commands": commands, "board_display": board_display}
 
-# Welcome the players
-if playermode == 1
-  print "\n\n\t\tWelcome #{player[0][:name]}!"
-elsif playermode == 2
-  print "\n\n\t\tWelcome #{player[0][:name]} and #{player[1][:name]}!"
-end
-tmp = gets
+def playmove(game)
+  # playermode = game[:playermode]
+  # currentplayer = game[:currentplayer]
+  # board = game[:board]
+  # moverecord = game[:moverecord]
+  # commands = game[:commands]
+  # board_display = game[:board_display]
+  # player = game[:player]
 
-# Coin toss
-print "\n\n\n\t\tTossing coin now...(Press ENTER to see coin toss results)"
-tmp = gets
+  if game[:playermode] == 1 and game[:currentplayer][:name] == "Computer"
+    computermove(game)
+    currentplayer = swapturn(game[:currentplayer], game[:player])
+  end
 
-# Generate a random value
-randtoss = (rand()*2)
+  begin
 
-# Display the coin toss
-if (randtoss < 1)
-  cointoss = "T"
-  player[0][:str] = "O"
-  player[0][:val] = 0  # The 0 represents 1
-  player[1][:str] = "X"
-  player[1][:val] = 1  # The 1 represents X   
-else
-  cointoss = "H"
-  player[0][:str] = "X"
-  player[0][:val] = 1  # The 1 represents X
-  player[1][:str] = "O"
-  player[1][:val] = 0  # The 0 represents O 
+  end while (checkvalidcommand(commands, board, board_display, command))
+
+  moverecord.push(cmd_parse)
+  board[cmd_parse[0]][cmd_parse[1]] = currentplayer[:val]
+  board_display[display_parse[0]][display_parse[1]] = currentplayer[:str]
 end
 
-puts "\n\t\tThe result of the coin toss is: \n\n"
-puts "\t\t\t\t\t\t\t  -------  "
-puts "\t\t\t\t\t\t\t/         \\"
-puts "\t\t\t\t\t\t\t|    #{cointoss}    |"
-puts "\t\t\t\t\t\t\t\\         /"
-print "\t\t\t\t\t\t\t  -------- "
-
-tmp = gets
-
-# Set current player based on who has X or O
-if player[1][:val] == 1
-  currentplayer = player[1]
-elsif player[0][:val] == 1
-  currentplayer = player[0]
+def validatecommand(game, command)
+  cmd_parse = commandparser(game[:commands], game[:board_display], command)
+  display_parse = displayparser(game[:commands], command)
+  if (cmd_parse[0] == -1 or cmd_parse[0] == -1)
+    puts "\n\t\t\"#{command}\" is not a valid command. Enter \"H\" for help."
+    return false
+  end
+  if (!board[cmd_parse[0]][cmd_parse[1]].nil?)
+    puts "\n\t\t\"#{command}\" is not an empty space"
+    return false
+  end
+  return [cmd_parse, display_parse]
 end
-
-puts "\n\t\t#{player[0][:name]} is \'#{player[0][:str]}\'. #{player[1][:name]} is \'#{player[1][:str]}\'.\n\n"
-
-# Determining who goes first
-print "\t\t#{currentplayer[:name]} goes first..."
-tmp = gets
 
 if playermode == 1 and currentplayer[:name] == "Computer"
-  computermove(board, currentplayer[:val], currentplayer[:str], moverecord, commands, board_display)
-  # Swap turns
-  if currentplayer == player[0]
-    currentplayer = player[1]
-  elsif currentplayer == player[1]
-    currentplayer = player[0]
-  end
+  computermove(board, currentplayer, moverecord, commands, board_display)
+  currentplayer = swapturn(currentplayer, player)
 end
 
-# Show the board for the first time
 showboard(board_display)
 
 # Game loop
@@ -111,7 +72,7 @@ begin
   print "\n\t\t#{currentplayer[:name]}, please enter a command: "
   command = gets.chomp.upcase
   puts "\n\t\tYou (#{currentplayer[:str]}) entered: \"#{command}\""
-  
+  # command = validatecommand(game, command)
   cmd_parse = commandparser(commands, board_display, command)
   display_parse = displayparser(commands, command)
 
@@ -132,26 +93,20 @@ begin
 
       if (playermode == 1)
         currentplayer = player[1]
-        computermove(board, currentplayer[:val], currentplayer[:str], moverecord, commands, board_display)
+        computermove(board, currentplayer, moverecord, commands, board_display)
       end
       if (checkgameover(board))
         break
       end
-      # Show board display
       showboard(board_display)
       print "\n\t\tPerformed #{$foo} iterations...\n"
-      # Swap turns
-      if currentplayer == player[0]
-        currentplayer = player[1]
-      elsif currentplayer == player[1]
-        currentplayer = player[0]
-      end
+      currentplayer = swapturn(currentplayer, player)
 
     else
       puts "\n\t\t\"#{command}\" is not an empty space"
     end
   end
-end while !(checkgameover(board))
+end while not (checkgameover(board))
 
 # Game end state
 File.write('./gameresults.txt', moverecord.to_s + "\n", mode: 'a')
