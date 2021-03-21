@@ -15,7 +15,7 @@
 # def computerresponse(board, val)
 
 #   # Check for an empty square
-#   emptysquares = checkemptysquares(board)
+#   emptysquares = findemptysquares(board)
 
 #   # Random value
 #   if (emptysquares.length == 9)
@@ -55,7 +55,7 @@
 #   tmpboard[1] = board[1].dup
 #   tmpboard[2] = board[2].dup
 
-#   emptysquares = checkemptysquares(board)
+#   emptysquares = findemptysquares(board)
 
 #   for i in 0..emptysquares.length-1
 #     minimax_score[0].push(emptysquares[i])
@@ -99,7 +99,7 @@
 #   scorediff = 1
 #   ########## FIRST ITERATION (SELF) ######################
 
-#   emptysquares[0] = checkemptysquares(board)
+#   emptysquares[0] = findemptysquares(board)
 #   for i in 0..emptysquares[0].length-1
 #     minimax_score[0].push(emptysquares[0][i])
 #   end
@@ -141,7 +141,7 @@
 
 #     ########## SECOND ITERATION ######################
 
-#     emptysquares[1] = checkemptysquares(tmpboard[0])
+#     emptysquares[1] = findemptysquares(tmpboard[0])
 #     for j in 0..emptysquares[1].length-1
 #       tmpboard[1][0] = tmpboard[0][0].dup
 #       tmpboard[1][1] = tmpboard[0][1].dup
@@ -179,7 +179,7 @@
 
 #       ########## THIRD ITERATION (SELF) ######################
 
-#       emptysquares[2] = checkemptysquares(tmpboard[1])
+#       emptysquares[2] = findemptysquares(tmpboard[1])
 #       for k in 0..emptysquares[2].length-1
 #         tmpboard[2][0] = tmpboard[1][0].dup
 #         tmpboard[2][1] = tmpboard[1][1].dup
@@ -214,7 +214,7 @@
 
 #         ########## FOURTH ITERATION ######################
 
-#         emptysquares[3] = checkemptysquares(tmpboard[2])
+#         emptysquares[3] = findemptysquares(tmpboard[2])
 #         for l in 0..emptysquares[3].length-1
 #           tmpboard[3][0] = tmpboard[2][0].dup
 #           tmpboard[3][1] = tmpboard[2][1].dup
@@ -263,7 +263,7 @@
 #           end
 
 #           ########## FIFTH ITERATION (SELF) ######################
-#           emptysquares[4] = checkemptysquares(tmpboard[3])
+#           emptysquares[4] = findemptysquares(tmpboard[3])
 #           for m in 0..emptysquares[4].length-1
 #             tmpboard[4][0] = tmpboard[3][0].dup
 #             tmpboard[4][1] = tmpboard[3][1].dup
@@ -297,7 +297,7 @@
 
 #             # ########## SIXTH ITERATION (OPPONENT) ######################
 
-#             # emptysquares[5] = checkemptysquares(tmpboard[4])
+#             # emptysquares[5] = findemptysquares(tmpboard[4])
 #             # for q in 0..emptysquares[5].length-1
 #             #   tmpboard[5][0] = tmpboard[4][0].dup
 #             #   tmpboard[5][1] = tmpboard[4][1].dup
@@ -364,10 +364,10 @@
 #     # print best_moves.uniq
 
 #     # return largestoccuring(best_moves)
-#     # emptysquares = checkemptysquares(board)
+#     # emptysquares = findemptysquares(board)
 #     return minimax_score[0][minimax_score[1].index(minimax_score[1].max)]
 #   else
-#     emptysquares = checkemptysquares(board)
+#     emptysquares = findemptysquares(board)
 #     return emptysquares[(rand()*(emptysquares.length)).floor()]
 #   end
 # end
@@ -378,7 +378,7 @@
 # def computerpredictwin(board, val)
 #   # Check for an empty square
 #   tmpboard = Array.new
-#   emptysquares = checkemptysquares(board)
+#   emptysquares = findemptysquares(board)
 #   for i in 0..emptysquares.length-1
 #     tmpboard[0] = board[0].dup
 #     tmpboard[1] = board[1].dup
@@ -563,7 +563,7 @@
   #   n1 = Array.new
   #   ########## FIRST ITERATION (SELF) ######################
   
-  #   emptysquares = checkemptysquares(board)
+  #   emptysquares = findemptysquares(board)
 	
   #   n0 = computerpredictwin(board, val)
 	
@@ -611,7 +611,7 @@
   #   #   return largestoccuring(ok_moves)
   #   else
   #     puts "\n\t\tI'm A PUTZ WHO HAS NO OTHER MOVES LEFT\n"
-  #     emptysquares = checkemptysquares(board)
+  #     emptysquares = findemptysquares(board)
   #     return emptysquares[(rand()*(emptysquares.length)).floor()]
   #   end
   # end
@@ -673,7 +673,7 @@
 	# ################################################################################################
 	# def computerpredictmove(board, val)
 	#   tmpboard = Array.new
-	#   emptysquares = checkemptysquares(board)
+	#   emptysquares = findemptysquares(board)
 	#   emptysquares = Array.new
   
 	#   for i in 0..emptysquares.length-1
@@ -703,7 +703,7 @@
   # def computerpredictmove(board, val)
   #   # Check for an empty square
   #   tmpboard = Array.new
-  #   emptysquares = checkemptysquares(board)
+  #   emptysquares = findemptysquares(board)
   #   print "\n\t\t"                                            #debug
   #   print emptysquares                                        #debug
   #   print "\n"                                                #debug
@@ -860,12 +860,12 @@
   
   #   commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2} #debug
   
-  #   emptysquares[0] = checkemptysquares(board)
+  #   emptysquares[0] = findemptysquares(board)
   #   for i in 0..emptysquares[0].length-1
   #     tmpboard[0][0] = board[0].dup
   #     tmpboard[0][1] = board[1].dup
   #     tmpboard[0][2] = board[2].dup
-  #     emptysquares[0] = checkemptysquares(tmpboard[0])
+  #     emptysquares[0] = findemptysquares(tmpboard[0])
   #     tmpboard[0][emptysquares[0][i][0]][emptysquares[0][i][1]] = val
   #     print "\n\t(#{val}): "             #debug
 	  
@@ -884,7 +884,7 @@
   #     end
   
   
-  #     emptysquares[1] = checkemptysquares(tmpboard[0])
+  #     emptysquares[1] = findemptysquares(tmpboard[0])
   #     for j in 0..emptysquares[1].length-1
   #       tmpboard[1][0] = tmpboard[0][0].dup
   #       tmpboard[1][1] = tmpboard[0][1].dup
@@ -921,7 +921,7 @@
 		
   
   
-  #       emptysquares[2] = checkemptysquares(tmpboard[1])
+  #       emptysquares[2] = findemptysquares(tmpboard[1])
   #       for k in 0..emptysquares[2].length-1
   #         tmpboard[2][0] = tmpboard[1][0].dup
   #         tmpboard[2][1] = tmpboard[1][1].dup
@@ -995,7 +995,7 @@
   #   elsif ok_moves.length > 0
   #     return [largestoccuring(ok_moves)]
   #   else
-  #     emptysquares = checkemptysquares(board)
+  #     emptysquares = findemptysquares(board)
   #     puts "Generating random square......"
   #     return [emptysquares[(rand()*(emptysquares.length)).floor()]]
   #   end

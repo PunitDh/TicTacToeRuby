@@ -4,26 +4,23 @@
 def checkwin(board)
 
   # All win states:
-  # Row A, Row B, Row C
-  # Column 1, Column 2, Column 3
-  # A1, B2, C3
-  # C1, B2, A3
+    # Row A, Row B, Row C
+    # Column 1, Column 2, Column 3
+    # Diagonal A1, B2, C3
+    # Diagonal C1, B2, A3
 
-  #board.map do ||
-  #end
   tmparray = Array.new
   tmparray[0] = Array.new
   tmparray[1] = Array.new
 
   for i in 0..2
     # Check each column
-    tmpboard = board.transpose
-    if (tmpboard[i].compact.length > 0 and tmpboard[i].uniq.length == 1)
-        return tmpboard[i][0]
+    if (checkequal(board.transpose[i]))
+        return board.transpose[i][0]
     end
 
     # Check each row
-    if (board[i].compact.length > 0 and board[i].uniq.length == 1)
+    if (checkequal(board[i]))
         return board[i][0]
     end
 
@@ -34,25 +31,32 @@ def checkwin(board)
     tmparray[1].push(board[2-i][i])
   end
   
-  if (tmparray[0].compact.length > 0 and tmparray[0].uniq.length == 1)  # Diagonal A1, B2, C3
+  if (checkequal(tmparray[0]))  # Diagonal A1, B2, C3
     return tmparray[0][0]
-  elsif (tmparray[1].compact.length > 0 and tmparray[1].uniq.length == 1)  # Diagonal C1, B2, A3
+  elsif (checkequal(tmparray[1]))  # Diagonal C1, B2, A3
     return tmparray[1][0]
   end
 
   return false
+end
+
+#############################################################################
+# A method to check if all elements in an array are equal
+#############################################################################
+def checkequal(array)
+   return (array.compact.length == array.length and array.uniq.length == 1) #? array.uniq[0] : false
 end
   
   #############################################################################
   # A method to check draw states
   #############################################################################
   def checkdraw(board)
-    return (checkemptysquares(board).length == 0)
+    return (findemptysquares(board).length == 0)
   end
   
   #############################################################################
-  # A method to check game end status
+  # A method to check game over status
   #############################################################################
-  def checkgameend(board)
+  def checkgameover(board)
     (checkdraw(board) or checkwin(board))
   end

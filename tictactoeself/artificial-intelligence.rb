@@ -18,24 +18,24 @@ end
 # A method that spits out a computer response
 ################################################################################################
 def computerresponse(board, val)
-  emptysquares = checkemptysquares(board)
-  if (emptysquares.length == 9)
+  emptysquares = findemptysquares(board)
+  if (emptysquares.length == board.flatten.length)
     bestsquare = (rand()*(emptysquares.length)).floor()
     return emptysquares[bestsquare]
   else
 
 
-    predictwin = computerpredictwin(board, val)
-    if (predictwin != -1)
-      return predictwin
-    end
+    # predictwin = computerpredictwin(board, val)
+    # if (predictwin != -1)
+    #   return predictwin
+    # end
 
-    predictloss = computerpredictwin(board, swapturn(val))
-    if predictloss != -1
-      return predictloss
-    end
+    # predictloss = computerpredictwin(board, swapturn(val))
+    # if predictloss != -1
+    #   return predictloss
+    # end
 
-
+    $foo = 0
     best_move = minimax(board,val)
     return [best_move[:r], best_move[:c]]
   end
@@ -49,7 +49,7 @@ end
 def computerpredictwin(board, val)
   # Check for an empty square
   tmpboard = Array.new
-  emptysquares = checkemptysquares(board)
+  emptysquares = findemptysquares(board)
   for i in 0..emptysquares.length-1
     tmpboard[0] = board[0].dup
     tmpboard[1] = board[1].dup
@@ -64,7 +64,7 @@ end
 
 
 ################################################################################################
-# The minimax function
+# The minimax recursion function
 ################################################################################################
 def minimax(board, val, maximising_player = true)
   tmpboard = Array.new
@@ -87,12 +87,16 @@ def minimax(board, val, maximising_player = true)
 
   for i in 0..2
     for j in 0..2
+      
       if board[i][j].nil?
         tmpboard[0] = board[0].dup
         tmpboard[1] = board[1].dup
         tmpboard[2] = board[2].dup
         tmpboard[i][j] = val
+        
         board_state = minimax(tmpboard, swapturn(val), !maximising_player)
+        $foo += 1
+        
         if (maximising_player)
           if (board_state[:score] > best_move[:score])
             best_move[:score] = board_state[:score]
@@ -119,7 +123,7 @@ end
 ################################################################################################
 # A method to check which squares are empty on the board
 ################################################################################################
-def checkemptysquares(board)
+def findemptysquares(board)
   emptysquares = []
   k = 0
   for i in 0..2

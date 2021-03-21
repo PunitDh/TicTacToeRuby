@@ -2,6 +2,7 @@ require "./game_end.rb"
 require "./print.rb"
 require "./parser.rb"
 require "./artificial-intelligence.rb"
+require "pry"
 
 #############################################################################
 #############################################################################
@@ -125,7 +126,7 @@ begin
       moverecord.push(cmd_parse)
       board[cmd_parse[0]][cmd_parse[1]] = currentplayer[:val]
       board_display[display_parse[0]][display_parse[1]] = currentplayer[:str]
-      if (checkgameend(board))
+      if (checkgameover(board))
         break
       end
 
@@ -133,12 +134,12 @@ begin
         currentplayer = player[1]
         computermove(board, currentplayer[:val], currentplayer[:str], moverecord, commands, board_display)
       end
-      if (checkgameend(board))
+      if (checkgameover(board))
         break
       end
       # Show board display
       showboard(board_display)
-
+      print "\n\t\tPerformed #{$foo} iterations...\n"
       # Swap turns
       if currentplayer == player[0]
         currentplayer = player[1]
@@ -150,13 +151,13 @@ begin
       puts "\n\t\t\"#{command}\" is not an empty space"
     end
   end
-end while !(checkgameend(board))
+end while !(checkgameover(board))
 
 # Game end state
 File.write('./gameresults.txt', moverecord.to_s + "\n", mode: 'a')
 puts ""
 winner = checkwin(board)
-if (winner!=false)
+if (winner)
   if player[0][:val] == winner
     winnername = player[0][:name]
   elsif player[1][:val] == winner
@@ -167,7 +168,7 @@ if (winner!=false)
   puts "\t\t\t\t\t|-----" + "-"*(winnername.length+5) + "------|"
   puts "\t\t\t\t\t|     #{winnername} won!      |"
   puts "\t\t\t\t\t|-----" + "-"*(winnername.length+5) + "------|"
-elsif (checkdraw(board)!=false)
+elsif (checkdraw(board))
   showboard(board_display)
   puts ""
   puts "\t\t\t\t\t|-----------------|"

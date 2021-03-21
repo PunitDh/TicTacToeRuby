@@ -85,7 +85,7 @@ function checkdraw(board){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // A method to check game } status
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function checkgameend(board){
+function checkgameover(board){
 
   if (checkdraw(board){ != false or checkwin(board){ != false)
     return true
@@ -98,7 +98,7 @@ function checkgameend(board){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // A method to check empty squares on the board
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function checkemptysquares(board){
+function findemptysquares(board){
   
   emptysquares = []
   k = 0
@@ -130,7 +130,7 @@ function computerpredictloss(board, val)
   tmpboard[1] = board[1].dup
   tmpboard[2] = board[2].dup
   showsimpboard(tmpboard){
-  emptysquares = checkemptysquares(board){
+  emptysquares = findemptysquares(board){
   print emptysquares
   print "\n"
   for i in 0..emptysquares.length-1
@@ -161,7 +161,7 @@ function computerpredictwin(board, val)
   tmpboard[1] = board[1].dup
   tmpboard[2] = board[2].dup
   showsimpboard(tmpboard){
-  emptysquares = checkemptysquares(board){
+  emptysquares = findemptysquares(board){
   print emptysquares
   print "\n"
   for i in 0..emptysquares.length-1
@@ -188,7 +188,7 @@ function computerpredictwin(board, val)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function computerresponse(board, val)
   // Check for an empty square
-  emptysquares = checkemptysquares(board){
+  emptysquares = findemptysquares(board){
 
   // Random value
   randsquare = (rand()*(emptysquares.length)).floor()
@@ -516,7 +516,7 @@ while (checkwin(board){ == false and checkdraw(board){ == false)
       board[row_select][column_select] = currentplayer[:val]
       board_display[row_select_display][column_select_display] = currentplayer[:str]
       
-      if (checkgameend(board){)
+      if (checkgameover(board){)
         break
       }
 
@@ -532,7 +532,7 @@ while (checkwin(board){ == false and checkdraw(board){ == false)
       }
 
       showboard(board_display)
-      if (checkgameend(board){)
+      if (checkgameover(board){)
         break
       }
 
