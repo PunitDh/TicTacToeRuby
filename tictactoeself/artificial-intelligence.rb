@@ -41,14 +41,10 @@ def computerpredictwin(board, val)
   # Check for an empty square
   tmpboard = Array.new
   emptysquares = findemptysquares(board)
-  for i in 0..emptysquares.length-1
-    tmpboard[0] = board[0].dup
-    tmpboard[1] = board[1].dup
-    tmpboard[2] = board[2].dup
-    tmpboard[emptysquares[i][0]][emptysquares[i][1]] = val
-    if (checkwin(tmpboard)!=false)
-      return emptysquares[i]
-    end
+  emptysquares.map do |empty|
+    tmpboard = board.map { |row| row.map { |cell| cell } }
+    tmpboard[empty[0]][empty[1]] = val
+    return empty if checkwin(tmpboard)
   end
   return -1
 end
@@ -70,12 +66,10 @@ def minimax(board, val, maximising_player = true)
 
   best_move[:score] = maximising_player ? -2 : 2
 
-  for i in 0..2
-    for j in 0..2
-      if board[i][j].nil?
-        tmpboard[0] = board[0].dup
-        tmpboard[1] = board[1].dup
-        tmpboard[2] = board[2].dup
+  board.map.with_index do |row,i|
+    row.map.with_index do |cell,j|
+      if cell.nil?
+        tmpboard = board.map { |row| row.map { |cell| cell } }
         tmpboard[i][j] = val
         
         board_state = minimax(tmpboard, otherval(val), !maximising_player)
@@ -94,9 +88,7 @@ def minimax(board, val, maximising_player = true)
             best_move[:c] = j            
           end
         end
-        tmpboard[0] = board[0].dup
-        tmpboard[1] = board[1].dup
-        tmpboard[2] = board[2].dup
+        tmpboard = board.map { |row| row.map { |cell| cell } }
       end
     end
   end

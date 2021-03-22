@@ -22,7 +22,7 @@ end
 # A method to draw the board
 #############################################################################
 def showboard(game)
-    for i in 0..7
+    game[:board_display].map.with_index do |row,i|
       puts "\t\t\t\t\t" + game[:board_display][i]
     end
 end
@@ -147,10 +147,10 @@ end
 def showsimpleboard(board)
   print "\n"
   print "\t\t|---------------| \n"
-  for i in 0..2
+  board.map do |row|
     print "\t\t"
-    for j in 0..2
-      print board[i][j].nil? ? "|    " : "|  " + board[i][j].to_s + " "
+    row.map do |cell|
+      print cell.nil? ? "|    " : "|  " + cell.to_s + " "
     end
     print " |\n"
     print "\t\t|---------------| \n"
@@ -174,7 +174,7 @@ def showtitlescreen(board_display)
   puts "\t\t*            Welcome to UNBEATABLE TIC-TAC-TOE V1.2 by Punit Dh             *"
   puts "\t\t*                                                                           *"
   puts "\t\t*****************************************************************************\n\n\n\n"
-  for i in 0..7
+  board_display.map.with_index do |row,i|
     puts "\t\t\t\t\t" + board_display[i]
   end
   print "\n\n\n\n\t\t\t\tPress ENTER or RETURN to START THE GAME\n\n\t\t\t\tType \"S\" to skip the intro at any time"

@@ -37,7 +37,7 @@ def checkwin(board)
   tmparray[0] = Array.new
   tmparray[1] = Array.new
 
-  for i in 0..2
+  board.map.with_index do |row,i|
     return board.transpose[i].first if checkequal(board.transpose[i])
     return board[i].first if checkequal(board[i])
     tmparray[0].push(board[i][i])
