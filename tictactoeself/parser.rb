@@ -1,4 +1,25 @@
 #############################################################################
+# A method to check if the entered command is valid
+#############################################################################
+def validatecommand(game, command)
+  cmd_parse = commandparser(game[:commands], game[:board_display], command)
+  
+  if (!cmd_parse)
+    puts "\n\t\t\"#{command}\" is not a valid command. Enter \"H\" for help."
+    return false
+  end
+
+  return false if cmd_parse[1]==-2  # Help command
+
+  if !game[:board][cmd_parse[0]][cmd_parse[1]].nil?
+    puts "\n\t\t\"#{command}\" is not an empty space"
+    return false
+  end
+
+  return cmd_parse
+end
+
+#############################################################################
 # A method that converts string commands to array indexes that
 # refer to positions on the board
 #############################################################################

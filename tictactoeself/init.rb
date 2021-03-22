@@ -12,7 +12,7 @@ def createnewgame()
   showtitlescreen(board_display)
   playermode = chooseplayermode()
   player = getplayernames(playermode)
-  
+
   game = {"board": board, "playermode": playermode, "player": player, "moverecord": moverecord, "commands": commands, "board_display": board_display}
 
   return game
@@ -73,11 +73,7 @@ def getplayernames(playermode)
   end
 
   # Welcome the players
-  if playermode == 1
-    print "\n\n\t\tWelcome #{player[0][:name]}!"
-  elsif playermode == 2
-    print "\n\n\t\tWelcome #{player[0][:name]} and #{player[1][:name]}!"
-  end
+    print (playermode == 1) ? "\n\n\t\tWelcome #{player[0][:name]}!" : "\n\n\t\tWelcome #{player[0][:name]} and #{player[1][:name]}!"
   tmpgets
 
   return player
@@ -109,15 +105,8 @@ def cointoss(player)
   tmpgets
 
   # Set current player based on who has X or O
-  if player[1][:val] == 1
-    currentplayer = player[1]
-  elsif player[0][:val] == 1
-    currentplayer = player[0]
-  end
-
+  currentplayer = (player[1][:val] == 1) ? player[1] : player[0]
   puts "\n\t\t#{player[0][:name]} is \'#{player[0][:str]}\'. #{player[1][:name]} is \'#{player[1][:str]}\'.\n\n"
-
-  # Determining who goes first
   print "\t\t#{currentplayer[:name]} goes first..."
   tmpgets
 
