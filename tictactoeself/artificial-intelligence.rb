@@ -25,10 +25,10 @@ def computerresponse(board, val)
     return emptysquares[bestsquare]
   else
     $foo = 0
-    predictwin = computerpredictwin(board, val)
-    return predictwin if (predictwin != -1)
-    predictloss = computerpredictwin(board, otherval(val))
-    return predictloss if (predictloss != -1)
+    predictwin = computerpredictwin(board, emptysquares, val)
+    return predictwin if predictwin
+    predictloss = computerpredictwin(board, emptysquares, otherval(val))
+    return predictloss if predictloss
     best_move = minimax(board,val)
     return [best_move[:r], best_move[:c]]
   end
@@ -37,16 +37,15 @@ end
 ################################################################################################
 # A method that predicts the next move NO DEBUG MODE
 ################################################################################################
-def computerpredictwin(board, val)
+def computerpredictwin(board, emptysquares, val)
   # Check for an empty square
   tmpboard = Array.new
-  emptysquares = findemptysquares(board)
   emptysquares.map do |empty|
     tmpboard = board.map { |row| row.map { |cell| cell } }
     tmpboard[empty[0]][empty[1]] = val
     return empty if checkwin(tmpboard)
   end
-  return -1
+  return false
 end
 
 ################################################################################################
@@ -111,7 +110,7 @@ def otherval(val)
 end
 
 ################################################################################################
-# A method that swaps turns and returns the opponent's piece
+# A method that swaps turns
 ################################################################################################
 def swapturn(currentplayer, player)
     return (currentplayer == player[0]) ? player[1] : player[0]

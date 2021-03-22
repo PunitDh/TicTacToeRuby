@@ -133,7 +133,7 @@ end
 #############################################################################
 def showhelp(game)
   puts ("\n\t\t***************************************************************************" * 5)
-  puts "\t\t****** HELP ***************************************************************"
+  puts "\t\t*******************************    HELP    ********************************"
   puts "\n\t\tThis is the tic-tac-toe board..."
   showboard(game)
   puts "\n\n\t\tEnter the following text commands: \n\n\t\t\t\"A1\", \"A2\", \"A3\", \"B1\", \"B2\", \"B3\", \"C1\", \"C2\", \"C3\".\n\n\t\tThey correspond to each cell on the board..."

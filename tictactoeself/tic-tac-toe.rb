@@ -8,8 +8,16 @@ require "./game-play.rb"
 ##########################         START THE GAME         ##########################
 ####################################################################################
 
+## For future projects
+# f = File.open("./gameresults.txt", "r")
+# f.each_line do |line|
+#   puts line
+# end
+# f.close
+
 game = createnewgame()
 nextplayer = cointoss(game[:player])
+game[:moverecord].push(game[:player])
 showboard(game)
 
 # Game loop

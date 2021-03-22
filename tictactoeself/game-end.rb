@@ -1,8 +1,8 @@
 #############################################################################
-# A method to check game over status
+# A method that ends the game
 #############################################################################
 def endgame(game)
-  File.write('./gameresults.txt', game[:moverecord].to_s + "\n", mode: 'a')
+  
   
   winner = checkwin(game[:board])
   puts "\n\n"
@@ -12,6 +12,8 @@ def endgame(game)
         winnername = w[:name]
       end
     end
+    game[:moverecord].push(winnername)
+
     if game[:playermode] == 1
       puts "\t\t\t\t\t|-------------------------|"
       puts "\t\t\t\t\t|        You lose!        |"
@@ -25,8 +27,12 @@ def endgame(game)
     puts "\t\t\t\t\t|-------------------------|"
     puts "\t\t\t\t\t|     Game is a draw!     |"
     puts "\t\t\t\t\t|-------------------------|"
+
+    game[:moverecord].push("Draw")
   end
   puts "\n\n\t\tResults automatically saved to ./gameresults.txt\n\n\n"
+  
+  File.write('./gameresults.txt', game[:moverecord].to_s + "\n", mode: 'a')
 end
 
 #############################################################################
