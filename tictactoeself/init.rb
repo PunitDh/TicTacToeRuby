@@ -1,9 +1,28 @@
 #############################################################################
+# A method that creates a new game
+#############################################################################
+def createnewgame()
+  # Initialise
+  board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
+  commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
+  moverecord = Array.new
+  board_display = displayboard()
+
+  # Show title screen and get player info
+  showtitlescreen(board_display)
+  playermode = chooseplayermode()
+  player = getplayernames(playermode)
+  game = {"board": board, "playermode": playermode, "player": player, "moverecord": moverecord, "commands": commands, "board_display": board_display}
+
+  return game
+end
+
+#############################################################################
 # A method to draw the board
 #############################################################################
-def showboard(board)
+def showboard(game)
     for i in 0..7
-      puts "\t\t\t\t\t" + board[i]
+      puts "\t\t\t\t\t" + game[:board_display][i]
     end
 end
 
@@ -75,19 +94,9 @@ def cointoss(player)
   randtoss = (rand()*2)
 
   # Display the coin toss
-  if (randtoss < 1)
-    cointoss = "T"
-    player[0][:str] = "O"
-    player[0][:val] = 0  # The 0 represents 1
-    player[1][:str] = "X"
-    player[1][:val] = 1  # The 1 represents X   
-  else
-    cointoss = "H"
-    player[0][:str] = "X"
-    player[0][:val] = 1  # The 1 represents X
-    player[1][:str] = "O"
-    player[1][:val] = 0  # The 0 represents O 
-  end
+  cointoss = (randtoss < 1) ? "T" : "H"
+  player[0][:str], player[0][:val] = (randtoss < 1) ? ["O", 0] : ["X", 1]
+  player[1][:str], player[1][:val] = (randtoss < 1) ? ["X", 1] : ["O", 0] 
 
   puts "\n\t\tThe result of the coin toss is: \n\n"
   puts "\t\t\t\t\t\t\t  -------  "
@@ -171,10 +180,10 @@ end
 #############################################################################
 # A method that shows "Help" feature
 #############################################################################
-def showhelp(board)
+def showhelp(game)
   puts "\n\t\t****** HELP ***************************************************************"
   puts "\n\t\tThis is the tic-tac-toe board..."
-  showboard(board)
+  showboard(game)
   puts "\n\n\t\tEnter the following text commands: \n\n\t\t\t\"A1\", \"A2\", \"A3\", \"B1\", \"B2\", \"B3\", \"C1\", \"C2\", \"C3\".\n\n\t\tThey correspond to each cell on the board..."
   # puts "\n\t\t\"H\" displays Help"
   puts "\t\tPress Ctrl + C to exit the game at any time"
@@ -207,14 +216,16 @@ end
 #############################################################################
 # A method to print the title screen
 #############################################################################
-def showtitlescreen()
+def showtitlescreen(board_display)
   # Title Screen
   puts "\n\n\n\t\t*****************************************************************************"
   puts "\t\t*                                                                           *"
   puts "\t\t*            Welcome to UNBEATABLE TIC-TAC-TOE V1.1 by Punit Dh             *"
   puts "\t\t*                                                                           *"
   puts "\t\t*****************************************************************************\n\n\n\n"
-  showboard(displayboard())
+  for i in 0..7
+    puts "\t\t\t\t\t" + board_display[i]
+  end
   print "\n\n\n\n\t\t\t\tPress ENTER or RETURN to START THE GAME"
   tmpgets
 

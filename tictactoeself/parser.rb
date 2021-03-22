@@ -3,7 +3,6 @@
 # refer to positions on the board
 #############################################################################
 def commandparser(commands, board, command)
-
     commands = Array.new
     case command[0]
       when "A"
@@ -17,7 +16,7 @@ def commandparser(commands, board, command)
         commands[1] = -2
         return commands      
       else
-        commands[0] = -1
+        return false
     end
   
     case command[1]
@@ -28,7 +27,7 @@ def commandparser(commands, board, command)
       when "3"
         commands[1] = 2
       else
-        commands[1] = -1
+        return false
     end
   
     return commands

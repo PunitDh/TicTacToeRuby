@@ -1,19 +1,18 @@
 ###############################################################################################
 # A method that lets the computer play
 ################################################################################################
-def computermove(board, currentplayer, moverecord, commands, board_display)
-  # currentplayer   = game[:currentplayer]
-  # moverecord      = game[:moverecord]
-  # commands        = game[:commands]
-
-  computer_response = computerresponse(board, currentplayer[:val])
-  print moverecord.length == 0 ? "\n\n\t\tComputer's  (#{currentplayer[:str]}) first move: " : "\n\t\tComputer (#{currentplayer[:str]}) responds: "
-  moverecord.push(computer_response)
-  computer_response_command = arraytocommandsparser(computer_response, commands)
+def computermove(game, currentplayer)
+  computer_response = computerresponse(game[:board], currentplayer[:val])
+  print game[:moverecord].length == 0 ? "\n\n\t\tComputer's  (#{currentplayer[:str]}) first move: " : "\n\t\tComputer (#{currentplayer[:str]}) responds: "
+  game[:moverecord].push(computer_response)
+  computer_response_command = arraytocommandsparser(computer_response, game[:commands])
   print "\"#{computer_response_command.join()}\"\n"
   computer_response_display = arraytodisplayparser(computer_response)
-  board[computer_response[0]][computer_response[1]] = currentplayer[:val]
-  board_display[computer_response_display[0]][computer_response_display[1]] = currentplayer[:str]
+  game[:board][computer_response[0]][computer_response[1]] = currentplayer[:val]
+  game[:board_display][computer_response_display[0]][computer_response_display[1]] = currentplayer[:str]
+  showboard(game)
+  print (!$foo.nil? or $foo==0) ? "\n\t\tPerformed #{$foo} iterations...\n" : nil
+  return swapturn(currentplayer, game[:player])
 end
 
 ###############################################################################################
@@ -25,7 +24,10 @@ def computerresponse(board, val)
     bestsquare = (rand()*(emptysquares.length)).floor()
     return emptysquares[bestsquare]
   else
-
+    predictwin = computerpredictwin(board, val)
+    return predictwin if (predictwin != -1)
+    predictloss = computerpredictwin(board, otherval(val))
+    return predictloss if (predictloss != -1)
     $foo = 0
     best_move = minimax(board,val)
     return [best_move[:r], best_move[:c]]
@@ -39,7 +41,7 @@ def computerpredictwin(board, val)
   # Check for an empty square
   tmpboard = Array.new
   emptysquares = findemptysquares(board)
-  for i in emptysquares
+  for i in 0..emptysquares.length-1
     tmpboard[0] = board[0].dup
     tmpboard[1] = board[1].dup
     tmpboard[2] = board[2].dup
@@ -142,15 +144,3 @@ def swapturn(currentplayer, player)
     return player[0]
   end
 end
-
-
-
-    # predictwin = computerpredictwin(board, val)
-    # if (predictwin != -1)
-    #   return predictwin
-    # end
-
-    # predictloss = computerpredictwin(board, otherval(val))
-    # if predictloss != -1
-    #   return predictloss
-    # end

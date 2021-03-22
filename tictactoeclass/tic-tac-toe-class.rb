@@ -9,20 +9,20 @@ rows = [
 ]
 
 winner = nil
-#-----------------------------------------------
-#-----------------------------------------------
-#--- START THE GAME-----------------------------
-begin
-    print_board(rows)
-    player_move(rows, 'x')
-    print_board(rows)
-    winner = winner?(rows)
-    break if winner
 
-    player_move(rows, 'o') if not winner?(rows)
-    winner = winner?(rows)
-end while not winner?(rows)
+#--START THE GAME
+print_board(rows)
+
+['x','o'].cycle do |player|
+    player_move(rows, player)
+    print_board(rows)
+    break if (winner = winner?(rows)) or draw?(rows)
+end
 
 # Finish
-puts "#{winner} is the winner!"
-print_board(rows)
+if winner
+    puts "#{winner} is the winner!"
+else
+    puts "a draw :("
+end
+# print_board(rows)
