@@ -39,10 +39,10 @@ def chooseplayermode()
       playermode = 1
       puts "\n\t\tAutomatically selecting (1)-player mode...\n"
       break
-    elsif (playermode < 1 or playermode > 2)
+    elsif ([1,2].index(playermode).nil?)
       puts "\n\t\t\"#{playermodeget}\" is not a valid player mode. Enter 1 or 2:\n"
     end
-  end while not (playermode == 1 or playermode == 2 or playermodeget.length == 0)
+  end while not ([1,2].index(playermode) or playermodeget.length == 0)
   return playermode
 end
 
@@ -50,26 +50,14 @@ end
 # A method to get the player names and save them in a hash
 #############################################################################
 def getplayernames(playermode)
-  player = Array.new
+  player = Array.new    # Set default values below
   player[0] = {name: "Player 1", val: -1, str: ""}
   player[1] = {name: "Player 2", val: -1, str: ""}
 
-  # Get player 1 name
-  print "\n\t\tEnter #{player[0][:name]} Name: "
-  player[0][:name] = gets.chomp
-  if player[0][:name] == ""
-    player[0][:name] = "Player 1"
-  end
-
-  # If two-player mode, get second player's name, or else use "Computer"
-  if (playermode == 2)
-    print "\n\t\tEnter #{player[1][:name]} Name: "
-    player[1][:name] = gets.chomp
-    if player[1][:name] == ""
-      player[1][:name] = "Player 2"
-    end
-  elsif playermode == 1
-    player[1][:name] = "Computer"
+  # Get player names
+  for i in 0..playermode-1
+    getname(player[i], i)
+    player[1][:name] = (playermode == 1) ? "Computer" : next
   end
 
   # Welcome the players
@@ -79,12 +67,22 @@ def getplayernames(playermode)
   return player
 end
 
+#############################################################################
+# A method to get the player names
+#############################################################################
+def getname(player, index)
+  print "\n\t\tEnter #{player[:name]} Name: "
+  name = gets.chomp
+  player[:name] = (name.length == 0) ? "Player #{index+1}" : name
+end
+
+
 #################################################################################
 # A method used to generate a cointoss, assign X and O, and choose first player
 #################################################################################
 def cointoss(player)
   # Coin toss
-  print "\n\n\n\t\tTossing coin now...(Press ENTER to see coin toss results)"
+  print "\n\n\t\tTossing coin now...(Press ENTER to see coin toss results)"
   tmpgets
 
   # Generate a random value
@@ -131,52 +129,16 @@ def displayboard()
 end
 
 #############################################################################
-# A method to get the player names and save them in a hash
-#############################################################################
-def getplayernames(playermode)
-  player = Array.new
-  player[0] = {name: "Player 1", val: -1, str: ""}
-  player[1] = {name: "Player 2", val: -1, str: ""}
-
-  # Get player 1 name
-  print "\n\t\tEnter #{player[0][:name]} Name: "
-  player[0][:name] = gets.chomp
-  if player[0][:name] == ""
-    player[0][:name] = "Player 1"
-  end
-
-  # If two-player mode, get second player's name, or else use "Computer"
-  if (playermode == 2)
-    print "\n\t\tEnter #{player[1][:name]} Name: "
-    player[1][:name] = gets.chomp
-    if player[1][:name] == ""
-      player[1][:name] = "Player 2"
-    end
-  elsif playermode == 1
-    player[1][:name] = "Computer"
-  end
-
-  # Welcome the players
-  if playermode == 1
-    print "\n\n\t\tWelcome #{player[0][:name]}!"
-  elsif playermode == 2
-    print "\n\n\t\tWelcome #{player[0][:name]} and #{player[1][:name]}!"
-  end
-  tmpgets
-
-  return player
-end
-
-#############################################################################
 # A method that shows "Help" feature
 #############################################################################
 def showhelp(game)
-  puts "\n\t\t****** HELP ***************************************************************"
+  puts ("\n\t\t***************************************************************************" * 5)
+  puts "\t\t****** HELP ***************************************************************"
   puts "\n\t\tThis is the tic-tac-toe board..."
   showboard(game)
   puts "\n\n\t\tEnter the following text commands: \n\n\t\t\t\"A1\", \"A2\", \"A3\", \"B1\", \"B2\", \"B3\", \"C1\", \"C2\", \"C3\".\n\n\t\tThey correspond to each cell on the board..."
-  # puts "\n\t\t\"H\" displays Help"
-  puts "\t\tPress Ctrl + C to exit the game at any time"
+  puts "\n\t\t\"R\" to play a random move"
+  puts "\n\t\tPress Ctrl+C or Cmd+C to exit the game at any time"
 end
   
 #############################################################################
@@ -199,8 +161,7 @@ end
 # A method used to get a 'nil' user input
 #############################################################################
 def tmpgets
-  tmp = gets
-  return nil
+  tmp = gets.chomp
 end
 
 #############################################################################
@@ -216,33 +177,33 @@ def showtitlescreen(board_display)
   for i in 0..7
     puts "\t\t\t\t\t" + board_display[i]
   end
-  print "\n\n\n\n\t\t\t\tPress ENTER or RETURN to START THE GAME"
-  tmpgets
+  print "\n\n\n\n\t\t\t\tPress ENTER or RETURN to START THE GAME\n\n\t\t\t\tType \"S\" to skip the intro at any time"
+  return if (tmpgets.upcase == "S")
 
   print "\n\n\t\tWelcome to UNBEATABLE TIC-TAC-TOE...\n\n\t\tThis version of TIC-TAC-TOE uses the MINIMAX algorithm to find the best move..."
-  tmpgets
+  return if (tmpgets.upcase == "S")
 
   print "\n\n\t\tIn other words, it is unbeatable..."
-  tmpgets
+  return if (tmpgets.upcase == "S")
 
   print "\n\n\t\tGROUND RULES:"
-  tmpgets
+  return if (tmpgets.upcase == "S")
 
   print "\n\n\t\t\'X\' always goes first..."
-  tmpgets
+  return if (tmpgets.upcase == "S")
 
   print "\n\n\t\tWho gets \'X\' and who gets \'O\' is determined by a coin toss..."
-  tmpgets
+  return if (tmpgets.upcase == "S")
 
   print "\n\n\t\tYou play by giving the following text commands:\n\n\t\t\t \"A1\", \"A2\", \"A3\", \"B1\", \"B2\", \"B3\", \"C1\", \"C2\", \"C3\"."#\n\n\t\tThey correspond to each cell on the board..."
-  tmpgets
+  return if (tmpgets.upcase == "S")
 
   print "\n\t\tYou can enter the text command \"H\" for Help if you get stuck or lost..."
-  tmpgets
+  return if (tmpgets.upcase == "S")
 
   print "\n\t\tPress Ctrl+C or Cmd+C to exit the game at any time..."
-  tmpgets
+  return if (tmpgets.upcase == "S")
 
   print "\n\n\t\tLet's get started..."
-  tmpgets
+  return if (tmpgets.upcase == "S")
 end

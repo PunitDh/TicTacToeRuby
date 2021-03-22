@@ -3,15 +3,15 @@
 ################################################################################################
 def computermove(game, currentplayer)
   computer_response = computerresponse(game[:board], currentplayer[:val])
-  print game[:moverecord].length == 0 ? "\n\n\t\tComputer's  (#{currentplayer[:str]}) first move: " : "\n\t\tComputer (#{currentplayer[:str]}) responds: "
+  print game[:moverecord].length == 0 ? "\n\n\t\tComputer's (#{currentplayer[:str]}) first move: " : "\n\t\tComputer (#{currentplayer[:str]}) responds: "
   game[:moverecord].push(computer_response)
-  computer_response_command = arraytocommandsparser(computer_response, game[:commands])
-  print "\"#{computer_response_command.join()}\"\n"
-  computer_response_display = arraytodisplayparser(computer_response)
+  command_response = arraytocommandsparser(computer_response, game[:commands])
+  print "\"#{command_response.join()}\"\n"
+  display_response = arraytodisplayparser(computer_response)
   game[:board][computer_response[0]][computer_response[1]] = currentplayer[:val]
-  game[:board_display][computer_response_display[0]][computer_response_display[1]] = currentplayer[:str]
+  game[:board_display][display_response[0]][display_response[1]] = currentplayer[:str]
   showboard(game)
-  print (!$foo.nil? or $foo==0) ? "\n\t\tPerformed #{$foo} iterations...\n" : nil
+  print (!$foo.nil? or !$foo==0) ? "\n\t\tPerformed #{$foo} iterations...\n" : nil
   return swapturn(currentplayer, game[:player])
 end
 
@@ -24,11 +24,11 @@ def computerresponse(board, val)
     bestsquare = (rand()*(emptysquares.length)).floor()
     return emptysquares[bestsquare]
   else
+    $foo = 0
     predictwin = computerpredictwin(board, val)
     return predictwin if (predictwin != -1)
     predictloss = computerpredictwin(board, otherval(val))
     return predictloss if (predictloss != -1)
-    $foo = 0
     best_move = minimax(board,val)
     return [best_move[:r], best_move[:c]]
   end
@@ -61,13 +61,8 @@ def minimax(board, val, maximising_player = true)
   best_move = {"r":nil, "c":nil, "score":0}
   
   if (checkwin(board))
-    if maximising_player
-      best_move[:score] = -1
-    else
-      best_move[:score] = 1
-    end
+      best_move[:score] = maximising_player ? -1 : 1
     return best_move
-
   elsif (checkdraw(board))
     best_move[:score] = 0
     return best_move
@@ -77,7 +72,6 @@ def minimax(board, val, maximising_player = true)
 
   for i in 0..2
     for j in 0..2
-      
       if board[i][j].nil?
         tmpboard[0] = board[0].dup
         tmpboard[1] = board[1].dup
@@ -114,15 +108,7 @@ end
 # A method to check which squares are empty on the board
 ################################################################################################
 def findemptysquares(board)
-  emptysquares = []
-  for i in 0..2
-    for j in 0..2
-      if (board[i][j].nil?)
-        emptysquares.push([i,j])
-      end
-    end
-  end
-  return emptysquares
+  return board.map.with_index { |row,i| row.map.with_index { |cell,j| [i,j] if cell.nil? }}.flatten(1).compact
 end
 
 ################################################################################################

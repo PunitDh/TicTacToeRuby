@@ -2,14 +2,14 @@
 # A method to check if the entered command is valid
 #############################################################################
 def validatecommand(game, command)
-  cmd_parse = commandparser(game[:commands], game[:board_display], command)
+  cmd_parse = commandparser(game, command)
   
   if (!cmd_parse)
     puts "\n\t\t\"#{command}\" is not a valid command. Enter \"H\" for help."
     return false
   end
 
-  return false if cmd_parse[1]==-2  # Help command
+  return false if cmd_parse==-2  # Help command
 
   if !game[:board][cmd_parse[0]][cmd_parse[1]].nil?
     puts "\n\t\t\"#{command}\" is not an empty space"
@@ -23,7 +23,7 @@ end
 # A method that converts string commands to array indexes that
 # refer to positions on the board
 #############################################################################
-def commandparser(commands, board, command)
+def commandparser(game, command)
     commands = Array.new
     case command[0]
       when "A"
@@ -33,14 +33,18 @@ def commandparser(commands, board, command)
       when "C"
         commands[0] = 2
       when "H"
-        showhelp(board)
-        commands[1] = -2
-        return commands      
+        showhelp(game)
+        return -2
+      when "R"
+        emptysquares = findemptysquares(game[:board])
+        randsquare = (rand()*(emptysquares.length)).floor()
+        puts "\t\tRandom square: \"" + arraytocommandsparser(emptysquares[randsquare], game[:commands]).join.to_s + "\""
+        return emptysquares[randsquare]
       else
         return false
     end
   
-    case command[1]
+    case command[1..]
       when "1"
         commands[1] = 0
       when "2"

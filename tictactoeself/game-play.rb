@@ -4,7 +4,7 @@
 def playermove(game, currentplayer)
   begin
     print "\n\t\t#{currentplayer[:name]}, please enter a command: "
-    command = gets.chomp.upcase
+    command = gets.chomp.strip.upcase.delete(' ')
     puts "\n\t\tYou (#{currentplayer[:str]}) entered: \"#{command}\""
     cmd_parse = validatecommand(game, command)
   end while not cmd_parse
@@ -13,7 +13,7 @@ def playermove(game, currentplayer)
 end
 
 #############################################################################
-# A method to check if the entered command is valid
+# A method to assign the move to the board then swap the turn
 #############################################################################
 def entermove(game, currentplayer, cmd_parse)
   display_parse = arraytodisplayparser(cmd_parse)
@@ -24,7 +24,7 @@ def entermove(game, currentplayer, cmd_parse)
 end
 
 #############################################################################
-# A method to check if the entered command is valid
+# A method to let the next player play, returns "nextplayer"
 #############################################################################
 def nextgameplayer?(game, nextplayer)
   return ((game[:playermode] == 1) and (nextplayer == game[:player][1]))
