@@ -1,8 +1,8 @@
-require "./game-end.rb"
 require "./init.rb"
 require "./parser.rb"
 require "./artificial-intelligence.rb"
 require "./game-play.rb"
+require "./game-end.rb"
 
 ####################################################################################
 ##########################         START THE GAME         ##########################
