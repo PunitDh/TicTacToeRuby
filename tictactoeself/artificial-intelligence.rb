@@ -16,8 +16,6 @@ def computermove(board, currentplayer, moverecord, commands, board_display)
   board_display[computer_response_display[0]][computer_response_display[1]] = currentplayer[:str]
 end
 
-
-
 ###############################################################################################
 # A method that spits out a computer response
 ################################################################################################
@@ -28,24 +26,11 @@ def computerresponse(board, val)
     return emptysquares[bestsquare]
   else
 
-
-    # predictwin = computerpredictwin(board, val)
-    # if (predictwin != -1)
-    #   return predictwin
-    # end
-
-    # predictloss = computerpredictwin(board, otherval(val))
-    # if predictloss != -1
-    #   return predictloss
-    # end
-
     $foo = 0
     best_move = minimax(board,val)
     return [best_move[:r], best_move[:c]]
   end
 end
-
-
 
 ################################################################################################
 # A method that predicts the next move NO DEBUG MODE
@@ -54,7 +39,7 @@ def computerpredictwin(board, val)
   # Check for an empty square
   tmpboard = Array.new
   emptysquares = findemptysquares(board)
-  for i in 0..emptysquares.length-1
+  for i in emptysquares
     tmpboard[0] = board[0].dup
     tmpboard[1] = board[1].dup
     tmpboard[2] = board[2].dup
@@ -65,7 +50,6 @@ def computerpredictwin(board, val)
   end
   return -1
 end
-
 
 ################################################################################################
 # The minimax recursion function
@@ -158,3 +142,15 @@ def swapturn(currentplayer, player)
     return player[0]
   end
 end
+
+
+
+    # predictwin = computerpredictwin(board, val)
+    # if (predictwin != -1)
+    #   return predictwin
+    # end
+
+    # predictloss = computerpredictwin(board, otherval(val))
+    # if predictloss != -1
+    #   return predictloss
+    # end

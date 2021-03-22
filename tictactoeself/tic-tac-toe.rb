@@ -2,7 +2,8 @@ require "./game_end.rb"
 require "./init.rb"
 require "./parser.rb"
 require "./artificial-intelligence.rb"
-require "pry"
+require "./game-play.rb"
+#require "pry"
 
 ####################################################################################
 ###############################                      ###############################
@@ -23,43 +24,6 @@ player = getplayernames(playermode)
 currentplayer = cointoss(player)
 game = {"board": board, "playermode": playermode, "player": player, "currentplayer": currentplayer, "moverecord": moverecord, "commands": commands, "board_display": board_display}
 
-def playmove(game)
-  # playermode = game[:playermode]
-  # currentplayer = game[:currentplayer]
-  # board = game[:board]
-  # moverecord = game[:moverecord]
-  # commands = game[:commands]
-  # board_display = game[:board_display]
-  # player = game[:player]
-
-  if game[:playermode] == 1 and game[:currentplayer][:name] == "Computer"
-    computermove(game)
-    currentplayer = swapturn(game[:currentplayer], game[:player])
-  end
-
-  begin
-
-  end while (checkvalidcommand(commands, board, board_display, command))
-
-  moverecord.push(cmd_parse)
-  board[cmd_parse[0]][cmd_parse[1]] = currentplayer[:val]
-  board_display[display_parse[0]][display_parse[1]] = currentplayer[:str]
-end
-
-def validatecommand(game, command)
-  cmd_parse = commandparser(game[:commands], game[:board_display], command)
-  display_parse = displayparser(game[:commands], command)
-  if (cmd_parse[0] == -1 or cmd_parse[0] == -1)
-    puts "\n\t\t\"#{command}\" is not a valid command. Enter \"H\" for help."
-    return false
-  end
-  if (!board[cmd_parse[0]][cmd_parse[1]].nil?)
-    puts "\n\t\t\"#{command}\" is not an empty space"
-    return false
-  end
-  return [cmd_parse, display_parse]
-end
-
 if playermode == 1 and currentplayer[:name] == "Computer"
   computermove(board, currentplayer, moverecord, commands, board_display)
   currentplayer = swapturn(currentplayer, player)
@@ -68,11 +32,13 @@ end
 showboard(board_display)
 
 # Game loop
-begin 
+begin
   print "\n\t\t#{currentplayer[:name]}, please enter a command: "
   command = gets.chomp.upcase
   puts "\n\t\tYou (#{currentplayer[:str]}) entered: \"#{command}\""
+  
   # command = validatecommand(game, command)
+  
   cmd_parse = commandparser(commands, board_display, command)
   display_parse = displayparser(commands, command)
 
@@ -99,7 +65,7 @@ begin
         break
       end
       showboard(board_display)
-      print "\n\t\tPerformed #{$foo} iterations...\n"
+      print (playermode == 1) ? "\n\t\tPerformed #{$foo} iterations...\n" : nil
       currentplayer = swapturn(currentplayer, player)
 
     else
@@ -118,11 +84,20 @@ if (winner)
   elsif player[1][:val] == winner
     winnername = player[1][:name]
   end
-  showboard(board_display)
-  puts ""
-  puts "\t\t\t\t\t|-----" + "-"*(winnername.length+5) + "------|"
-  puts "\t\t\t\t\t|     #{winnername} won!      |"
-  puts "\t\t\t\t\t|-----" + "-"*(winnername.length+5) + "------|"
+
+  if playermode == 1
+    showboard(board_display)
+    puts ""
+    puts "\t\t\t\t\t|-------------------------|"
+    puts "\t\t\t\t\t|        You lose!        |"
+    puts "\t\t\t\t\t|-------------------------|"
+  else
+    showboard(board_display)
+    puts ""
+    puts "\t\t\t\t\t|-----" + "-"*(winnername.length+5) + "------|"
+    puts "\t\t\t\t\t|     #{winnername} won!      |"
+    puts "\t\t\t\t\t|-----" + "-"*(winnername.length+5) + "------|"
+  end
 elsif (checkdraw(board))
   showboard(board_display)
   puts ""

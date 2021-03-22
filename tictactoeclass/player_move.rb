@@ -8,8 +8,9 @@ def player_move(rows, player)
             value = value.strip
             value.to_i - 1
         end
-        x = coordinates[0]
-        y = coordinates[1]
-    end while rows[y][x]
+        # x = coordinates[0]
+        # y = coordinates[1]
+        x, y = coordinates
+    end while not rows[y][x].nil?
     rows[y][x] = player
 end

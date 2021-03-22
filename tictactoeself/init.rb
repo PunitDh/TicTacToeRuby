@@ -211,14 +211,20 @@ def showtitlescreen()
   # Title Screen
   puts "\n\n\n\t\t*****************************************************************************"
   puts "\t\t*                                                                           *"
-  puts "\t\t*             Welcome to Tic-Tac-Toe Version 1.0 by Punit Dh                *"
+  puts "\t\t*            Welcome to UNBEATABLE TIC-TAC-TOE V1.1 by Punit Dh             *"
   puts "\t\t*                                                                           *"
   puts "\t\t*****************************************************************************\n\n\n\n"
   showboard(displayboard())
-  print "\n\n\n\n\t\t\t\t\tPress ENTER or RETURN to START THE GAME"
+  print "\n\n\n\n\t\t\t\tPress ENTER or RETURN to START THE GAME"
   tmpgets
 
-  print "\n\n\t\tWelcome to Tic-Tac-Toe...\n\n\t\tYou can player in either single or multiplayer mode...(Press ENTER)"
+  print "\n\n\t\tWelcome to UNBEATABLE TIC-TAC-TOE...\n\n\t\tThis version of TIC-TAC-TOE uses the MINIMAX algorithm to find the best move..."
+  tmpgets
+
+  print "\n\n\t\tIn other words, it is unbeatable..."
+  tmpgets
+
+  print "\n\n\t\tGROUND RULES:"
   tmpgets
 
   print "\n\n\t\t\'X\' always goes first..."
