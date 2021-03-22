@@ -12,6 +12,7 @@ def createnewgame()
   showtitlescreen(board_display)
   playermode = chooseplayermode()
   player = getplayernames(playermode)
+  
   game = {"board": board, "playermode": playermode, "player": player, "moverecord": moverecord, "commands": commands, "board_display": board_display}
 
   return game
@@ -220,7 +221,7 @@ def showtitlescreen(board_display)
   # Title Screen
   puts "\n\n\n\t\t*****************************************************************************"
   puts "\t\t*                                                                           *"
-  puts "\t\t*            Welcome to UNBEATABLE TIC-TAC-TOE V1.1 by Punit Dh             *"
+  puts "\t\t*            Welcome to UNBEATABLE TIC-TAC-TOE V1.2 by Punit Dh             *"
   puts "\t\t*                                                                           *"
   puts "\t\t*****************************************************************************\n\n\n\n"
   for i in 0..7

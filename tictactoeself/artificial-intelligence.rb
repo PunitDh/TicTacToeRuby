@@ -115,12 +115,10 @@ end
 ################################################################################################
 def findemptysquares(board)
   emptysquares = []
-  k = 0
   for i in 0..2
     for j in 0..2
       if (board[i][j].nil?)
-        emptysquares[k] = [i,j]
-        k += 1
+        emptysquares.push([i,j])
       end
     end
   end
@@ -138,9 +136,5 @@ end
 # A method that swaps turns and returns the opponent's piece
 ################################################################################################
 def swapturn(currentplayer, player)
-  if currentplayer == player[0]
-    return player[1]
-  elsif currentplayer == player[1]
-    return player[0]
-  end
+    return (currentplayer == player[0]) ? player[1] : player[0]
 end

@@ -10,7 +10,6 @@ require "./game-play.rb"
 
 game = createnewgame()
 nextplayer = cointoss(game[:player])
-
 showboard(game)
 
 # Game loop
@@ -21,7 +20,7 @@ end while not (checkgameover(game))
 # Game end state
 endgame(game)
 
-# COMPUTER VS COMPUTER
+# TO PLAY COMPUTER VS COMPUTER SIMULATIONS, RUN THIS LOOP INSTEAD OF THE GAME LOOP
 # begin
 #   nextplayer = playmove(game,nextplayer)
 #   break if (checkgameover(game))

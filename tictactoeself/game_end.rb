@@ -3,6 +3,7 @@
 #############################################################################
 def endgame(game)
   File.write('./gameresults.txt', game[:moverecord].to_s + "\n", mode: 'a')
+  
   puts "\n"
   winner = checkwin(game[:board])
   if (winner)
@@ -29,6 +30,7 @@ def endgame(game)
     puts "\t\t\t\t\t|-----------------|"
   end
   puts ""
+  puts "\n\t\tResults automatically saved to ./gameresults.txt\n\n\n"
 end
 
 #############################################################################
