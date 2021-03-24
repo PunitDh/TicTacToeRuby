@@ -2,17 +2,17 @@
 # A method that lets the computer play
 ################################################################################################
 def computermove(game, currentplayer)
-  computer_response = computerresponse(game[:board], currentplayer[:val])
-  print game[:moverecord].length == 0 ? "\n\n\t\tComputer's (#{currentplayer[:str]}) first move: " : "\n\t\tComputer (#{currentplayer[:str]}) responds: "
-  game[:moverecord].push(computer_response)
-  command_response = arraytocommandsparser(computer_response, game[:commands])
+  computer_response = computerresponse(game.board, currentplayer.val)
+  print game.moverecord.length == 0 ? "\n\n\t\tComputer's (#{currentplayer.str}) first move: " : "\n\t\tComputer (#{currentplayer.str}) responds: "
+  game.moverecord.push(computer_response)
+  command_response = arraytocommandsparser(computer_response, game.commands)
   print "\"#{command_response.join()}\"\n"
   display_response = arraytodisplayparser(computer_response)
-  game[:board][computer_response[0]][computer_response[1]] = currentplayer[:val]
-  game[:board_display][display_response[0]][display_response[1]] = currentplayer[:str]
+  game.board[computer_response[0]][computer_response[1]] = currentplayer.val
+  game.board_display[display_response[0]][display_response[1]] = currentplayer.str
   showboard(game)
   print (!$foo.nil? or !$foo==0) ? "\n\t\tPerformed #{$foo} iterations...\n" : nil
-  return swapturn(currentplayer, game[:player])
+  return swapturn(currentplayer, game.players)
 end
 
 ###############################################################################################

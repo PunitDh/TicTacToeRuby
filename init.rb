@@ -1,29 +1,136 @@
+class Player
+  attr_accessor :name, :val, :str
+
+  PLAYERS = []
+
+  def initialize(name, val=-1, str="")
+    @name = name
+    @val = val
+    @str = str
+    PLAYERS << self
+  end
+
+  def val= (val)
+    @val = val
+  end
+
+  def str= (str)
+    @str = str
+  end
+
+  def name
+    @name
+  end
+
+  def self.find(val)
+    PLAYERS.detect { |player| player.val == val }
+  end
+
+  def str
+    @str
+  end
+
+  def val
+    @val
+  end
+end
+
+class MoveRecord
+  attr_accessor :playernames, :move
+
+  def initialize
+    @recordarray = Array.new
+  end
+  
+  def push(value)
+    @recordarray.push(value)
+  end
+
+  def length
+    @recordarray.length
+  end
+
+  def to_s
+    @recordarray.to_s
+  end
+end
+
+class Board
+  attr_accessor :board, :board_display
+
+  def initialize
+    @board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
+  end
+
+  def get(val0, val1)
+    @board[val0][val1]
+  end
+
+  def set(val0, val1, val)
+    @board[val0][val1] = val
+  end
+
+  def grid
+    @board
+  end
+end
+
 #############################################################################
-# A method that creates a new game
+# A Game class
 #############################################################################
-def createnewgame()
-  # Initialise
-  board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
-  commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
-  moverecord = Array.new
-  board_display = displayboard()
+class Game
+  attr_accessor :board, :moverecord, :board_display
+  attr_reader :commands, :playermode, :player
 
-  # Show title screen and get player info
-  showtitlescreen(board_display)
-  playermode = chooseplayermode()
-  player = getplayernames(playermode)
+  def initialize
+    @board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
+    @commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
+    @moverecord = MoveRecord.new
+    @board_display = displayboard()
+    showtitlescreen(board_display)
+    @playermode = chooseplayermode()
+    @player = getplayernames(@playermode)
+  end
 
-  game = {"board": board, "playermode": playermode, "player": player, "moverecord": moverecord, "commands": commands, "board_display": board_display}
+  def playermode
+    @playermode
+  end
 
-  return game
+  def playernames
+    [@player[0].name,@player[1].name]
+  end
+
+  def players
+    @player
+  end
+
+  def board
+    @board
+  end
+
+  def boardvals(val0, val1)
+    board[val0][val1]
+  end
+
+  def commands
+    @commands
+  end
+
+  def moverecord
+    @moverecord
+  end
+
+  def board_display
+    @board_display
+  end
 end
 
 #############################################################################
 # A method to draw the board
 #############################################################################
 def showboard(game)
-    game[:board_display].map.with_index do |row,i|
-      puts "\t\t\t\t\t" + game[:board_display][i]
+    game.board_display.map.with_index do |row,i|
+      puts "\t\t\t\t\t" + game.board_display[i]
     end
 end
 
@@ -46,24 +153,26 @@ def chooseplayermode()
   return playermode
 end
 
+
 #############################################################################
 # A method to get the player names and save them in a hash
 #############################################################################
 def getplayernames(playermode)
   player = Array.new    # Set default values below
-  player[0] = {name: "Player 1", val: -1, str: ""}
-  player[1] = {name: "Player 2", val: -1, str: ""}
+  player[0] = Player.new("Player 1")
+  player[1] = Player.new("Player 2")
 
   # Get player names
   for i in 0..playermode-1
     getname(player[i], i)
-    player[1][:name] = (playermode == 1) ? "Computer" : next
+    player[1].name = (playermode == 1) ? "Computer" : next
   end
 
   # Welcome the players
-    print (playermode == 1) ? "\n\n\t\tWelcome #{player[0][:name]}!" : "\n\n\t\tWelcome #{player[0][:name]} and #{player[1][:name]}!"
+    print (playermode == 1) ? "\n\n\t\tWelcome #{player[0].name}!" : "\n\n\t\tWelcome #{player[0].name} and #{player[1].name}!"
   tmpgets
-
+  # print "These are the players: \n"
+  # p player
   return player
 end
 
@@ -71,11 +180,10 @@ end
 # A method to get the player names
 #############################################################################
 def getname(player, index)
-  print "\n\t\tEnter #{player[:name]} Name: "
+  print "\n\t\tEnter #{player.name} Name: "
   name = gets.chomp
-  player[:name] = (name.length == 0) ? "Player #{index+1}" : name
+  player.name = (name.length == 0) ? "Player #{index+1}" : name
 end
-
 
 #################################################################################
 # A method used to generate a cointoss, assign X and O, and choose first player
@@ -86,26 +194,28 @@ def cointoss(player)
   tmpgets
 
   # Generate a random value
-  randtoss = (rand()*2)
+  randtoss = 1.54 #(rand()*2)
 
   # Display the coin toss
-  cointoss = (randtoss < 1) ? "T" : "H"
-  player[0][:str], player[0][:val] = (randtoss < 1) ? ["O", 0] : ["X", 1]
-  player[1][:str], player[1][:val] = (randtoss < 1) ? ["X", 1] : ["O", 0] 
+  ctoss = (randtoss < 0.95) ? "T" : "H"
+  player[0].str = (randtoss < 1) ? "O" : "X"
+  player[0].val = (randtoss < 1) ? 0 : 1
+  player[1].str = (randtoss < 1) ? "X" : "O"
+  player[1].val = (randtoss < 1) ? 1 : 0
 
   puts "\n\t\tThe result of the coin toss is: \n\n"
   puts "\t\t\t\t\t\t\t  -------  "
   puts "\t\t\t\t\t\t\t/         \\"
-  puts "\t\t\t\t\t\t\t|    #{cointoss}    |"
+  puts "\t\t\t\t\t\t\t|    #{ctoss}    |"
   puts "\t\t\t\t\t\t\t\\         /"
   print "\t\t\t\t\t\t\t  -------- "
 
   tmpgets
 
   # Set current player based on who has X or O
-  currentplayer = (player[1][:val] == 1) ? player[1] : player[0]
-  puts "\n\t\t#{player[0][:name]} is \'#{player[0][:str]}\'. #{player[1][:name]} is \'#{player[1][:str]}\'.\n\n"
-  print "\t\t#{currentplayer[:name]} goes first..."
+  currentplayer = (player[1].val == 1) ? player[1] : player[0]
+  puts "\n\t\t#{player[0].name} is \'#{player[0].str}\'. #{player[1].name} is \'#{player[1].str}\'.\n\n"
+  print "\t\t#{currentplayer.name} goes first..."
   tmpgets
 
   return currentplayer

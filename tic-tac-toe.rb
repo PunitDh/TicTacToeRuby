@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require "./init.rb"
 require "./parser.rb"
 require "./artificial-intelligence.rb"
@@ -15,9 +17,10 @@ require "./game-end.rb"
 # end
 # f.close
 
-game = createnewgame()
-nextplayer = cointoss(game[:player])
-game[:moverecord].push(game[:player])
+game = Game.new
+
+nextplayer = cointoss(game.players)
+game.moverecord.push(game.playernames)
 showboard(game)
 
 # Game loop

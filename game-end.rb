@@ -4,17 +4,13 @@
 def endgame(game)
   
   
-  winner = checkwin(game[:board])
+  winner = checkwin(game.board)
   puts "\n\n"
   if (winner)
-    for w in game[:player]
-      if !w.key(winner).nil?
-        winnername = w[:name]
-      end
-    end
-    game[:moverecord].push(winnername)
+    winnername = Player.find(winner)
+    game.moverecord.push(winnername.name)
 
-    if game[:playermode] == 1
+    if game.playermode == 1
       puts "\t\t\t\t\t|-------------------------|"
       puts "\t\t\t\t\t|        You lose!        |"
       puts "\t\t\t\t\t|-------------------------|"
@@ -23,16 +19,15 @@ def endgame(game)
       puts "\t\t\t\t\t|     #{winnername} won!      |"
       puts "\t\t\t\t\t|-----" + "-"*(winnername.length+5) + "------|"
     end
-  elsif (checkdraw(game[:board]))
+  elsif (checkdraw(game.board))
     puts "\t\t\t\t\t|-------------------------|"
     puts "\t\t\t\t\t|     Game is a draw!     |"
     puts "\t\t\t\t\t|-------------------------|"
 
-    game[:moverecord].push("Draw")
+    game.moverecord.push("Draw")
   end
   puts "\n\n\t\tResults automatically saved to ./gameresults.txt\n\n\n"
-  
-  File.write('./gameresults.txt', game[:moverecord].to_s + "\n", mode: 'a')
+  File.write('./gameresults.txt', game.moverecord.to_s + "\n", mode: 'a')
 end
 
 #############################################################################
@@ -73,5 +68,5 @@ end
   # A method to check game over status
   #############################################################################
   def checkgameover(game)
-    (checkdraw(game[:board]) or checkwin(game[:board]))
+    (checkdraw(game.board) or checkwin(game.board))
   end
