@@ -11,7 +11,7 @@ def validatecommand(game, command)
 
   return false if cmd_parse==-2  # Help command
   
-  if !game.boardvals(cmd_parse[0], cmd_parse[1]).nil?
+  if !game.board.get(cmd_parse[0], cmd_parse[1]).nil?
     puts "\n\t\t\"#{command}\" is not an empty space"
     return false
   end
@@ -38,7 +38,7 @@ def commandparser(game, command)
       when "R"
         emptysquares = findemptysquares(game.board)
         randsquare = (rand()*(emptysquares.length)).floor()
-        puts "\t\tRandom square: \"" + arraytocommandsparser(emptysquares[randsquare], game.board).join.to_s + "\""
+        puts "\t\tRandom square: \"" + arraytocommandsparser(emptysquares[randsquare], game.commands).join.to_s + "\""
         return emptysquares[randsquare]
       else
         return false

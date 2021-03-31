@@ -21,7 +21,8 @@ game = Game.new
 
 nextplayer = cointoss(game.players)
 game.moverecord.push(game.playernames)
-showboard(game)
+game.board.show()
+# showboard(game)
 
 # Game loop
 begin

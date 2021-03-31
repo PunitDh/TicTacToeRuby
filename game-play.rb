@@ -17,10 +17,11 @@ end
 # A method to assign the move to the board then swap the turn
 #############################################################################
 def entermove(game, currentplayer, cmd_parse)
-  display_parse = arraytodisplayparser(cmd_parse)
-  game.board[cmd_parse[0]][cmd_parse[1]] = currentplayer.val
-  game.board_display[display_parse[0]][display_parse[1]] = currentplayer.str
-  showboard(game)
+  game.board.set(cmd_parse[0], cmd_parse[1], currentplayer.val)
+  # display_parse = arraytodisplayparser(cmd_parse)
+  # game.board[cmd_parse[0]][cmd_parse[1]] = currentplayer.val
+  # game.board_display[display_parse[0]][display_parse[1]] = currentplayer.str
+  game.board.show()
   return swapturn(currentplayer, game.players)
 end
 

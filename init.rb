@@ -10,29 +10,29 @@ class Player
     PLAYERS << self
   end
 
-  def val= (val)
-    @val = val
-  end
+  # def val= (val)
+  #   @val = val
+  # end
 
-  def str= (str)
-    @str = str
-  end
+  # def str= (str)
+  #   @str = str
+  # end
 
-  def name
-    @name
-  end
+  # def name
+  #   @name
+  # end
 
   def self.find(val)
     PLAYERS.detect { |player| player.val == val }
   end
 
-  def str
-    @str
-  end
+  # def str
+  #   @str
+  # end
 
-  def val
-    @val
-  end
+  # def val
+  #   @val
+  # end
 end
 
 class MoveRecord
@@ -55,19 +55,155 @@ class MoveRecord
   end
 end
 
+
+
+
 class Board
   attr_accessor :board, :board_display
 
-  def initialize
+  @board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
+  def initialize(board=@board)
+    # if (board == nil)
+    #   @board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
+    # else
+    #   @board = board.dup
+    # end
     @board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
+    @board_display = displayboard()
+    showtitlescreen(@board_display)
+  end
+
+  def length
+    @board.flatten.length
+  end
+
+  def flatten
+    @board.flatten
   end
 
   def get(val0, val1)
     @board[val0][val1]
   end
 
-  def set(val0, val1, val)
-    @board[val0][val1] = val
+  #############################################################################
+  # A method to check win states and returns the winner
+  #############################################################################
+  def checkwin(board=@board)
+    tmparray = Array.new
+    tmparray[0] = Array.new
+    tmparray[1] = Array.new
+
+    board.map.with_index do |row,i|
+      return board.transpose[i].first if checkequal(board.transpose[i])
+      return board[i].first if checkequal(board[i])
+      tmparray[0].push(board[i][i])
+      tmparray[1].push(board[2-i][i])
+    end
+
+    return tmparray[0][0] if checkequal(tmparray.first)
+    return tmparray[1][0] if checkequal(tmparray[1])
+    return false
+  end
+  
+  #############################################################################
+  # A method to check draw states
+  #############################################################################
+  def checkdraw(board=@board)
+    return (board.flatten.compact.length == 9)
+  end
+
+  def set(row, column, val)
+    drow, dcol = arraytodisplayparser([row,column])
+    @board[row][column] = val
+    @board_display[drow][dcol] = valtostr(val)
+  end
+
+  #############################################################################
+  # A method to draw the board
+  #############################################################################
+  def show
+    @board_display.map.with_index do |row,i|
+      puts "\t\t\t\t\t" + @board_display[i]
+    end
+  end
+
+  def computerpredictwin(val)
+    # Check for an empty square
+    emptysquares = findemptysquares()
+    tmpboard = Array.new
+    emptysquares.map do |empty|
+      tmpboard = @board.map { |row| row.map { |cell| cell } }
+      tmpboard[empty[0]][empty[1]] = val
+      return empty if checkwin(tmpboard)
+    end
+    return false
+  end
+
+  # def map
+
+  # end
+
+  # def with_index
+    
+  # end
+
+  ################################################################################################
+  # The minimax recursion function
+  ################################################################################################
+  def minimax(val, maximising_player = true)
+    tmpboard = Board.new
+    best_move = {"r":nil, "c":nil, "score":0}
+    
+    if (checkwin())#checkwin(board))
+        best_move[:score] = maximising_player ? -1 : 1
+      return best_move
+    elsif (checkdraw())#(board))
+      best_move[:score] = 0
+      return best_move
+    end
+
+    best_move[:score] = maximising_player ? -2 : 2
+
+    board.map.with_index do |row,i|
+      row.map.with_index do |cell,j|
+        if cell.nil?
+          tmpboard = board.map { |row| row.map { |cell| cell } }
+          tmpboard[i][j] = val
+          
+          board_state = minimax(tmpboard, otherval(val), !maximising_player)
+          $foo += 1
+          
+          if (maximising_player)
+            if (board_state[:score] > best_move[:score])
+              best_move[:score] = board_state[:score]
+              best_move[:r] = i
+              best_move[:c] = j
+            end
+          else
+            if (board_state[:score] < best_move[:score])
+              best_move[:score] = board_state[:score]
+              best_move[:r] = i
+              best_move[:c] = j            
+            end
+          end
+          tmpboard = board.map { |row| row.map { |cell| cell } }
+        end
+      end
+    end
+    return best_move
+  end
+
+  def findemptysquares
+    @board.map.with_index { |row,i| row.map.with_index { |cell,j| [i,j] if cell.nil? }}.flatten(1).compact
+  end
+
+  def valtostr(val)
+    case val
+      when 0
+        return 'O'
+      when 1
+        return 'X'
+    end
   end
 
   def grid
@@ -83,11 +219,11 @@ class Game
   attr_reader :commands, :playermode, :player
 
   def initialize
-    @board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
+    @board = Board.new # [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
     @commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
     @moverecord = MoveRecord.new
-    @board_display = displayboard()
-    showtitlescreen(board_display)
+    #@board_display = displayboard()
+    #showtitlescreen(board_display)
     @playermode = chooseplayermode()
     @player = getplayernames(@playermode)
   end
@@ -108,9 +244,9 @@ class Game
     @board
   end
 
-  def boardvals(val0, val1)
-    board[val0][val1]
-  end
+  # def boardvals(val0, val1)
+  #   @board[val0][val1]
+  # end
 
   def commands
     @commands
@@ -125,14 +261,7 @@ class Game
   end
 end
 
-#############################################################################
-# A method to draw the board
-#############################################################################
-def showboard(game)
-    game.board_display.map.with_index do |row,i|
-      puts "\t\t\t\t\t" + game.board_display[i]
-    end
-end
+
 
 #############################################################################
 # A method used to choose the player mode
@@ -194,7 +323,7 @@ def cointoss(player)
   tmpgets
 
   # Generate a random value
-  randtoss = 1.54 #(rand()*2)
+  randtoss = (rand()*2)
 
   # Display the coin toss
   ctoss = (randtoss < 0.95) ? "T" : "H"
@@ -245,7 +374,7 @@ def showhelp(game)
   puts ("\n\t\t***************************************************************************" * 5)
   puts "\t\t*******************************    HELP    ********************************"
   puts "\n\t\tThis is the tic-tac-toe board..."
-  showboard(game)
+  game.board.show()
   puts "\n\n\t\tEnter the following text commands: \n\n\t\t\t\"A1\", \"A2\", \"A3\", \"B1\", \"B2\", \"B3\", \"C1\", \"C2\", \"C3\".\n\n\t\tThey correspond to each cell on the board..."
   puts "\n\t\t\"R\" to play a random move"
   puts "\n\t\tPress Ctrl+C or Cmd+C to exit the game at any time"
