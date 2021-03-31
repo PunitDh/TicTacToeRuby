@@ -1,0 +1,37 @@
+#############################################################################
+# A method that ends the game
+#############################################################################
+def endgame(game)
+  winner = checkwin(game.board)
+  puts "\n\n"
+  if (winner)
+    winnername = Player.find(winner)
+    game.moverecord.push(winnername.name)
+
+#         ╔═══╦═══╦═══╗",
+# # 	" A ║   ║   ║   ║",
+# # 	"   ╠═══╬═══╬═══╣",
+# # 	" B ║   ║   ║   ║",
+# # 	"   ╠═══╬═══╬═══╣",
+# # 	" C ║   ║   ║   ║",
+# # 	"   ╚═══╩═══╩═══╝
+
+    if game.playermode == 1
+      puts "\t\t\t\t\t╔" + "═"*25 +"╗"
+      puts "\t\t\t\t\t║        You lose!        ║"
+      puts "\t\t\t\t\t╚" + "═"*25 +"╝"
+    else
+      puts "\t\t\t\t\t╔═════" + "═"*(winnername.name.length+5) + "══════╗"
+      puts "\t\t\t\t\t|     #{winnername.name} won!      |"
+      puts "\t\t\t\t\t╚═════" + "═"*(winnername.name.length+5) + "══════╝"
+    end
+  elsif (checkdraw(game.board))
+    puts "\t\t\t\t\t╔" + "═"*25 +"╗"
+    puts "\t\t\t\t\t║     Game is a draw!     ║"
+    puts "\t\t\t\t\t╚" + "═"*25 +"╝"
+
+    game.moverecord.push("Draw")
+  end
+  puts "\n\n\t\tResults automatically saved to ./gameresults.txt\n\n\n"
+  File.write('./gameresults.txt', game.moverecord.to_s + "\n", mode: 'a')
+end

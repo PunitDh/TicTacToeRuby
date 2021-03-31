@@ -3,7 +3,7 @@
 #############################################################################
 def playermove(game, currentplayer)
   begin
-    print "\n\t\t#{currentplayer.name}, please enter a command: "
+    print "\n\t\t#{currentplayer.name}, please enter a command (or \"H\" for Help): "
     command = gets.chomp.strip.upcase.delete(' ')
     puts "\n\t\tYou (#{currentplayer.str}) entered: \"#{command}\""
     cmd_parse = validatecommand(game, command)
@@ -11,15 +11,6 @@ def playermove(game, currentplayer)
   game.moverecord.push(cmd_parse)
   game.playmove(cmd_parse,currentplayer.val)
   currentplayer = swapturn(currentplayer, game.players)
-  # currentplayer = entermove(game, currentplayer, cmd_parse)
-end
-
-#############################################################################
-# A method to assign the move to the board then swap the turn
-#############################################################################
-def entermove(game, currentplayer, cmd_parse)
-  game.playmove(cmd_parse,currentplayer.val)
-  return swapturn(currentplayer, game.players)
 end
 
 #############################################################################

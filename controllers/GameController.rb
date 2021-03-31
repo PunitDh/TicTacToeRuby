@@ -1,6 +1,6 @@
-require_relative "../models/tic-tac-toe.rb"
+require_relative "../models/classes.rb"
 
-class GameController
+module GameController
 	def self.create
 		game = Game.new
 	end

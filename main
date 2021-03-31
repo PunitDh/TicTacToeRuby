@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative "./controllers/GameController.rb"
+require_relative "./views/game-title.rb"
+require 'tty-prompt'
+
+showtitlescreen(displayboard())
+prompt = TTY::Prompt.new(symbols: {marker: " "})
+
+begin
+	puts "\n\n\n\n"
+	choices = {"\n\n\t\t\t\t\t    New Game": 1, "\n\n\t\t\t\t\t    Quit Game": 0}
+	request = prompt.select("\t\t\t\t\tChoose from below:", choices, show_help: :never)
+	GameController::create if request == 1
+end until request==0
+
+puts "\n\n\t\t\t\tGoodbye!\n\n"
