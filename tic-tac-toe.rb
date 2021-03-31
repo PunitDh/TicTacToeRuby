@@ -5,6 +5,7 @@ require "./parser.rb"
 require "./artificial-intelligence.rb"
 require "./game-play.rb"
 require "./game-end.rb"
+require 'colorize'
 
 ####################################################################################
 ##########################         START THE GAME         ##########################
@@ -21,8 +22,7 @@ game = Game.new
 
 nextplayer = cointoss(game.players)
 game.moverecord.push(game.playernames)
-game.board.show()
-# showboard(game)
+showboard(game)
 
 # Game loop
 begin

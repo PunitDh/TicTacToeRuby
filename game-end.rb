@@ -2,6 +2,8 @@
 # A method that ends the game
 #############################################################################
 def endgame(game)
+  
+  
   winner = checkwin(game.board)
   puts "\n\n"
   if (winner)
@@ -66,5 +68,5 @@ end
   # A method to check game over status
   #############################################################################
   def checkgameover(game)
-    game.board.checkdraw or game.board.checkwin
+    (checkdraw(game.board) or checkwin(game.board))
   end
