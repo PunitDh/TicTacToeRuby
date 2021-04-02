@@ -1,0 +1,174 @@
+commit 0f28ebba7889bceba5133df48d696ab74eb6556a
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Wed Mar 31 23:39:18 2021 +1100
+
+    Use MVC model, clean up interface, add TTY Prompt
+
+commit dc7a4eb0631913c429ef849c1566f16d7a2833df
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Wed Mar 31 21:20:58 2021 +1100
+
+    WORKING COPY - Refactor code, add game.playmove() function, fixed Random move bug
+
+commit bbaa41864c85aa1facc25ae4a013408d8d0c7027
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Wed Mar 31 21:19:13 2021 +1100
+
+    BROKEN COPY - Attempt to create Board class, but have to modify entire structure of game
+
+commit 9085e57e22906099ec6f004b49a438d137c41599
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Thu Mar 25 03:17:31 2021 +1100
+
+    Add Game Class, Player Class, MoveRecord Class, Board Class (not yet functional), GameController (not yet functional)
+
+commit f8e1e9555e3e6f46b0b0b86180ae20385596f3a0
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Mar 23 09:58:09 2021 +1100
+
+    Clean up the folder tree
+
+commit 3c165b33fe2698ee0982feff145a34b183283030
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Mar 23 00:28:52 2021 +1100
+
+    Re-ordered requires
+
+commit 5a04b972b5d66cb406de064041675283f8f1c6de
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Tue Mar 23 00:25:41 2021 +1100
+
+    Refactor further, V1.2 Complete
+
+commit 82a9c289b88c10093e43cad867eec14761f80592
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Mon Mar 22 22:26:36 2021 +1100
+
+    Refactor all loops with |iterator| commands
+
+commit f1f4b7701558dcea3c904b51e8a989fd7184ed7f
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Mon Mar 22 21:50:55 2021 +1100
+
+    Refactor findemptysquares function with |iterator| functionality
+
+commit 1ed2e8d6fd487cec1cb21e2ee56d1f2cc6182b58
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Mar 22 16:44:40 2021 +1100
+
+    Minor edits V1.2
+
+commit 06bfe3ee90c41349189e1a3ffd154f5b9139ecc3
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Mar 22 16:35:30 2021 +1100
+
+    Updated final version 1.2
+
+commit 45c5f0728209dee3b9002acf23f2daa72d9ab18f
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Mar 22 16:23:07 2021 +1100
+
+    Final version V1.2
+
+commit feb470474f8888d19cd754a4a223e16cc1776c4f
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Mar 22 16:20:29 2021 +1100
+
+    All code refactored
+
+commit b00435c8814a2d43aa4352de0b87fc67bfc47ce3
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Mar 22 11:10:28 2021 +1100
+
+    Update tictactoeclass code
+
+commit f16545428214f91484a56b92b6e4d671c4bb9d00
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Sun Mar 21 21:15:22 2021 +1100
+
+    Major code refactored. Still debugging left to do.
+
+commit 3c92af8cc916d206eb7c93b38c70b02937973ef3
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Sun Mar 21 14:39:00 2021 +1100
+
+    Refactor code in game_end scenarios
+
+commit 6593464abd5f3c267680fed6e3d0ea8b5b775be4
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Sun Mar 21 04:03:53 2021 +1100
+
+    Refactor much of the main code
+
+commit 2ab733f6b3ef1c6a53b557f425b3d022d63ef26f
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Sun Mar 21 02:38:47 2021 +1100
+
+    Added minimax recursive algorithm, from YouTube tutorial https://www.youtube.com/watch?v=wnL7Woqkb44
+
+commit c435176c8a0ec847cc804333957ff4f8e0adf16c
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Sat Mar 20 21:41:25 2021 +1100
+
+    Fixed AI bug where it was not recognising opponent wins, e.g. A1,B2,C3,A3??
+
+commit 0166fd432dd2ca3e782e764b63df6f5a3d0da8f3
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Fri Mar 19 17:57:36 2021 +1100
+
+    Add Advanced AI Functionality, functional behaviour tree. Still not perfect.
+
+commit 12f61f0136db43a5daf6e6663376a1cafbd4a553
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Fri Mar 19 12:22:21 2021 +1100
+
+    Create fully functioning checkfork functionality
+
+commit 495f64c1f8f5879fdf05e65f49fb34767ecfd2d4
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Fri Mar 19 00:26:16 2021 +1100
+
+    Refactor code, add ability to save games, improve AI functionality, add ability to recognise forks
+
+commit ac93fe99285c25116e1e2ce3b28ee401ab80927b
+Merge: 1b4c89d 441ef4c
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Wed Mar 17 17:28:41 2021 +1100
+
+    fixing merge
+
+commit 1b4c89d5f8f83a720b1a3322803d7b146d51e552
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Wed Mar 17 17:20:04 2021 +1100
+
+    Refactor code
+
+commit 1a11d53e11ce202abbc2b0ecc3be6f6bc84b71b9
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Wed Mar 17 14:10:38 2021 +1100
+
+    Add michael's tictactoe, refactor code
+
+commit 441ef4ca58f01dccf36c04a3441284e5de2d4b6d
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Wed Mar 17 00:28:27 2021 +1100
+
+    Attempt to create behaviour tree AI
+
+commit 89b3fc594826169b8357db9a42e085d06b17ad07
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Tue Mar 16 22:32:11 2021 +1100
+
+    Add brute force AI capabilities: predict immediate loss and win
+
+commit b55a171a5cb929cd592dc425ba6e171d3d77514f
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Tue Mar 16 19:57:56 2021 +1100
+
+    Add readme
+
+commit 67e628f020623317936ca5ba711a647d0f8d746a
+Author: root <root@Punit-BeastPC.localdomain>
+Date:   Tue Mar 16 19:44:38 2021 +1100
+
+    Create Tic-tac-toe Version 1.0, 1-player 2-player working, only random moves by computer

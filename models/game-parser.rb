@@ -38,10 +38,9 @@ def commandparser(game, command)
         return -2                 #     nil         emp
       when "R"                    #
         return false if not command[1].nil?
-        emptysquares = findemptysquares(game.board)
-        randsquare = (rand()*(emptysquares.length)).floor()
-        puts "\t\tRandom square: \"" + arraytocommandsparser(emptysquares[randsquare], game.commands).join.to_s + "\""
-        return emptysquares[randsquare]
+        randomsquare = randomsquare(findemptysquares(game.board))
+        puts "\t\tRandom square: \"" + arraytocommandsparser(randomsquare, game.commands).join.to_s + "\""
+        return randomsquare
       else
         return false
     end

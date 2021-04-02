@@ -2,7 +2,7 @@
 # A method to check win states and returns the winner
 #############################################################################
 def checkwin(board)
-	tmparray = Array.new
+	tmparray    = Array.new
 	tmparray[0] = Array.new
 	tmparray[1] = Array.new
   
@@ -13,10 +13,10 @@ def checkwin(board)
 	  tmparray[1].push(board[2-i][i])
 	end
   
-	return tmparray[0][0] if checkequal(tmparray.first)
-	return tmparray[1][0] if checkequal(tmparray[1])
+	return tmparray[0].first if checkequal(tmparray.first)
+	return tmparray[1].first if checkequal(tmparray[1])
 	return false
-  end
+end
   
 #############################################################################
 # A method to check if all elements in an array are equal

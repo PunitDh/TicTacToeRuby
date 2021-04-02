@@ -6,7 +6,7 @@ def endgame(game)
   puts "\n\n"
   if (winner)
     winnername = Player.find(winner)
-    game.moverecord.push(winnername.name)
+    game.moverecord.setwinner(winnername.name + ": " + ['O','X'][winner])
 
 #         ╔═══╦═══╦═══╗",
 # # 	" A ║   ║   ║   ║",
@@ -30,7 +30,7 @@ def endgame(game)
     puts "\t\t\t\t\t║     Game is a draw!     ║"
     puts "\t\t\t\t\t╚" + "═"*25 +"╝"
 
-    game.moverecord.push("Draw")
+    game.moverecord.setwinner("Draw")
   end
   puts "\n\n\t\tResults automatically saved to ./gameresults.txt\n\n\n"
   File.write('./gameresults.txt', game.moverecord.to_s + "\n", mode: 'a')

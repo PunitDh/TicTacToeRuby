@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require_relative "./controllers/GameController.rb"
+require_relative "./views/game-title.rb"
+require 'tty-prompt'
+
+####################################################################################
+##########################         START THE GAME         ##########################
+####################################################################################
+
+# Show title screen
+showtitlescreen(displayboard())
+
+# Initialise prompt
+prompt = TTY::Prompt.new(symbols: {marker: " "})
+
+# Ask for user prompt
+begin
+	puts "\n\n"
+	choices = {"New Game\n".center(100) => 1, "Simulation Mode\n".center(100) => 2, "Quit Game\n".center(100) => 0}
+	request = prompt.select("Choose from below:\n".center(100), choices, show_help: :never)
+
+	GameController::create 		if request == 1
+	GameController::simulation 	if request == 2
+	
+end until request == 0
+
+# End of game
+puts "\n\n\t\t\t\tGoodbye!\n\n"

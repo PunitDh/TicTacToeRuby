@@ -1,5 +1,3 @@
-
-
 ###############################################################################################
 # A method that lets the computer play
 ################################################################################################
@@ -9,35 +7,28 @@ def computermove(game, currentplayer)
   game.moverecord.push(computer_response)
   command_response = arraytocommandsparser(computer_response, game.commands)
   print "\"#{command_response.join()}\"\n"
-  game.playmove(computer_response,currentplayer.val)
-  print (!$foo==0) ? "\n\t\tPerformed #{$foo} iterations...\n" : nil
+  game.entermove(computer_response,currentplayer.val)
+  print "\n\t\tPerformed #{$foo} iterations...\n" if ($foo > 0)
   return swapturn(currentplayer, game.players)
 end
 
-###############################################################################################
+################################################################################################
 # A method that spits out a computer response
 ################################################################################################
 def computerresponse(board, val)
   emptysquares = findemptysquares(board)
-  if (emptysquares.length == board.flatten.length)
-    bestsquare = (rand()*(emptysquares.length)).floor()
-    return emptysquares[bestsquare]
-  else
-    $foo = 0
-    predictwin = computerpredictwin(board, emptysquares, val)
-    return predictwin if predictwin
-    predictloss = computerpredictwin(board, emptysquares, otherval(val))
-    return predictloss if predictloss
-    best_move = minimax(board,val)
-    return [best_move[:r], best_move[:c]]
-  end
+  return randomsquare(emptysquares) if (emptysquares.length == board.flatten.length or (($encmbr.nil?) ? nil : (rand() > ((100-$encmbr).to_f/100).to_f)))
+  $foo = 0
+  return (predictwin = computerpredictwin(board, emptysquares, val)) if predictwin
+  return (predictloss = computerpredictwin(board, emptysquares, otherval(val))) if predictloss
+  best_move = minimax(board,val)
+  return [best_move[:r], best_move[:c]]
 end
 
 ################################################################################################
 # A method that predicts the next move NO DEBUG MODE
 ################################################################################################
 def computerpredictwin(board, emptysquares, val)
-  # Check for an empty square
   tmpboard = Array.new
   emptysquares.map do |empty|
     tmpboard = board.map { |row| row.map { |cell| cell } }
@@ -48,7 +39,14 @@ def computerpredictwin(board, emptysquares, val)
 end
 
 ################################################################################################
-# The minimax recursion function
+# A method that spits out a random square
+################################################################################################
+def randomsquare(emptysquares)
+  return emptysquares[(rand()*(emptysquares.length)).floor()]
+end
+
+################################################################################################
+# The minimax recursion function - The brain of the program
 ################################################################################################
 def minimax(board, val, maximising_player = true)
   tmpboard = Array.new
@@ -71,7 +69,7 @@ def minimax(board, val, maximising_player = true)
         tmpboard[i][j] = val
         
         board_state = minimax(tmpboard, otherval(val), !maximising_player)
-        $foo += 1
+        $foo += 1   # A global variable used to store the number of iterations
         
         if (maximising_player)
           if (board_state[:score] > best_move[:score])
@@ -98,19 +96,19 @@ end
 # A method to check which squares are empty on the board
 ################################################################################################
 def findemptysquares(board)
-  return board.map.with_index { |row,i| row.map.with_index { |cell,j| [i,j] if cell.nil? }}.flatten(1).compact
+  board.map.with_index { |row,i| row.map.with_index { |cell,j| [i,j] if cell.nil? }}.flatten(1).compact
 end
 
 ################################################################################################
 # A method that returns the opponent's piece
 ################################################################################################
 def otherval(val)
-	return (val-1).abs
+	(val-1).abs
 end
 
 ################################################################################################
 # A method that swaps turns
 ################################################################################################
 def swapturn(currentplayer, player)
-    return (currentplayer == player[0]) ? player[1] : player[0]
+  (currentplayer == player[0]) ? player[1] : player[0]
 end
