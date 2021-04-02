@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative "./controllers/GameController.rb"
-require_relative "./views/game-title.rb"
+require_relative "./models/game-setup.rb"
 require 'tty-prompt'
 
 ####################################################################################

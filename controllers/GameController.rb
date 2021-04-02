@@ -1,4 +1,4 @@
-require_relative "../models/classes.rb"
+require_relative "../models/game-classes.rb"
 
 module GameController
 	def self.create

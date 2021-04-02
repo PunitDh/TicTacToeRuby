@@ -9,7 +9,7 @@ def computermove(game, currentplayer)
   print "\"#{command_response.join()}\"\n"
   game.entermove(computer_response,currentplayer.val)
   print "\n\t\tPerformed #{$foo} iterations...\n" if ($foo > 0)
-  return swapturn(currentplayer, game.players)
+  return Player.find(otherval(currentplayer.val))
 end
 
 ################################################################################################
@@ -104,11 +104,4 @@ end
 ################################################################################################
 def otherval(val)
 	(val-1).abs
-end
-
-################################################################################################
-# A method that swaps turns
-################################################################################################
-def swapturn(currentplayer, player)
-  (currentplayer == player[0]) ? player[1] : player[0]
 end

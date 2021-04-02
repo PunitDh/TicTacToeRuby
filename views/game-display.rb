@@ -10,16 +10,6 @@ def showboard(game)
 end
 
 #############################################################################
-# A method used to choose the player mode
-#############################################################################
-def chooseplayermode()
-  prompt = TTY::Prompt.new(symbols: {marker: " "})
-  choices = {"\n\n\t\t\t\t\t   (1)-Player Mode": 1, "\n\t\t\t\t\t   (2)-Player Mode": 2}
-  playermode = prompt.select("\n\n\t\t\t\t\tChoose (1)-player or (2)-player mode:", choices, show_help: :never)
-  return playermode
-end
-
-#############################################################################
 # A method to get the player names and save them in a hash
 #############################################################################
 def getplayernames(playermode)
@@ -115,11 +105,8 @@ def cointoss(player)
   player[rtoss].str, player[rtoss].val = vals[rtoss]
   player[otherval(rtoss)].str, player[otherval(rtoss)].val = vals[otherval(rtoss)]
   ctoss = (rtoss < 0.5) ? "T" : "H"
-  # randtoss = (rand())
-  # player[0].str, player[0].val = (randtoss < 0.5) ? ["O",0] : ["X",1]
-  # player[1].str, player[1].val = (randtoss < 0.5) ? ["X",1] : ["O",0]
 
-  return [currentplayer = (player[1].val == 1) ? player[1] : player[0], ctoss]
+  return [currentplayer = Player.find(1), ctoss]
 end
 
 #############################################################################

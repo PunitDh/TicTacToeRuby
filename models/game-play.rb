@@ -8,10 +8,9 @@ def playermove(game, currentplayer)
     puts "\n\t\tYou (#{currentplayer.str}) entered: \"#{command}\""
     cmd_parse = validatecommand(game, command)
   end while not cmd_parse
-  
   game.moverecord.push(cmd_parse)
   game.entermove(cmd_parse,currentplayer.val)
-  currentplayer = swapturn(currentplayer, game.players)
+  currentplayer = Player.find(otherval(currentplayer.val))
 end
 
 #############################################################################
