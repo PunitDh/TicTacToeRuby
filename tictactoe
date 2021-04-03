@@ -17,11 +17,12 @@ prompt = TTY::Prompt.new(symbols: {marker: " "})
 # Ask for user prompt
 begin
 	puts "\n\n"
-	choices = {"New Game\n".center(100) => 1, "Simulation Mode\n".center(100) => 2, "Quit Game\n".center(100) => 0}
+	choices = {"New Game\n".center(100) => 1, "Simulation Mode\n".center(100) => 2, "Instructions\n".center(100) => 3, "Quit Game\n".center(100) => 0}
 	request = prompt.select("Choose from below:\n".center(100), choices, show_help: :never)
 
-	GameController::create 		if request == 1
-	GameController::simulation 	if request == 2
+	GameController::create 			if request == 1
+	GameController::simulation 		if request == 2
+	GameController::instructions	if request == 3
 	
 end until request == 0
 

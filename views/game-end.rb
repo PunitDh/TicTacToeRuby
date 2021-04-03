@@ -8,21 +8,13 @@ def endgame(game)
     winnername = Player.find(winner)
     game.moverecord.setwinner(winnername.name + ": " + ['O','X'][winner])
 
-#         ╔═══╦═══╦═══╗",
-# # 	" A ║   ║   ║   ║",
-# # 	"   ╠═══╬═══╬═══╣",
-# # 	" B ║   ║   ║   ║",
-# # 	"   ╠═══╬═══╬═══╣",
-# # 	" C ║   ║   ║   ║",
-# # 	"   ╚═══╩═══╩═══╝
-
     if game.playermode == 1
       puts "\t\t\t\t\t╔" + "═"*25 +"╗"
       puts "\t\t\t\t\t║        You lose!        ║"
       puts "\t\t\t\t\t╚" + "═"*25 +"╝"
     else
       puts "\t\t\t\t\t╔═════" + "═"*(winnername.name.length+5) + "══════╗"
-      puts "\t\t\t\t\t|     #{winnername.name} won!      |"
+      puts "\t\t\t\t\t║     #{winnername.name} won!      ║"
       puts "\t\t\t\t\t╚═════" + "═"*(winnername.name.length+5) + "══════╝"
     end
   elsif (checkdraw(game.board))

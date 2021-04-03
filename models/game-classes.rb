@@ -57,9 +57,12 @@ class Game
 	attr_accessor :moverecord
 	attr_reader :commands, :playermode, :player, :board, :board_display
 
-	def initialize(simulation_mode = false)
+	def initialize
 		board_reset()
 		@commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
+	end
+
+	def startgame(simulation_mode = false)
 		if (!simulation_mode)
 			@playermode = chooseplayermode()
 			@player = getplayernames(@playermode)
