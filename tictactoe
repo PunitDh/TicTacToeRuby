@@ -18,7 +18,7 @@ prompt = TTY::Prompt.new(symbols: {marker: " "})
 begin
 	puts "\n\n"
 	choices = {"New Game\n".center(100) => 1, "Simulation Mode\n".center(100) => 2, "Instructions\n".center(100) => 3, "Quit Game\n".center(100) => 0}
-	request = prompt.select("Choose from below:\n".center(100), choices, show_help: :never)
+	request = prompt.select("Choose from below: (Use ↑↓ arrow keys to select)\n".center(100), choices, show_help: :never)
 
 	GameController::create 			if request == 1
 	GameController::simulation 		if request == 2
@@ -27,4 +27,6 @@ begin
 end until request == 0
 
 # End of game
-puts "\n\n\t\t\t\tGoodbye!\n\n"
+puts "\n\n"
+puts "Goodbye!".center(100)
+puts "\n\n"

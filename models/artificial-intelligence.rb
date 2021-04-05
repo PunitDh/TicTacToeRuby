@@ -42,7 +42,7 @@ end
 # A method that spits out a random square
 ################################################################################################
 def randomsquare(emptysquares)
-  return emptysquares[(rand()*(emptysquares.length)).floor()]
+  return emptysquares.sample
 end
 
 ################################################################################################

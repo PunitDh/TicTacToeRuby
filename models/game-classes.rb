@@ -66,7 +66,7 @@ class Game
 		if (!simulation_mode)
 			@playermode = chooseplayermode()
 			@player = getplayernames(@playermode)
-			showtitleprompts()
+			# showtitleprompts()
 			gameloop(self)
 		else
 			@player = getplayernames(1)

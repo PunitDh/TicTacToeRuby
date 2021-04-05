@@ -60,9 +60,7 @@ def selectfirstplayer(player)
   # Coin toss
   print "\n\n\t\tTossing coin now...(Press ENTER to see coin toss results)"
   tmpgets
-  p player
   currentplayer = cointoss(player)
-  p player
   puts "\n\t\tThe result of the coin toss is: \n\n"
   puts "\t\t\t\t\t\t\t  -------  "
   puts "\t\t\t\t\t\t\t/         \\"
