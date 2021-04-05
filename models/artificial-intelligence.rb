@@ -17,10 +17,12 @@ end
 ################################################################################################
 def computerresponse(board, val)
   emptysquares = findemptysquares(board)
-  return randomsquare(emptysquares) if (emptysquares.length == board.flatten.length or (($encmbr.nil?) ? nil : (rand() > ((100-$encmbr).to_f/100).to_f)))
+  return randomsquare(emptysquares) if emptysquares.length == board.flatten.length or (($encmbr.nil?) ? nil : (rand() > ((100-$encmbr).to_f/100).to_f))
   $foo = 0
-  return (predictwin = computerpredictwin(board, emptysquares, val)) if predictwin
-  return (predictloss = computerpredictwin(board, emptysquares, otherval(val))) if predictloss
+  [val,otherval(val)].each do |v|
+    predictwin = computerpredictwin(board, emptysquares, v)
+    return predictwin if predictwin
+  end
   best_move = minimax(board,val)
   return [best_move[:r], best_move[:c]]
 end
@@ -66,11 +68,11 @@ def minimax(board, val, maximising_player = true)
     row.map.with_index do |cell,j|
       if cell.nil?
         tmpboard = board.map { |row| row.map { |cell| cell } }
+        
         tmpboard[i][j] = val
         
         board_state = minimax(tmpboard, otherval(val), !maximising_player)
         $foo += 1   # A global variable used to store the number of iterations
-        
         if (maximising_player)
           if (board_state[:score] > best_move[:score])
             best_move[:score] = board_state[:score]

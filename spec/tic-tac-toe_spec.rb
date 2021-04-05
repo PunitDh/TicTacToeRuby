@@ -85,4 +85,27 @@ describe Game do
 		expect(move).to eq([1,1])
 		game.entermove(move, 1)
 	end
+
+	it 'should return the value at any given square, i.e. X, O or nil' do
+		game = Game.new
+		game.entermove([0,0], 0)
+		game.entermove([0,1], 1)
+		game.entermove([1,1], 0)
+		game.entermove([1,2], 1)
+		expect(game.get(0,1)).to be(1)
+		expect(game.get(1,1)).to be(0)
+		expect(game.get(0,2)).to be(nil)
+	end
+
+	it 'should swap the turn and return the opponent piece, i.e. either 1 or 0' do
+		expect(otherval(1)).to be(0)
+		expect(otherval(0)).to be(1)
+	end
+
+	it 'should find the player that holds either X or O, i.e. 1 or 0' do
+		game = Game.new
+		Player.new()
+		expect(otherval(1)).to be(0)
+		expect(otherval(0)).to be(1)
+	end	
 end

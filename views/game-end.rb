@@ -26,4 +26,5 @@ def endgame(game)
   end
   puts "\n\n\t\tResults automatically saved to ./gameresults.txt\n\n\n"
   File.write('./gameresults.txt', game.moverecord.to_s + "\n", mode: 'a')
+  # game.board_reset()
 end

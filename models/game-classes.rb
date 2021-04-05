@@ -19,6 +19,14 @@ class Player
 	def self.find(val)
 		PLAYERS.detect { |player| player.val == val }
 	end
+
+	def self.to_s
+		PLAYERS.to_s
+	end
+
+	def self.reset
+		PLAYERS.clear
+	end
 end
 
 #############################################################################
@@ -63,10 +71,11 @@ class Game
 	end
 
 	def startgame(simulation_mode = false)
+		board_reset()
 		if (!simulation_mode)
 			@playermode = chooseplayermode()
+			Player.reset
 			@player = getplayernames(@playermode)
-			# showtitleprompts()
 			gameloop(self)
 		else
 			@player = getplayernames(1)
@@ -89,6 +98,7 @@ class Game
 		@board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
 		@moverecord = MoveRecord.new
 		@board_display = displayboard()
+		
 	end
 
 	def entermove(coord, val)
