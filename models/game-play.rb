@@ -10,7 +10,7 @@ def playermove(game, currentplayer)
   end while not cmd_parse
   game.moverecord.push(cmd_parse)
   game.entermove(cmd_parse,currentplayer.val)
-  currentplayer = Player.find(otherval(currentplayer.val))
+  currentplayer = Player.find(swapval(currentplayer.val))
 end
 
 #############################################################################

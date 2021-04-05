@@ -4,18 +4,18 @@
 def chooseplayermode()
 	prompt = TTY::Prompt.new(symbols: {marker: " "})
 	choices = {"\n\n\t\t\t\t\t   (1)-Player Mode": 1, "\n\t\t\t\t\t   (2)-Player Mode": 2}
-	playermode = prompt.select("\n\n\t\t\t\t\tChoose (1)-player or (2)-player mode:", choices, show_help: :never)
-	return playermode
+	return prompt.select("\n\n\t\t\t\t\tChoose (1)-player or (2)-player mode:", choices, show_help: :never)
 end
 
 #################################################################################
 # A method used to generate a cointoss, assign X and O
 #################################################################################
 def cointoss(players)
-	vals = ['O','X']
 	ctoss = rand().round
-	player[0].str, player[0].val = vals[ctoss], ctoss
-	player[1].str, player[1].val = vals[otherval(ctoss)], otherval(ctoss)
+	players.each do |player|
+		ctoss = swapval(ctoss)
+		player.setval(ctoss)
+	end
 	return [Player.find(1), ['T','H'][ctoss]]
 end
 

@@ -98,14 +98,14 @@ describe Game do
 	end
 
 	it 'should swap the turn and return the opponent piece, i.e. either 1 or 0' do
-		expect(otherval(1)).to be(0)
-		expect(otherval(0)).to be(1)
+		expect(swapval(1)).to be(0)
+		expect(swapval(0)).to be(1)
 	end
 
 	it 'should find the player that holds either X or O, i.e. 1 or 0' do
 		game = Game.new
-		Player.new()
-		expect(otherval(1)).to be(0)
-		expect(otherval(0)).to be(1)
+		Player.new("Player 1", 1, 'X')
+		expect(swapval(1)).to be(0)
+		expect(swapval(0)).to be(1)
 	end	
 end

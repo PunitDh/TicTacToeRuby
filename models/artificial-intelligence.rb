@@ -9,7 +9,7 @@ def computermove(game, currentplayer)
   print "\"#{command_response.join()}\"\n"
   game.entermove(computer_response,currentplayer.val)
   print "\n\t\tPerformed #{$foo} iterations...\n" if ($foo > 0)
-  return Player.find(otherval(currentplayer.val))
+  return Player.find(swapval(currentplayer.val))
 end
 
 ################################################################################################
@@ -19,7 +19,7 @@ def computerresponse(board, val)
   emptysquares = findemptysquares(board)
   return randomsquare(emptysquares) if emptysquares.length == board.flatten.length or (($encmbr.nil?) ? nil : (rand() > ((100-$encmbr).to_f/100).to_f))
   $foo = 0
-  [val,otherval(val)].each do |v|
+  [val,swapval(val)].each do |v|
     predictwin = computerpredictwin(board, emptysquares, v)
     return predictwin if predictwin
   end
@@ -71,7 +71,7 @@ def minimax(board, val, maximising_player = true)
         
         tmpboard[i][j] = val
         
-        board_state = minimax(tmpboard, otherval(val), !maximising_player)
+        board_state = minimax(tmpboard, swapval(val), !maximising_player)
         $foo += 1   # A global variable used to store the number of iterations
         if (maximising_player)
           if (board_state[:score] > best_move[:score])
@@ -104,6 +104,6 @@ end
 ################################################################################################
 # A method that returns the opponent's piece
 ################################################################################################
-def otherval(val)
-	(val-1).abs
+def swapval(val)
+	1-val
 end

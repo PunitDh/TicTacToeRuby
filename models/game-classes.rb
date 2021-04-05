@@ -20,8 +20,13 @@ class Player
 		PLAYERS.detect { |player| player.val == val }
 	end
 
-	def self.to_s
-		PLAYERS.to_s
+	def self.names
+		[Player.find(1).name + ": " + Player.find(1).str, Player.find(0).name + ": " +Player.find(0).str]
+	end
+
+	def setval(val)
+		@val = val
+		@str = ['O','X'][val]
 	end
 
 	def self.reset
@@ -66,15 +71,15 @@ class Game
 	attr_reader :commands, :playermode, :player, :board, :board_display
 
 	def initialize
-		board_reset()
+		reset()
 		@commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
 	end
 
 	def startgame(simulation_mode = false)
-		board_reset()
+		reset()
 		if (!simulation_mode)
-			@playermode = chooseplayermode()
 			Player.reset
+			@playermode = chooseplayermode()
 			@player = getplayernames(@playermode)
 			gameloop(self)
 		else
@@ -83,18 +88,11 @@ class Game
 		end
 	end
 
-	def playernames
-		pl = []
-		pl[0] = Player.find(1)
-		pl[1] = Player.find(0)
-		[pl[0].name + ": " + pl[0].str, pl[1].name + ": " + pl[1].str]
-	end
-
 	def players
 		@player
 	end
 
-	def board_reset()
+	def reset()
 		@board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
 		@moverecord = MoveRecord.new
 		@board_display = displayboard()

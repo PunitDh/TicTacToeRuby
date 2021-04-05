@@ -13,7 +13,7 @@ $encmbr = 0       # A global variable for encumbrance percentage % (default: 0))
 #############################################################################
 def gameloop(game)
   nextplayer = selectfirstplayer(game.players)
-  game.moverecord.setplayers(game.playernames)
+  game.moverecord.setplayers(Player.names)
   showboard(game)
 
   # Game loop
@@ -37,12 +37,12 @@ def gameloopsim(game)
 
   ([nsim.to_i,1000].min).times do # To prevent crashes, the max number of simulations is capped at 1000
     nextplayer = cointoss(game.players)[0]
-    game.moverecord.setplayers(game.playernames)
+    game.moverecord.setplayers(Player.names)
       
     begin
       nextplayer = computermove(game,nextplayer)  
     end while not (checkgameover(game))
     endgame(game)
-    game.board_reset()
+    game.reset()
   end
 end

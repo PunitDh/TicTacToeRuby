@@ -66,3 +66,7 @@
 {:Players=>["Computer: X", "Player 1: O"], :Moves=>[[1, 0], [0, 0], [0, 1], [1, 1], [2, 2], [0, 2], [2, 0], [2, 1], [1, 2]], :Winner=>"Draw"}
 {:Players=>["Player 1: X", "Computer: O"], :Moves=>[[0, 2], [1, 1], [0, 0], [0, 1], [2, 1], [1, 0], [1, 2], [2, 2], [2, 0]], :Winner=>"Draw"}
 {:Players=>["Computer: X", "Player 1: O"], :Moves=>[[1, 2], [0, 2], [0, 0], [1, 0], [0, 1], [1, 1], [2, 0], [2, 1], [2, 2]], :Winner=>"Draw"}
+{:Players=>["Player 1: X", "Computer: O"], :Moves=>[[0, 1], [0, 0], [2, 0], [1, 1], [1, 2], [2, 2]], :Winner=>"Computer: O"}
+{:Players=>["Computer: X", "Player 1: O"], :Moves=>[[1, 1], [1, 2], [0, 0], [0, 2], [2, 2]], :Winner=>"Computer: X"}
+{:Players=>["Computer: X", "Player 1: O"], :Moves=>[[0, 1], [1, 0], [0, 0], [0, 2], [1, 1], [2, 0], [2, 1]], :Winner=>"Computer: X"}
+{:Players=>["Player 1: X", "Computer: O"], :Moves=>[[0, 1], [0, 0], [0, 2], [1, 0], [2, 0], [1, 1], [2, 2], [1, 2]], :Winner=>"Computer: O"}
