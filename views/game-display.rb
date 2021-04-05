@@ -13,7 +13,8 @@ end
 # A method used to generate the board display
 #############################################################################
 def displayboard()
-	return board_display = ["     1   2   3  ",
+	return [
+    "     1   2   3  ",
 		"   ┌───┬───┬───┐",
 		" A │   │   │   │",
 		"   ├───┼───┼───┤",

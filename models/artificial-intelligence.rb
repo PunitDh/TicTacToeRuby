@@ -63,7 +63,6 @@ def minimax(board, val, maximising_player = true)
   end
 
   best_move[:score] = maximising_player ? -2 : 2
-
   board.map.with_index do |row,i|
     row.map.with_index do |cell,j|
       if cell.nil?
