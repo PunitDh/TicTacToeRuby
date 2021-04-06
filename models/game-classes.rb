@@ -126,9 +126,13 @@ class Game
 		linesUUIDs = []
 		file = File.open(@filename)
 		File.foreach(@filename).with_index do |line,i|
-			eachline = JSON.parse(line)
+			begin
+				eachline = JSON.parse(line)
+			rescue StandardError => exception
+				return puts "\t\t"+"-"*75+"\n\t\tUnable to load game save file.\n\n\t\tThe game save file \"#{@filename}\" is either corrupt or appears to have been tampered with.\n\n\t\tPlease delete the file \"#{@filename}\" and create a new one.\n\t\t"+"-"*75
+			end
 			lines << eachline
-			linesUUIDs << {"Game ID: " + eachline["UUID"][0..7].to_s => i}
+			linesUUIDs << {("Game ID: " + eachline["UUID"][0..7].to_s).center(90) => i}
 		 nlines += 1
 		end
 		puts "\n Total number of games to load from: #{nlines}"
@@ -143,7 +147,8 @@ class Game
 		newarray.push(["--------","--------"])
 		newarray.push(["Winner: ",lines[request]["Winner"]])
 		table = TTY::Table.new(lines[request]["Players"], newarray)
-		puts table.render(:ascii)
+		table_parse = table.render(:ascii).split("\n")
+		table_parse.each { |table_line| puts table_line.center(90) }
 		file.close
 	end
 end

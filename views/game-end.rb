@@ -26,5 +26,4 @@ def endgame(game)
   end
   puts "\n\n\t\tResults automatically saved to #{game.moverecord.filename}\n\n\n"
   File.write(game.moverecord.filename,(game.moverecord.record).to_json + "\n", mode: 'a')
-  # game.reset()
 end
