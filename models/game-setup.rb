@@ -13,8 +13,8 @@ end
 def cointoss(players)
 	ctoss = rand().round
 	players.each do |player|
-		ctoss = swapval(ctoss)
 		player.setval(ctoss)
+		ctoss = swapval(ctoss)
 	end
 	return [Player.find(1), ['T','H'][ctoss]]
 end
@@ -36,7 +36,7 @@ def showtitlescreen(board_display)
 	\t║        ▀▀█▀▀  ▀  █▀▀    ▀▀█▀▀ █▀▀█ █▀▀    ▀▀█▀▀ █▀▀█ █▀▀                  ║
 	\t║          █   ▀█▀ █   ▀▀   █   █▄▄█ █   ▀▀   █   █  █ █▀▀                  ║
 	\t║          █   ▀▀▀ ▀▀▀      █   ▀  ▀ ▀▀▀      █   ▀▀▀▀ ▀▀▀                  ║
-	\t║                                                        V"+$version.to_s+"               ║
+	\t║                                                 Version "+$version.to_s+"               ║
 	\t║                     "+"Created by Punit Dh".black.blink+"                                   ║
 	\t║" + " "*75+"║
 	\t╚" + "═"*75+"╝\n"

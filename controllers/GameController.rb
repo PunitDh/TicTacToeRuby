@@ -1,7 +1,7 @@
 require_relative "../models/game-classes.rb"
 require_relative "../views/game-help.rb"
 
-$version = 1.2
+$version = 1.5
 
 module GameController
 	@game = Game.new
