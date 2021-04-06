@@ -2,7 +2,10 @@
 
 require_relative "./controllers/GameController.rb"
 require_relative "./models/game-setup.rb"
-require 'tty-prompt'
+require "tty-prompt"
+require "tty-file"
+require "tty-table"
+require "colorize"
 
 ####################################################################################
 ##########################         START THE GAME         ##########################
@@ -16,9 +19,18 @@ prompt = TTY::Prompt.new(symbols: {marker: " "})
 
 # Ask for user prompt
 begin
-	puts "\n\n"
-	choices = {"New Game\n".center(100) => 1, "Simulation Mode\n".center(100) => 2, "Instructions\n".center(100) => 3, "Load Previous Games\n" => 4, "Quit Game\n".center(100) => 0}
-	request = prompt.select("Choose from below: (Use ↑↓ arrow keys to select)\n".center(100), choices, show_help: :never)
+	puts "\n"
+	halign = 95
+	choices = 
+	{
+		"New Game".center(halign) => 1,
+		"Simulation Mode".center(halign) => 2,
+		"Instructions".center(halign) => 3,
+		"Load Previous Games".center(halign) => 4,
+		"Quit Game".center(halign) => 0
+	}
+	
+	request = prompt.select("Choose from below: (Use ↑↓ arrow keys to select)\n".center(100), choices, show_help: :never, cycle: true)
 
 	GameController::create 			if request == 1
 	GameController::simulation 		if request == 2

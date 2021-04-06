@@ -4,7 +4,7 @@
 def chooseplayermode()
 	prompt = TTY::Prompt.new(symbols: {marker: " "})
 	choices = {"\n\n\t\t\t\t\t   (1)-Player Mode": 1, "\n\t\t\t\t\t   (2)-Player Mode": 2}
-	return prompt.select("\n\n\t\t\t\t\tChoose (1)-player or (2)-player mode:", choices, show_help: :never)
+	return prompt.select("\n\n\t\t\t\t\tChoose (1)-player or (2)-player mode:", choices, show_help: :never, cycle: true)
 end
 
 #################################################################################
@@ -36,8 +36,8 @@ def showtitlescreen(board_display)
 	\t║        ▀▀█▀▀  ▀  █▀▀    ▀▀█▀▀ █▀▀█ █▀▀    ▀▀█▀▀ █▀▀█ █▀▀                  ║
 	\t║          █   ▀█▀ █   ▀▀   █   █▄▄█ █   ▀▀   █   █  █ █▀▀                  ║
 	\t║          █   ▀▀▀ ▀▀▀      █   ▀  ▀ ▀▀▀      █   ▀▀▀▀ ▀▀▀                  ║
-	\t║                                                        V1.2               ║
-	\t║                     "+"Created by Punit Dh".on_white.blink+"                                   ║
+	\t║                                                        V"+$version.to_s+"               ║
+	\t║                     "+"Created by Punit Dh".black.blink+"                                   ║
 	\t║" + " "*75+"║
 	\t╚" + "═"*75+"╝\n"
 	

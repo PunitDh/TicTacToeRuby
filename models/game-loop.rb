@@ -3,7 +3,7 @@ require_relative "./artificial-intelligence.rb"
 require_relative "./game-play.rb"
 require_relative "../views/game-end.rb"
 require_relative "./game-logic.rb"
-require "colorize"
+
 
 $foo    = 0       # A global variable used to store the number of iterations
 $encmbr = 0       # A global variable for encumbrance percentage % (default: 0))

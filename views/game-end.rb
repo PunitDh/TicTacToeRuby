@@ -24,7 +24,7 @@ def endgame(game)
 
     game.moverecord.setwinner("Draw")
   end
-  puts "\n\n\t\tResults automatically saved to ./gameresults.txt\n\n\n"
-  File.write('./gameresults.txt', game.moverecord.to_s + "\n", mode: 'a')
+  puts "\n\n\t\tResults automatically saved to #{game.moverecord.filename}\n\n\n"
+  File.write(game.moverecord.filename,(game.moverecord.record).to_json + "\n", mode: 'a')
   # game.reset()
 end

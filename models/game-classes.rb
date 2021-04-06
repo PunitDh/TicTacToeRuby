@@ -1,5 +1,8 @@
 require_relative "../views/game-display.rb"
 require_relative "./game-loop.rb"
+require "uuid"
+require "json"
+require "tty-table"
 
 #############################################################################
 # The Player class initialises the player
@@ -38,8 +41,12 @@ end
 # The MoveRecord module creates a record of moves to save to a JSON file
 #############################################################################  
 class MoveRecord
-	def initialize
-		@record = {"Players": [], "Moves": [], "Winner": nil}
+	attr_reader :filename, :record
+
+	def initialize(filename = "./gameresults.json")
+		uuid = UUID.new
+		@record = {"UUID": uuid.generate, "Players": [], "Moves": [], "Winner": nil}
+		@filename = filename
 	end
 
 	def setplayers(players)
@@ -68,11 +75,12 @@ end
 #############################################################################
 class Game
 	attr_accessor :moverecord
-	attr_reader :commands, :playermode, :player, :board, :board_display
-
+	attr_reader :commands, :playermode, :player, :board, :board_display, :filename
+	
 	def initialize
 		reset()
 		@commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
+		@filename = "./gameresults.json"
 	end
 
 	def startgame(simulation_mode = false)
@@ -94,7 +102,7 @@ class Game
 
 	def reset()
 		@board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
-		@moverecord = MoveRecord.new
+		@moverecord = MoveRecord.new(@filename)
 		@board_display = displayboard()
 		
 	end
@@ -108,5 +116,34 @@ class Game
 
 	def get(row, col)
 		board[row][col]
+	end
+
+	def load()
+		prompt = TTY::Prompt.new(symbols: {marker: " "})
+		
+		nlines = 0
+		lines = []
+		linesUUIDs = []
+		file = File.open(@filename)
+		File.foreach(@filename).with_index do |line,i|
+			eachline = JSON.parse(line)
+			lines << eachline
+			linesUUIDs << {"Game ID: " + eachline["UUID"][0..7].to_s => i}
+		 nlines += 1
+		end
+		puts "\n Total number of games to load from: #{nlines}"
+		puts "\n"
+		puts ""
+		request = prompt.select("Choose which game to display: ".center(100), linesUUIDs, show_help: :never, cycle: true)
+		moves = lines[request]["Moves"]
+		newarray = []
+		moves.each.with_index do |move,i|
+			newarray.push (i % 2 == 0) ? [arraytocommandsparser(move, @commands).join,""] : ["",arraytocommandsparser(move, @commands).join]
+		end
+		newarray.push(["--------","--------"])
+		newarray.push(["Winner: ",lines[request]["Winner"]])
+		table = TTY::Table.new(lines[request]["Players"], newarray)
+		puts table.render(:ascii)
+		file.close
 	end
 end
