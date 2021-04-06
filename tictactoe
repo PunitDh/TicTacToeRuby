@@ -26,6 +26,7 @@ if not ARGV[0]
 	# Initialise variables
 	prompt = TTY::Prompt.new(symbols: {marker: " "})
 	halign = 95
+<<<<<<< HEAD
 
 	# Ask for user prompt
 	begin
@@ -53,3 +54,27 @@ if not ARGV[0]
 	puts "Goodbye!".center(halign)
 	puts "\n\n"
 end
+=======
+	choices = 
+	{
+		"New Game".center(halign) => 1,
+		"Simulation Mode".center(halign) => 2,
+		"Instructions".center(halign) => 3,
+		"Load Previous Games".center(halign) => 4,
+		"Quit Game".center(halign) => 5
+	}
+	
+	request = prompt.select("Choose from below: (Use ↑↓ arrow keys to select)\n".center(100), choices, show_help: :never, cycle: true)
+
+	GameController::create 			if request == 1
+	GameController::simulation 		if request == 2
+	GameController::instructions	if request == 3
+	GameController::load_games		if request == 4
+	request = prompt.select("Are you sure you want to quit?\n".center(100), {"Yes".center(100)=>0, "No".center(100)=>5}, show_help: :never, cycle: true) if request == 5
+end until request == 0
+
+# End of game
+puts "\n\n"
+puts "Goodbye!".center(100)
+puts "\n\n"
+>>>>>>> 95ba0f5a3320a59d9e47942f04aa3b6ede77ab60
