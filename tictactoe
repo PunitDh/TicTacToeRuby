@@ -27,7 +27,7 @@ begin
 		"Simulation Mode".center(halign) => 2,
 		"Instructions".center(halign) => 3,
 		"Load Previous Games".center(halign) => 4,
-		"Quit Game".center(halign) => 0
+		"Quit Game".center(halign) => 5
 	}
 	
 	request = prompt.select("Choose from below: (Use ↑↓ arrow keys to select)\n".center(100), choices, show_help: :never, cycle: true)
@@ -36,7 +36,7 @@ begin
 	GameController::simulation 		if request == 2
 	GameController::instructions	if request == 3
 	GameController::load_games		if request == 4
-	
+	request = prompt.select("Are you sure you want to quit?\n".center(100), {"Yes".center(100)=>0, "No".center(100)=>5}, show_help: :never, cycle: true) if request == 5
 end until request == 0
 
 # End of game
