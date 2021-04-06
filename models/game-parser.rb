@@ -34,7 +34,8 @@ def commandparser(game, command)
       when "C"
         commands[0] = 2
       when "H"
-        showhelp(game)            #   command1  command1.nil
+        showhelp()            #   command1  command1.nil
+        tmpgets
         return -2                 #     nil         emp
       when "R"                    #
         return false if not command[1].nil?

@@ -80,7 +80,7 @@ class Game
 	def initialize
 		reset()
 		@commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
-		@filename = "./gameresults.json"
+		@filename = "./gameresults-1000-sims.json"
 	end
 
 	def startgame(simulation_mode = false)
@@ -88,6 +88,7 @@ class Game
 		if (!simulation_mode)
 			Player.reset
 			@playermode = chooseplayermode()
+			return if @playermode == 0
 			@player = getplayernames(@playermode)
 			gameloop(self)
 		else

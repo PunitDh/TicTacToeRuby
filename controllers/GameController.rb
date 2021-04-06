@@ -1,8 +1,6 @@
 require_relative "../models/game-classes.rb"
 require_relative "../views/game-help.rb"
 
-$version = 1.5
-
 module GameController
 	@game = Game.new
 
@@ -15,7 +13,8 @@ module GameController
 	end
 
 	def self.instructions
-		showhelp(@game)
+		showhelp()
+		tmpgets
 	end
 
 	def self.load_games

@@ -1,4 +1,5 @@
 require_relative "../models/game-classes.rb"
+require "colorize"
 
 describe Game do
 	it 'should create an empty board on initialization' do
