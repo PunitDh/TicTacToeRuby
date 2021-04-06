@@ -1,3 +1,5 @@
+require 'date'
+
 #############################################################################
 # A method that ends the game
 #############################################################################
@@ -25,5 +27,6 @@ def endgame(game)
     game.moverecord.setwinner("Draw")
   end
   puts "\n\n\t\tResults automatically saved to #{game.moverecord.filename}\n\n\n"
+  game.moverecord.record[:DateTime] = Time.now.strftime("%d/%m/%Y %H:%M:%S")
   File.write(game.moverecord.filename,(game.moverecord.record).to_json + "\n", mode: 'a')
 end
