@@ -5,9 +5,6 @@
 {"UUID":"5477e200-78b7-0139-a657-5a5f89656090","DateTime":"06/04/2021 13:37:27","Players":["Player 1: X","Computer: O"],"Moves":[[1,0],[0,0],[0,1],[1,1],[2,2],[0,2],[2,0],[2,1],[1,2]],"Winner":"Draw"}
 {"UUID":"d118f2c0-78b7-0139-a65d-5a5f89656090","DateTime":"06/04/2021 13:41:04","Players":["d: X","Computer: O"],"Moves":[[1,0],[0,0],[2,0],[0,1],[1,1],[0,2]],"Winner":"Computer: O"}
 {"UUID":"d1e2ec60-78b8-0139-a681-5a5f89656090","DateTime":"06/04/2021 13:48:22","Players":["Computer: X","Player 1: O"],"Moves":[[1,2],[0,1],[0,2],[2,2],[1,1],[2,0],[1,0]],"Winner":"Computer: X"}
-<<<<<<< HEAD
 {"UUID":"dc3dbd20-78ce-0139-c0d2-56f137dafaec","DateTime":"06/04/2021 16:25:58","Players":["Computer: X","Player 1: O"],"Moves":[[2,0],[0,0],[0,2],[2,1],[1,1]],"Winner":"Computer: X"}
 {"UUID":"e1780c80-78ce-0139-c0d3-56f137dafaec","DateTime":"06/04/2021 16:26:03","Players":["Computer: X","Player 1: O"],"Moves":[[2,1],[0,1],[0,0],[2,0],[0,2],[1,1],[1,0],[1,2],[2,2]],"Winner":"Draw"}
 {"UUID":"2428ead0-78cf-0139-c0d7-56f137dafaec","DateTime":"06/04/2021 16:27:56","Players":["Player 1: X","Computer: O"],"Moves":[[1,2],[0,2],[0,0],[1,0],[0,1],[1,1],[2,0],[2,1],[2,2]],"Winner":"Draw"}
-=======
->>>>>>> 95ba0f5a3320a59d9e47942f04aa3b6ede77ab60

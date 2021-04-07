@@ -80,7 +80,7 @@ class Game
 	def initialize
 		reset()
 		@commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
-		@filename = "./gameresults-1000-sims.json"
+		@filename = "./gameresults.json"
 	end
 
 	def startgame(simulation_mode = false)

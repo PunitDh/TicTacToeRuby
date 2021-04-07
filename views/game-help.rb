@@ -9,5 +9,5 @@ def showhelp()
 end
 
 def showversion()
-	puts $gamename + "\t" + $version.to_s
+	puts "\n" + $gamename + "\t" + $version.to_s + "\n"
 end

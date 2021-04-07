@@ -52,5 +52,5 @@ end
 # A method used to get a 'nil' user input
 #############################################################################
 def tmpgets
-	tmp = gets.chomp
+	tmp = $stdin.gets
 end

@@ -40,10 +40,10 @@ if not ARGV[0]
 		}
 		
 		request = prompt.select("Choose from below: (Use ↑↓ arrow keys to select)\n".center(halign), choices, show_help: :never, cycle: true)
-		GameController::create 			if request == 1
-		GameController::simulation 		if request == 2
-		GameController::instructions	if request == 3
-		GameController::load_games		if request == 4
+		GameController::create          if request == 1
+		GameController::simulation      if request == 2
+		GameController::instructions    if request == 3
+		GameController::load_games      if request == 4
 		request = prompt.select("Are you sure you want to quit?\n".center(halign), {"Yes".center(halign)=>0, "No".center(halign)=>5}, show_help: :never, cycle: true) if request == 5
 	end until request == 0
 

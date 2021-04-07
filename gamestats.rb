@@ -7,7 +7,7 @@ require './models/game-parser.rb'
 require './models/game-classes.rb'
 require 'time'
 
-def gamestats(filename = "gameresults-1000-sims.json")
+def gamestats(filename = "gameresults.json")
 	commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
 	prompt = TTY::Prompt.new(symbols: {marker: " "})
 	nlines = 0
