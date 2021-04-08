@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
 require_relative "./controllers/GameController.rb"
-require_relative "./models/game-setup.rb"
-require_relative "./views/TitleScreen.rb"
 require_relative "./gamestats.rb"
+require_relative "./views/Prompts.rb"
+require_relative "./views/Display.rb"
 require "tty-prompt"
 require "colorize"
 require "tty-box"
@@ -13,13 +13,13 @@ require "tty-box"
 ####################################################################################
 
 # Check command-line arguments
-showhelp()		if ["--h", "-h", "--help", "-help"].include? ARGV[0]
-showversion()	if ["--v", "-v", "--ver", "-ver", "--version", "-version"].include? ARGV[0]
-showabout()		if ["--a", "-a", "--about", "-about"].include? ARGV[0]
+Views::GameHelp::showhelp()		if ["--h", "-h", "--help", "-help"].include? ARGV[0]
+Views::GameHelp::showversion()	if ["--v", "-v", "--ver", "-ver", "--version", "-version"].include? ARGV[0]
+Views::GameHelp::showabout()	if ["--a", "-a", "--about", "-about"].include? ARGV[0]
 (ARGV[1].nil? ? gamestats() : gamestats(ARGV[1])) 	if ["--gs", "-stats", "--gamestats", "-gs", "--stats", "-gamestats"].include? ARGV[0]
 
 if not ARGV[0]
-	Views::TitleScreen::show()
+	Views::Display::titlescreen()
 	halign = 95
 
 	# Ask for user prompt
@@ -35,12 +35,12 @@ if not ARGV[0]
 			"Quit Game".center(halign)				=> 5
 		}
 		
-		request = prompt("Choose from below: (Use ↑↓ arrow keys to select)", choices)
+		request = Views::Prompts::prompt("Choose from below: (Use ↑↓ arrow keys to select)", choices)
 		GameController::create          if request == 1
 		GameController::simulation      if request == 2
 		GameController::instructions    if request == 3
 		GameController::load_games      if request == 4
-		request = prompt("Are you sure you want to quit?", {"Yes".center(halign)=>0, "No".center(halign)=>5}) if request == 5
+		request = Views::Prompts::prompt("Are you sure you want to quit?", {"Yes".center(halign)=>0, "No".center(halign)=>5}) if request == 5
 	end until request == 0
 
 	# End of game

@@ -1,10 +1,8 @@
 require_relative "./game-parser.rb"
 require_relative "./artificial-intelligence.rb"
-require_relative "./game-play.rb"
 require_relative "./game-logic.rb"
-require_relative "../views/game-display.rb"
-require_relative "../views/DisplayBoard.rb"
 require_relative "./MoveRecord.rb"
+require_relative "../views/Display.rb"
 require_relative "./Player.rb"
 require "uuid"
 require "json"
@@ -21,72 +19,28 @@ class Game
 	attr_accessor :moverecord
 	attr_reader :commands, :playermode, :player, :board, :board_display, :filename
 	
-	
-	# Initialise the Game class
+	########### Initialise the Game class ###############################################
 	def initialize
 		reset()
 		@commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
 		@filename = "./gameresults.json"
+		@halign = 95
 	end
 
-	# A method to reset the board
+	########### Reset the board #######################################################
 	def reset()
 		@board = [[nil,nil,nil], [nil,nil,nil], [nil,nil,nil]]
 		@moverecord = MoveRecord.new(@filename)
-		@board_display = Views::DisplayBoard.board()
-		
+		@board_display = Views::Display::board()
 	end
 
-	# A method to set the value on the board
-	def entermove(coord, val)
-		drow,dcol = arraytodisplayparser(coord)
-		board[coord[0]][coord[1]] = val
-		board_display[drow][dcol] = ['O','X'][val]
-		showboard()
-	end
-
-	# A method to get the value on a particular square on the board
-	def get(row, col)
-		board[row][col]
-	end
-
-	# A method to get the player names and save them in a hash
-	def requestplayernames(playermode)
-		@player = Array.new    # Set default values below
-		@player[0] = Player.new("Player 1")
-		@player[1] = Player.new("Player 2")
-	
-		# Get player names
-		for i in 0..playermode-1
-		getname(@player[i], i)
-		@player[1].name = (playermode == 1) ? "Computer" : next
-		end
-	
-		# Welcome the players
-		print (playermode == 1) ? "\n\n\t\tWelcome #{@player[0].name}!" : "\n\n\t\tWelcome #{@player[0].name} and #{@player[1].name}!"
-		tmpgets
-	
-		return player
-	end
-
-	# A method to draw the board
-	def showboard()
-		@board_display.map.with_index do |row,i|
-		str = @board_display[i].split("X").join("X".light_red)
-		str = str.split("O").join("O".light_blue)
-		puts "\t\t\t\t\t" + str
-		end
-	end
-
-	#############################################################################
-	# The main GAME LOOP
-	#############################################################################
+	######### Start the main GAME LOOP ################################################
 	def startgame(simulation_mode=false)
-		halign = 95
+		
 		reset()
 		if not simulation_mode
 			Player.reset
-			@playermode = prompt("Choose (1)-player or (2)-player mode:", {"(1)-Player Mode".center(halign) => 1, "(2)-Player Mode".center(halign) => 2, "Cancel".center(halign) => 0} )
+			@playermode = Views::Prompts::prompt("Choose (1)-player or (2)-player mode:", {"(1)-Player Mode".center(@halign) => 1, "(2)-Player Mode".center(@halign) => 2, "Cancel".center(@halign) => 0} )
 			return if @playermode == 0
 			@player = requestplayernames(@playermode)
 
@@ -94,12 +48,9 @@ class Game
 			@moverecord.setplayers(Player.names)
 			showboard()
 		
-			# Game loop
 			begin
-				nextplayer = nextgameplayer?(self, nextplayer) ? computermove(self, nextplayer) : playermove(self, nextplayer)
+				nextplayer = nextgameplayer?(nextplayer) ? computermove(self, nextplayer) : playermove(nextplayer)
 			end while not (checkgameover())
-		
-			# Game end state
 			endgame()
 	
 		else
@@ -111,7 +62,7 @@ class Game
 			end while (nsim.to_i <= 0)
 		
 			([nsim.to_i,1000].min).times do # To prevent crashes, the max number of simulations is capped at 1000
-				nextplayer = cointoss(@player)[0]
+				nextplayer = cointoss()[0]
 				@moverecord.setplayers(Player.names)
 				
 				begin
@@ -123,16 +74,105 @@ class Game
 		end
 	end	
 
-	#############################################################################
-	# Load a saved game
-	#############################################################################
+	########### Set the value on the board #############################################
+	def entermove(coord, val)
+		drow,dcol = arraytodisplayparser(coord)
+		board[coord[0]][coord[1]] = val
+		board_display[drow][dcol] = ['O','X'][val]
+		showboard()
+	end
+
+	########### Get the value on a particular square on the board ######################
+	def get(row, col)
+		board[row][col]
+	end
+
+	########### Draw the board ########################################################
+	def showboard()
+		@board_display.map.with_index do |row,i|
+		str = @board_display[i].split("X").join("X".light_red)
+		str = str.split("O").join("O".light_blue)
+		puts "\t\t\t\t\t" + str
+		end
+	end
+
+	########## Get the player names and save them in a hash ############################
+	def requestplayernames(playermode)
+		@player = Array.new    # Set default values below
+		@player[0] = Player.new("Player 1")
+		@player[1] = Player.new("Player 2")
+	
+		# Get player names
+		for i in 0..playermode-1
+			@player[i].requestname(i)
+			@player[1].name = (playermode == 1) ? "Computer" : next
+		end
+	
+		# Welcome the players
+		print (playermode == 1) ? "\n\n\t\tWelcome #{@player[0].name}!" : "\n\n\t\tWelcome #{@player[0].name} and #{@player[1].name}!"
+		Views::Prompts::tmpgets
+	
+		return player
+	end
+
+	########## Generate a cointoss, assign X and O ###################################
+	def cointoss()
+		ctoss = rand().round
+		@player.each do |player|
+			player.setval(ctoss)
+			ctoss = swapval(ctoss)
+		end
+		return [Player.find(1), ['T','H'][ctoss]]
+	end	
+
+
+	########## Select first player based on cointoss results ##########################
+	def selectfirstplayer(player)
+		# Coin toss
+		print "\n\n\t\tTossing coin now...(Press ENTER to see coin toss results)"
+		Views::Prompts::tmpgets
+		currentplayer = cointoss()
+		puts "\n\t\tThe result of the coin toss is: \n\n"
+		puts "\t\t\t\t\t\t\t  -------  "
+		puts "\t\t\t\t\t\t\t/         \\"
+		puts "\t\t\t\t\t\t\t|    #{currentplayer[1]}    |"
+		puts "\t\t\t\t\t\t\t\\         /"
+		print "\t\t\t\t\t\t\t  -------- "
+		Views::Prompts::tmpgets
+	
+		puts "\n\t\t#{player[0].name} is \'#{player[0].str}\'. #{player[1].name} is \'#{player[1].str}\'.\n\n"
+		print "\t\t#{currentplayer[0].name} goes first..."
+		Views::Prompts::tmpgets
+	
+		return currentplayer[0]
+	end
+
+	######## Let the player play the next move#####################################################################
+	def playermove(currentplayer)
+		begin
+			print "\n\t\t#{currentplayer.name}, please enter a command (or \"H\" for Help): "
+			command = gets.chomp.strip.upcase.delete(' ')
+			puts "\n\t\tYou (#{currentplayer.str}) entered: \"#{command}\""
+			cmd_parse = validatecommand(self, command)
+		end while not cmd_parse
+
+		@moverecord.push(cmd_parse)
+		entermove(cmd_parse,currentplayer.val)
+		currentplayer = Player.find(swapval(currentplayer.val))
+	end
+	
+	######## # Return the next player #####################################################################
+	def nextgameplayer?(nextplayer)
+		return ((@playermode == 1) and (nextplayer == @player[1]))
+	end	
+
+	######### Load a saved game ###############################################################
 	def load()
 		nlines = 0
 		lines = []
 		linesUUIDs = []
 
 		file = File.open(@filename)
-		
 		File.foreach(@filename).with_index do |line,i|
 			begin
 				eachline = JSON.parse(line)
@@ -140,41 +180,40 @@ class Game
 				return puts "\t\t"+"-"*75+"\n\t\tUnable to load game save file.\n\n\t\tThe game save file \"#{@filename}\" is either corrupt or appears to have been tampered with.\n\n\t\tPlease delete the file \"#{@filename}\" and create a new one.\n\t\t"+"-"*75
 			end
 			lines << eachline
-			linesUUIDs << {("Game ID: " + eachline["UUID"][0..7].to_s + " @ " + eachline["DateTime"]).center(90) => i}
+			linesUUIDs << {("Game ID: " + eachline["UUID"][0..7].to_s + " @ " + eachline["DateTime"]).center(@halign) => i}
 		 nlines += 1
 		end
+		file.close
 
-		puts "\n Total number of games to load from: #{nlines}"
-		puts "\n"
-		puts ""
-
-		request = prompt("Choose which game to display: ", linesUUIDs)
+		puts "\n Total number of games to load from: #{nlines}\n\n\n"
+		request = Views::Prompts::prompt("Choose which game to display: ", linesUUIDs)
 		moves = lines[request]["Moves"]
 		movesarray = []
 		moves.each.with_index { |move,i| movesarray.push (i % 2 == 0) ? [arraytocommandsparser(move, @commands).join,""] : ["",arraytocommandsparser(move, @commands).join] }
 		movesarray.push(["--------","--------"])
 		movesarray.push(["Winner: ",lines[request]["Winner"]])
 		table = TTY::Table.new(lines[request]["Players"], movesarray)
-		table.render(:ascii).split("\n").each { |table_line| puts table_line.center(90) }
-		file.close
+		table.render(:ascii).split("\n").each { |table_line| puts table_line.center(@halign) }
 	end
 
-	# A method to check game over status
+
+	###### Check game over status ###############################################################################################
 	def checkgameover()
 		(checkdraw(@board) or checkwin(@board))
 	end
 
-	# A method that displays endgame
+
+	###### Displays endgame ###################################################################################################
 	def endgame()
 		winner = checkwin(@board)
 		puts "\n\n"
 		if (winner)
 			winnername = Player.find(winner)
 			@moverecord.setwinner(winnername.name + ": " + ['O','X'][winner])
-			printbox((@playermode == 1) ? "You lose!" : "#{winnername.name} won!")
+			Views::Display::printbox((@playermode == 1) ? "You lose!" : "#{winnername.name} won!")
 		
 		elsif (checkdraw(@board))
-			printbox("Game is a draw!")
+			Views::Display::printbox("Game is a draw!")
 			@moverecord.setwinner("Draw")
 		end
 

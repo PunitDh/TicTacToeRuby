@@ -21,6 +21,15 @@ class Player
 		[Player.find(1).name + ": " + Player.find(1).str, Player.find(0).name + ": " +Player.find(0).str]
 	end
 
+	#############################################################################
+	# A method to get the player names
+	#############################################################################
+	def requestname(index)
+		print "\n\t\tEnter #{@name} Name: "
+		@name = gets.chomp
+		@name = (@name.length == 0) ? "Player #{index+1}" : @name
+	end
+
 	def setval(val)
 		@val = val
 		@str = ['O','X'][val]

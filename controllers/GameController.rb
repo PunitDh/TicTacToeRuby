@@ -1,5 +1,5 @@
 require_relative "../models/Game.rb"
-require_relative "../views/game-help.rb"
+require_relative "../views/GameHelp.rb"
 
 module GameController
 	@game = Game.new
@@ -13,8 +13,7 @@ module GameController
 	end
 
 	def self.instructions
-		showhelp()
-		tmpgets
+		Views::GameHelp::showhelp()
 	end
 
 	def self.load_games
