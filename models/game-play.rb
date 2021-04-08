@@ -17,5 +17,5 @@ end
 # A method to let the next player play, returns "nextplayer"
 #############################################################################
 def nextgameplayer?(game, nextplayer)
-  return ((game.playermode == 1) and (nextplayer == game.players[1]))
+  return ((game.playermode == 1) and (nextplayer == game.player[1]))
 end

@@ -34,10 +34,10 @@ def commandparser(game, command)
       when "C"
         commands[0] = 2
       when "H"
-        showhelp()            #   command1  command1.nil
+        showhelp()
         tmpgets
-        return -2                 #     nil         emp
-      when "R"                    #
+        return -2
+      when "R"
         return false if not command[1].nil?
         randomsquare = randomsquare(findemptysquares(game.board))
         puts "\t\tRandom square: \"" + arraytocommandsparser(randomsquare, game.commands).join.to_s + "\""

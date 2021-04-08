@@ -1,4 +1,3 @@
-
 ################################################################################################
 # A method that lets the computer play
 ################################################################################################
@@ -32,7 +31,6 @@ end
 # A method that predicts the next move NO DEBUG MODE
 ################################################################################################
 def computerpredictwin(board, emptysquares, val)
-  tmpboard = Array.new
   emptysquares.map do |empty|
     tmpboard = board.map { |row| row.map { |cell| cell } }
     tmpboard[empty[0]][empty[1]] = val
@@ -52,7 +50,6 @@ end
 # The minimax recursion function - The brain of the program
 ################################################################################################
 def minimax(board, val, maximising_player = true)
-  tmpboard = Array.new
   best_move = {"r":nil, "c":nil, "score":0}
   
   if (checkwin(board))

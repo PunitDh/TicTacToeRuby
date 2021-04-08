@@ -32,9 +32,3 @@ def checkdraw(board)
 	return (board.flatten.compact.length == 9)
 end
 
-#############################################################################
-# A method to check game over status
-#############################################################################
-def checkgameover(game)
-	(checkdraw(game.board) or checkwin(game.board))
-end

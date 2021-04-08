@@ -1,4 +1,4 @@
-require_relative "../models/game-classes.rb"
+require_relative "../models/Game.rb"
 require_relative "../views/game-help.rb"
 
 module GameController

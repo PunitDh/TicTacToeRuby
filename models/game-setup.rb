@@ -1,12 +1,3 @@
-#############################################################################
-# A method used to choose the player mode
-#############################################################################
-def chooseplayermode()
-	prompt = TTY::Prompt.new(symbols: {marker: " "})
-	choices = {"\n\n\t\t\t\t\t   (1)-Player Mode": 1, "\n\t\t\t\t\t   (2)-Player Mode": 2, "\n\t\t\t\t\t   Cancel": 0}
-	return prompt.select("\n\n\t\t\t\t\tChoose (1)-player or (2)-player mode:", choices, show_help: :never, cycle: true)
-end
-
 #################################################################################
 # A method used to generate a cointoss, assign X and O
 #################################################################################

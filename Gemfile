@@ -17,3 +17,5 @@ gem "colorize", "~> 0.8.1"
 gem "tty-prompt", "~> 0.23.0"
 
 gem "uuid", "~> 2.3"
+
+gem "tty-box", "~> 0.7.0"

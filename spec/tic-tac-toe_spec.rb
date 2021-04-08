@@ -1,4 +1,4 @@
-require_relative "../models/game-classes.rb"
+require_relative "../models/Game.rb"
 require "colorize"
 
 describe Game do

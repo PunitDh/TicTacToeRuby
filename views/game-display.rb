@@ -1,48 +1,17 @@
-#############################################################################
-# A method to draw the board
-#############################################################################
-def showboard(game)
-    game.board_display.map.with_index do |row,i|
-      str = game.board_display[i].split("X").join("X".light_red)
-      str = str.split("O").join("O".light_blue)
-      puts "\t\t\t\t\t" + str
-    end
+###############################################################################################
+# A method used to print a message inside a box
+###############################################################################################
+def printbox(message, width: 25, height: 3, border: :thick)
+	box = (TTY::Box.frame message, width: width, height: height, border: border, align: :center).split("\n")
+  box.each { |line| print line.center(100)+"\n" }
 end
 
-#############################################################################
-# A method used to generate the board display
-#############################################################################
-def displayboard()
-	return [
-    "     1   2   3  ",
-		"   ┌───┬───┬───┐",
-		" A │   │   │   │",
-		"   ├───┼───┼───┤",
-		" B │   │   │   │",
-		"   ├───┼───┼───┤",
-		" C │   │   │   │",
-		"   └───┴───┴───┘"]
-end
-
-#############################################################################
-# A method to get the player names and save them in a hash
-#############################################################################
-def getplayernames(playermode)
-  player = Array.new    # Set default values below
-  player[0] = Player.new("Player 1")
-  player[1] = Player.new("Player 2")
-
-  # Get player names
-  for i in 0..playermode-1
-    getname(player[i], i)
-    player[1].name = (playermode == 1) ? "Computer" : next
-  end
-
-  # Welcome the players
-    print (playermode == 1) ? "\n\n\t\tWelcome #{player[0].name}!" : "\n\n\t\tWelcome #{player[0].name} and #{player[1].name}!"
-  tmpgets
-
-  return player
+###############################################################################################
+# A method used to print a message inside a box
+###############################################################################################
+def prompt(question, choices, halign: 95)
+	prompt = TTY::Prompt.new(symbols: {marker: " "})
+  return prompt.select("#{question}\n".center(halign), choices, show_help: :never, cycle: true)
 end
 
 #############################################################################

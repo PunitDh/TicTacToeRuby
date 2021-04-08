@@ -2,14 +2,12 @@
 
 require 'json'
 require 'tty-table'
-require 'tty-prompt'
 require './models/game-parser.rb'
-require './models/game-classes.rb'
+require './models/Game.rb'
 require 'time'
 
 def gamestats(filename = "gameresults.json")
 	commands = {"A"=>0, "B"=>1, "C"=>2, "H"=>-2}
-	prompt = TTY::Prompt.new(symbols: {marker: " "})
 	nlines = 0
 	lines = []
 	winners = []
@@ -53,5 +51,3 @@ def gamestats(filename = "gameresults.json")
 	timetaken = Time.parse(times[times.length-1]) - Time.parse(times[0])
 	print (timetaken / 60).floor.to_s + " mins " + (timetaken % 60).to_s + " seconds\n\n"
 end
-
-# gamestats()
