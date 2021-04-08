@@ -18,6 +18,7 @@ module Views
 		box.each { |line| print line.center(100)+"\n" }
 		end
 
+		###### Prints the title screen #################################################################################
 		def self.titlescreen()
 			# Title Screen
 			title = ["\n",

@@ -1,5 +1,5 @@
-require_relative "./game-parser.rb"
-require_relative "./artificial-intelligence.rb"
+require_relative "./Parser.rb"
+require_relative "./AI.rb"
 require_relative "./game-logic.rb"
 require_relative "./MoveRecord.rb"
 require_relative "../views/Display.rb"
@@ -49,7 +49,7 @@ class Game
 			showboard()
 		
 			begin
-				nextplayer = nextgameplayer?(nextplayer) ? computermove(self, nextplayer) : playermove(nextplayer)
+				nextplayer = nextgameplayer?(nextplayer) ? computermove(nextplayer) : playermove(nextplayer)
 			end while not (checkgameover())
 			endgame()
 	
@@ -66,7 +66,7 @@ class Game
 				@moverecord.setplayers(Player.names)
 				
 				begin
-					nextplayer = computermove(self,nextplayer)  
+					nextplayer = computermove(nextplayer)  
 				end while not (checkgameover())
 				endgame()
 				reset()
@@ -76,7 +76,7 @@ class Game
 
 	########### Set the value on the board #############################################
 	def entermove(coord, val)
-		drow,dcol = arraytodisplayparser(coord)
+		drow,dcol = Parser::arraytodisplayparser(coord)
 		board[coord[0]][coord[1]] = val
 		board_display[drow][dcol] = ['O','X'][val]
 		showboard()
@@ -147,26 +147,38 @@ class Game
 		return currentplayer[0]
 	end
 
-	######## Let the player play the next move#####################################################################
+	######## Let the player play the next move #####################################################################
 	def playermove(currentplayer)
 		begin
 			print "\n\t\t#{currentplayer.name}, please enter a command (or \"H\" for Help): "
 			command = gets.chomp.strip.upcase.delete(' ')
 			puts "\n\t\tYou (#{currentplayer.str}) entered: \"#{command}\""
-			cmd_parse = validatecommand(self, command)
+			cmd_parse = Parser::validatecommand(self, command)
 		end while not cmd_parse
 
 		@moverecord.push(cmd_parse)
 		entermove(cmd_parse,currentplayer.val)
 		currentplayer = Player.find(swapval(currentplayer.val))
 	end
+
+	####### Let the computer play the next move ####################################################################
+	def computermove(currentplayer)
+		computer_response = AI::response(@board, currentplayer.val)
+		print @moverecord.length == 0 ? "\n\n\t\tComputer's (#{currentplayer.str}) first move: " : "\n\t\tComputer (#{currentplayer.str}) responds: "
+		@moverecord.push(computer_response)
+		command_response = Parser::arraytocommandsparser(computer_response, @commands)
+		print "\"#{command_response}\"\n"
+		entermove(computer_response,currentplayer.val)
+		print "\n\t\tPerformed #{$foo} iterations...\n" if ($foo > 0)
+		return Player.find(swapval(currentplayer.val))
+	end
 	
-	######## # Return the next player #####################################################################
+	######## # Return the next player ###############################################################################
 	def nextgameplayer?(nextplayer)
 		return ((@playermode == 1) and (nextplayer == @player[1]))
 	end	
 
-	######### Load a saved game ###############################################################
+	######### Load a saved game ######################################################################################
 	def load()
 		nlines = 0
 		lines = []
@@ -189,7 +201,7 @@ class Game
 		request = Views::Prompts::prompt("Choose which game to display: ", linesUUIDs)
 		moves = lines[request]["Moves"]
 		movesarray = []
-		moves.each.with_index { |move,i| movesarray.push (i % 2 == 0) ? [arraytocommandsparser(move, @commands).join,""] : ["",arraytocommandsparser(move, @commands).join] }
+		moves.each.with_index { |move,i| movesarray.push (i % 2 == 0) ? [Parser::arraytocommandsparser(move, @commands),""] : ["",Parser::arraytocommandsparser(move, @commands)] }
 		movesarray.push(["--------","--------"])
 		movesarray.push(["Winner: ",lines[request]["Winner"]])
 		table = TTY::Table.new(lines[request]["Players"], movesarray)

@@ -46,11 +46,11 @@ describe Game do
 
 	it 'should check a user input to see whether it is valid' do
 		game = Game.new
-		expect(validatecommand(game,"A2")).to eq([0,1])
-		expect(validatecommand(game,"2A")).to eq([0,1])
-		expect(validatecommand(game,"231ABC")).to eq(false)
+		expect(Parser::validatecommand(game,"A2")).to eq([0,1])
+		expect(Parser::validatecommand(game,"2A")).to eq([0,1])
+		expect(Parser::validatecommand(game,"231ABC")).to eq(false)
 		game.entermove([1,1],1)
-		expect(validatecommand(game,"B2")).to eq(false)
+		expect(Parser::validatecommand(game,"B2")).to eq(false)
 	end
 
 	it 'should allow computer to make a winning move' do
@@ -60,7 +60,7 @@ describe Game do
 		game.entermove([1,1], 1)
 		game.entermove([1,2], 0)
 		emptysquares = findemptysquares(game.board)
-		move = computerpredictwin(game.board,emptysquares,1)
+		move = AI::predictwin(game.board,emptysquares,1)
 		expect(move).to eq([2,2])
 		game.entermove(move, 1)
 		expect(checkwin(game.board)).to be(1)
@@ -73,7 +73,7 @@ describe Game do
 		game.entermove([1,1], 0)
 		game.entermove([1,2], 1)
 		emptysquares = findemptysquares(game.board)
-		move = computerpredictwin(game.board,emptysquares,0)
+		move = AI::predictwin(game.board,emptysquares,0)
 		expect(move).to eq([2,2])
 		game.entermove(move, 0)
 		expect(checkwin(game.board)).to eq(0)
@@ -82,7 +82,7 @@ describe Game do
 	it 'find the best possible move' do
 		game = Game.new
 		game.entermove([0,0], 0)
-		move = computerresponse(game.board,1)
+		move = AI::response(game.board,1)
 		expect(move).to eq([1,1])
 		game.entermove(move, 1)
 	end

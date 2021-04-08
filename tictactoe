@@ -13,9 +13,9 @@ require "tty-box"
 ####################################################################################
 
 # Check command-line arguments
-Views::GameHelp::showhelp()		if ["--h", "-h", "--help", "-help"].include? ARGV[0]
-Views::GameHelp::showversion()	if ["--v", "-v", "--ver", "-ver", "--version", "-version"].include? ARGV[0]
-Views::GameHelp::showabout()	if ["--a", "-a", "--about", "-about"].include? ARGV[0]
+Views::GameInfo::showhelp()		if ["--h", "-h", "--help", "-help"].include? ARGV[0]
+Views::GameInfo::showversion()	if ["--v", "-v", "--ver", "-ver", "--version", "-version"].include? ARGV[0]
+Views::GameInfo::showabout()	if ["--a", "-a", "--about", "-about"].include? ARGV[0]
 (ARGV[1].nil? ? gamestats() : gamestats(ARGV[1])) 	if ["--gs", "-stats", "--gamestats", "-gs", "--stats", "-gamestats"].include? ARGV[0]
 
 if not ARGV[0]

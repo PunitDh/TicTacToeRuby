@@ -2,7 +2,7 @@
 
 require 'json'
 require 'tty-table'
-require './models/game-parser.rb'
+require './models/Parser.rb'
 require './models/Game.rb'
 require 'time'
 
@@ -40,7 +40,7 @@ def gamestats(filename = "gameresults.json")
 	firstmoveswithquantities = []
 	allmoves.each { |move| firstmoveswithquantities << [move, firstmoves.count(move)] }
 	quantities = firstmoveswithquantities.transpose[1]
-	p arraytocommandsparser(firstmoveswithquantities[quantities.index(quantities.max)][0], commands).join
+	p Parser::arraytocommandsparser(firstmoveswithquantities[quantities.index(quantities.max)][0], commands).join
 	puts ""
 	(players.uniq).each do |player|
 		print " - #{player[0][0..player[0].length-4]} started first: " + (players.count(player)).to_s + " times\n\n" 

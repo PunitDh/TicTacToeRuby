@@ -29,6 +29,5 @@ end
 # A method to check draw states
 #############################################################################
 def checkdraw(board)
-	return (board.flatten.compact.length == 9)
+	return (board.flatten.compact.length == board.flatten.length)
 end
-
