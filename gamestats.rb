@@ -37,10 +37,10 @@ def gamestats(filename = "gameresults.json")
 	print "\n - Most popular opening move: "
 	firstmoves = moves.map { |move| move }
 	allmoves = firstmoves.uniq
-	firstmoveswithquantities = []
-	allmoves.each { |move| firstmoveswithquantities << [move, firstmoves.count(move)] }
-	quantities = firstmoveswithquantities.transpose[1]
-	p Parser::arraytocommandsparser(firstmoveswithquantities[quantities.index(quantities.max)][0], commands).join
+	firstmoveqty = []
+	allmoves.each { |move| firstmoveqty << [move, firstmoves.count(move)] }
+	quantities = firstmoveqty.transpose[1]
+	p Parser::arraytocmd(firstmoveqty[quantities.index(quantities.max)][0], commands).join
 	puts ""
 	(players.uniq).each do |player|
 		print " - #{player[0][0..player[0].length-4]} started first: " + (players.count(player)).to_s + " times\n\n" 

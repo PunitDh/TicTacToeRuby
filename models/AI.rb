@@ -1,4 +1,5 @@
 module AI
+
   ####### Spit out a computer response ###########################################################
   def self.response(board, val)
     emptysquares = findemptysquares(board)
@@ -17,7 +18,7 @@ module AI
     emptysquares.map do |empty|
       tmpboard = board.map { |row| row.map { |cell| cell } }
       tmpboard[empty[0]][empty[1]] = val
-      return empty if checkwin(tmpboard)
+      return empty if Logic::checkwin(tmpboard)
     end
     return false
   end
@@ -28,10 +29,10 @@ module AI
   def self.minimax(board, val, maximising_player = true)
     best_move = {"r":nil, "c":nil, "score":0}
     
-    if (checkwin(board))
+    if (Logic::checkwin(board))
         best_move[:score] = maximising_player ? -1 : 1
       return best_move
-    elsif (checkdraw(board))
+    elsif (Logic::checkdraw(board))
       best_move[:score] = 0
       return best_move
     end
@@ -58,7 +59,6 @@ module AI
     end
     return best_move
   end
-
 end
 
 

@@ -1,6 +1,6 @@
 require_relative "./Parser.rb"
 require_relative "./AI.rb"
-require_relative "./game-logic.rb"
+require_relative "./Logic.rb"
 require_relative "./MoveRecord.rb"
 require_relative "../views/Display.rb"
 require_relative "./Player.rb"
@@ -76,7 +76,7 @@ class Game
 
 	########### Set the value on the board #############################################
 	def entermove(coord, val)
-		drow,dcol = Parser::arraytodisplayparser(coord)
+		drow,dcol = Parser::arraytodisplay(coord)
 		board[coord[0]][coord[1]] = val
 		board_display[drow][dcol] = ['O','X'][val]
 		showboard()
@@ -166,7 +166,7 @@ class Game
 		computer_response = AI::response(@board, currentplayer.val)
 		print @moverecord.length == 0 ? "\n\n\t\tComputer's (#{currentplayer.str}) first move: " : "\n\t\tComputer (#{currentplayer.str}) responds: "
 		@moverecord.push(computer_response)
-		command_response = Parser::arraytocommandsparser(computer_response, @commands)
+		command_response = Parser::arraytocmd(computer_response, @commands)
 		print "\"#{command_response}\"\n"
 		entermove(computer_response,currentplayer.val)
 		print "\n\t\tPerformed #{$foo} iterations...\n" if ($foo > 0)
@@ -201,7 +201,7 @@ class Game
 		request = Views::Prompts::prompt("Choose which game to display: ", linesUUIDs)
 		moves = lines[request]["Moves"]
 		movesarray = []
-		moves.each.with_index { |move,i| movesarray.push (i % 2 == 0) ? [Parser::arraytocommandsparser(move, @commands),""] : ["",Parser::arraytocommandsparser(move, @commands)] }
+		moves.each.with_index { |move,i| movesarray.push (i % 2 == 0) ? [Parser::arraytocmd(move, @commands),""] : ["",Parser::arraytocmd(move, @commands)] }
 		movesarray.push(["--------","--------"])
 		movesarray.push(["Winner: ",lines[request]["Winner"]])
 		table = TTY::Table.new(lines[request]["Players"], movesarray)
@@ -211,20 +211,20 @@ class Game
 
 	###### Check game over status ###############################################################################################
 	def checkgameover()
-		(checkdraw(@board) or checkwin(@board))
+		(Logic::checkdraw(@board) or Logic::checkwin(@board))
 	end
 
 
 	###### Displays endgame ###################################################################################################
 	def endgame()
-		winner = checkwin(@board)
+		winner = Logic::checkwin(@board)
 		puts "\n\n"
 		if (winner)
 			winnername = Player.find(winner)
 			@moverecord.setwinner(winnername.name + ": " + ['O','X'][winner])
 			Views::Display::printbox((@playermode == 1) ? "You lose!" : "#{winnername.name} won!")
 		
-		elsif (checkdraw(@board))
+		elsif (Logic::checkdraw(@board))
 			Views::Display::printbox("Game is a draw!")
 			@moverecord.setwinner("Draw")
 		end

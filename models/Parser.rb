@@ -1,8 +1,8 @@
 module Parser
   ###### Check if the entered command is valid ################################################
   def self.validatecommand(game, command)
-    cmd_parse = Parser::commandparser(game, command)
-    cmd_parse = Parser::commandparser(game, command.reverse) if not cmd_parse
+    cmd_parse = Parser::command(game, command)
+    cmd_parse = Parser::command(game, command.reverse) if not cmd_parse
     
     if (!cmd_parse)
       puts "\n\t\t\"#{command}\" is not a valid command. Enter \"H\" for help."
@@ -20,7 +20,7 @@ module Parser
   end
 
   ###### Converts string commands to array indexes #############################################
-  def self.commandparser(game, command)
+  def self.command(game, command)
       commands = Array.new
       case command[0]
         when "A"
@@ -36,8 +36,8 @@ module Parser
           return false if not command[1].nil?
           randomsquare = randomsquare(findemptysquares(game.board))
           ### randomsquare = game.board.randomsquare()
-          ### puts "\t\tRandom square: \"" + game.board.arraytocommandsparser(randomsquare).join.to_s + "\""
-          puts "\t\tRandom square: \"" + Parser::arraytocommandsparser(randomsquare, game.commands) + "\""
+          ### puts "\t\tRandom square: \"" + game.board.arraytocmd(randomsquare).join.to_s + "\""
+          puts "\t\tRandom square: \"" + Parser::arraytocmd(randomsquare, game.commands) + "\""
           return randomsquare
         else
           return false
@@ -58,7 +58,7 @@ module Parser
   end
     
   ######## Converts board array values commands to grid display indices #################################
-  def self.arraytodisplayparser(command)
+  def self.arraytodisplay(command)
       commands = Array.new
       commands[0] = (command[0] < 3) ? (command[0] + 1)*2   : false
       commands[1] = (command[1] < 3) ? ((command[1]+1)*4)+1 : false
@@ -66,7 +66,7 @@ module Parser
   end
     
   ######### Converts board array values to array commands ###############################################
-  def self.arraytocommandsparser(command, commands)
+  def self.arraytocmd(command, commands)
       output = Array.new
       output[0] = commands.key(command[0])
       output[1] = (command[1]+1).to_s

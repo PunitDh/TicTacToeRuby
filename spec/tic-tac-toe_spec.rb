@@ -26,7 +26,7 @@ describe Game do
 		game.entermove([1,1], 1)
 		game.entermove([1,2], 0)
 		game.entermove([2,2], 1)
-		expect(checkwin(game.board)).to eq(1)
+		expect(Logic::checkwin(game.board)).to eq(1)
 	end
 
 	it 'should return true if the board is in a draw state' do
@@ -40,8 +40,8 @@ describe Game do
 		game.entermove([0, 2], 1)
 		game.entermove([2, 0], 0)
 		game.entermove([2, 2], 1)
-		expect(checkdraw(game.board)).to be(true)
-		expect(checkwin(game.board)).to eq(false)
+		expect(Logic::checkdraw(game.board)).to be(true)
+		expect(Logic::checkwin(game.board)).to eq(false)
 	end
 
 	it 'should check a user input to see whether it is valid' do
@@ -63,7 +63,7 @@ describe Game do
 		move = AI::predictwin(game.board,emptysquares,1)
 		expect(move).to eq([2,2])
 		game.entermove(move, 1)
-		expect(checkwin(game.board)).to be(1)
+		expect(Logic::checkwin(game.board)).to be(1)
 	end
 
 	it 'should allow computer to block opponent win' do
@@ -76,7 +76,7 @@ describe Game do
 		move = AI::predictwin(game.board,emptysquares,0)
 		expect(move).to eq([2,2])
 		game.entermove(move, 0)
-		expect(checkwin(game.board)).to eq(0)
+		expect(Logic::checkwin(game.board)).to eq(0)
 	end
 
 	it 'find the best possible move' do

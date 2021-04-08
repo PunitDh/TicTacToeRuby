@@ -17,8 +17,8 @@ module Views
 
 		# ######### A method to check if the entered command is valid ################################################################
 		# def Parser::validatecommand(game, command)
-		# 	cmd_parse = Parser::commandparser(game, command)
-		# 	cmd_parse = Parser::commandparser(game, command.reverse) if not cmd_parse
+		# 	cmd_parse = Parser::command(game, command)
+		# 	cmd_parse = Parser::command(game, command.reverse) if not cmd_parse
 			
 		# 	if (!cmd_parse)
 		# 	puts "\n\t\t\"#{command}\" is not a valid command. Enter \"H\" for help."
@@ -36,7 +36,7 @@ module Views
 		# end
 		
 		# ####### A method that converts string commands to array indexes that refer to positions on the board ######################
-		# def Parser::commandparser(game, command)
+		# def Parser::command(game, command)
 		# 	commands = Array.new
 		# 	case command[0]
 		# 		when "A"
@@ -51,7 +51,7 @@ module Views
 		# 		when "R"
 		# 		return false if not command[1].nil?
 		# 		randomsquare = randomsquare(findemptysquares(game.board))
-		# 		puts "\t\tRandom square: \"" + Parser::arraytocommandsparser(randomsquare, game.commands) + "\""
+		# 		puts "\t\tRandom square: \"" + Parser::arraytocmd(randomsquare, game.commands) + "\""
 		# 		return randomsquare
 		# 		else
 		# 		return false
@@ -72,7 +72,7 @@ module Views
 		# end
 			
 		# #########  A method that converts board array values commands to grid display indices #############################
-		# def Parser::arraytodisplayparser(command)
+		# def Parser::arraytodisplay(command)
 		# 	commands = Array.new
 		# 	commands[0] = (command[0] < 3) ? (command[0] + 1)*2   : false
 		# 	commands[1] = (command[1] < 3) ? ((command[1]+1)*4)+1 : false
@@ -80,7 +80,7 @@ module Views
 		# end
 			
 		# #######  A method that converts board array values to array commands ##############################################
-		# def Parser::arraytocommandsparser(command, commands)
+		# def Parser::arraytocmd(command, commands)
 		# 	output = Array.new
 		# 	output[0] = commands.key(command[0])
 		# 	output[1] = (command[1]+1).to_s
