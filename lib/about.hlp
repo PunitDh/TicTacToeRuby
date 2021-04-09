@@ -1,3 +1,15 @@
+
+
     About Unbeatable TicTacToe
     ---------------------------------------------
     This game was developed as a Terminal Application project.
+    
+    The Unbeatable TicTactoe Version 1.5 is a terminal application written in the Ruby programming language.
+    It was written by Punit Dharmadhikari as a terminal application project.
+    
+    The game is a TicTacToe board game that utilises the Minimax algorithm to find the best move.
+    So far, it has proved to be unbeatable, even by itself.
+
+    ... Can you beat it?
+
+
