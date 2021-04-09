@@ -76,19 +76,26 @@ The TicTacToe game has three main features, and the user interacts with each fea
 In order to choose the single or multiplayer mode, the user simply needs to select `New Game` option from the main menu. This will take the user to another menu screen that lets them choose between 1- and 2-player modes. The user can then enter their name(s) and start playing.
 
 #### **An unbeatable artificial intelligence and simulation mode**
-
+The user will interact with this system while playing the game. The game's robust minimax algorithm accurately predicts the best possible move by iterating through every possible play on the board. The user can also choose the simulation mode and watch the computer play itself to view the capabilities of the AI. Within the source files, there exists a global variable `$encmbr` which is set to `0`. As long as this is `0`, the computer will never lose. Increasing the `$encmbr` variable in small increments such as `0.5` will start producing interesting results, such as the computer making "mistakes" in its moves. This was a deliberate feature that I added during testing the game.
 
 #### **Saving / loading games from the JSON file system**
+The saving and loading system is built into the application. The application automatically saves every game to a JSON file in the form of a Hash. The user can view any previously played game by selecting the "Load Previous Games" option on the main menu. Every game has a unique UUID identifier and a time-stamp, to help the user remember when the game was played. The game is displayed in a table format.
 
 
-- how the user will interact with / use each feature
-
-- how errors will be handled by the application and displayed to the user
+### **Error Handling**
 I have designed a fail-proof and robust way for the application to handle errors. Several methods used for error handling are as follows.
 
     **Using TTY-prompt instead of command inputs wherever possible**
 
     Initially all the inputs in the application were given through command-line interface. Every input was validated through use of a method and a `while` loop to ensure it was a valid command. However, during refactoring, I realised that it is much better to simply offer the user a list of options to choose from so as to avoid any errors.
+
+    **Thoroughly testing all aspects of the game**
+
+    The game has been tested and re-tested multiple times through using the TDD and the `rspec` functionality. I designed about 12 test cases which are highly relevant to the functioning of the game. Some examples include: testing whether the user input is valid, testing whether the computer accurately finds all empty squares on the board, etc.
+
+    The game was also tested using the "Simulation Mode", a testing feature I manually created to test whether or not the AI is unbeatable. I ran 1,000 simulations to test whether or not the computer could beat itself. If the AI is indeed truly unbeatable, it would result in a draw every single time. This was proven to be true. 
+    
+    I added global variable `$encmbr`, which is an "encumberance factor" on the computer. This allows the computer to make "mistakes" once in a while, spitting out a random value instead of finding the best move. Only when I increased the "encumberance factor" to `0.5`, I noticed the computer starting to make mistakes that affected gameplay in any significant way.
 
     **Validating user input commands and taking care of all edge cases**
 
