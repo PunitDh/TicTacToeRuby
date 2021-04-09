@@ -85,33 +85,33 @@ The saving and loading system is built into the application. The application aut
 ### **Error Handling**
 I have designed a fail-proof and robust way for the application to handle errors. Several methods used for error handling are as follows.
 
-    **Using TTY-prompt instead of command inputs wherever possible**
+#### **Using TTY-prompt instead of command inputs wherever possible**
 
-    Initially all the inputs in the application were given through command-line interface. Every input was validated through use of a method and a `while` loop to ensure it was a valid command. However, during refactoring, I realised that it is much better to simply offer the user a list of options to choose from so as to avoid any errors.
+Initially all the inputs in the application were given through command-line interface. Every input was validated through use of a method and a `while` loop to ensure it was a valid command. However, during refactoring, I realised that it is much better to simply offer the user a list of options to choose from so as to avoid any errors.
 
-    **Thoroughly testing all aspects of the game**
+#### **Thoroughly testing all aspects of the game**
 
-    The game has been tested and re-tested multiple times through using the TDD and the `rspec` functionality. I designed about 12 test cases which are highly relevant to the functioning of the game. Some examples include: testing whether the user input is valid, testing whether the computer accurately finds all empty squares on the board, etc.
+The game has been tested and re-tested multiple times through using the TDD and the `rspec` functionality. I designed about 12 test cases which are highly relevant to the functioning of the game. Some examples include: testing whether the user input is valid, testing whether the computer accurately finds all empty squares on the board, etc.
 
-    The game was also tested using the "Simulation Mode", a testing feature I manually created to test whether or not the AI is unbeatable. I ran 1,000 simulations to test whether or not the computer could beat itself. If the AI is indeed truly unbeatable, it would result in a draw every single time. This was proven to be true. 
-    
-    I added global variable `$encmbr`, which is an "encumberance factor" on the computer. This allows the computer to make "mistakes" once in a while, spitting out a random value instead of finding the best move. Only when I increased the "encumberance factor" to `0.5`, I noticed the computer starting to make mistakes that affected gameplay in any significant way.
+The game was also tested using the "Simulation Mode", a testing feature I manually created to test whether or not the AI is unbeatable. I ran 1,000 simulations to test whether or not the computer could beat itself. If the AI is indeed truly unbeatable, it would result in a draw every single time. This was proven to be true. 
 
-    **Validating user input commands and taking care of all edge cases**
+I added global variable `$encmbr`, which is an "encumberance factor" on the computer. This allows the computer to make "mistakes" once in a while, spitting out a random value instead of finding the best move. Only when I increased the "encumberance factor" to `0.5`, I noticed the computer starting to make mistakes that affected gameplay in any significant way.
 
-    Although care has been given to limit the number of command-line inputs, it is not possible everywhere. The board game commands "A1", "A2", "B1", etc that are used during gameplay still need to be entered correctly by the user. However, functionality is still added that allows users to enter lowercase commands such as "a1" or "b1", and also commands in reverse, i.e. "1a", "2B", "3C", etc. These are checked and validated correctly by the application. Entering the command "R" during gameplay enters a random move, and "H" displays the help file.
+#### **Validating user input commands and taking care of all edge cases**
 
-    **Exception handling for corrupt or missing JSON save file**
+Although care has been given to limit the number of command-line inputs, it is not possible everywhere. The board game commands "A1", "A2", "B1", etc that are used during gameplay still need to be entered correctly by the user. However, functionality is still added that allows users to enter lowercase commands such as "a1" or "b1", and also commands in reverse, i.e. "1a", "2B", "3C", etc. These are checked and validated correctly by the application. Entering the command "R" during gameplay enters a random move, and "H" displays the help file.
 
-    The game allows viewing of previously played games that can be loaded from a save file. All games are written as a Hash, have unique UUIDs and are timestamped before they are converted into a JSON format. This format is then saved to a JSON file in the local directory.
+#### **Exception handling for corrupt or missing JSON save file**
 
-    The file loader requires that any data in the JSON savefile be valid and un-corrupted. If it is missing, corrupted or tampered with, the application throws an exception. I used a `begin rescue exception` loop to handle any `StandardError` thrown by the application during the load process. The application shows an error message to the user if the file is corrupt, and asks the user to delete the savefile.
+The game allows viewing of previously played games that can be loaded from a save file. All games are written as a Hash, have unique UUIDs and are timestamped before they are converted into a JSON format. This format is then saved to a JSON file in the local directory.
 
-    **Preventing infinite loops, memory leaks and crashes by limiting the total number of simulations to 1,000**
+The file loader requires that any data in the JSON savefile be valid and un-corrupted. If it is missing, corrupted or tampered with, the application throws an exception. I used a `begin rescue exception` loop to handle any `StandardError` thrown by the application during the load process. The application shows an error message to the user if the file is corrupt, and asks the user to delete the savefile.
 
-    The game uses several loops in its processes. The most resource-consuming loop is the Minimax algorithm. The Minimax Algorithm calculates every iteration of every possible move available to it from the current board position. This is done every time it is the computer's turn to play. This process is fairly quick, even when a large number of iterations are performed.
+#### **Preventing infinite loops, memory leaks and crashes by limiting the total number of simulations to 1,000**
 
-    The problem, however, lies within the simulation mode. To perform a Computer vs Computer simulation, the computer plays games against itself a specified `n` number of times. If `n` is too large, this could potentially cause the game to crash. This is limited by capping the number of possible simulations to 1,000. Upon performing 1,000 simulations during my testing phase, I found that it took around 14 mins to complete.
+The game uses several loops in its processes. The most resource-consuming loop is the Minimax algorithm. The Minimax Algorithm calculates every iteration of every possible move available to it from the current board position. This is done every time it is the computer's turn to play. This process is fairly quick, even when a large number of iterations are performed.
+
+The problem, however, lies within the simulation mode. To perform a Computer vs Computer simulation, the computer plays games against itself a specified `n` number of times. If `n` is too large, this could potentially cause the game to crash. This is limited by capping the number of possible simulations to 1,000. Upon performing 1,000 simulations during my testing phase, I found that it took around 14 mins to complete.
 
 
 ## **Flow Chart**
