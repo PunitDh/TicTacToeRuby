@@ -1,5 +1,5 @@
 #############################################################################
-# The MoveRecord module creates a record of moves to save to a JSON file
+# The MoveRecord class creates a record of moves to save to a JSON file
 #############################################################################  
 class MoveRecord
 	attr_reader :filename, :record

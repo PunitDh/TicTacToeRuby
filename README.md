@@ -1,23 +1,55 @@
 # **Punit Dharmadhikari T1A3 Terminal Application - Unbeatable TicTacToe in Ruby**
 
 ## **Link to Repository**
+The Unbeatable TicTacToe project is located in two repositories: [GitHub](https://github.com/PunitDh/TicTacToeRuby) and [Replit](https://replit.com/@PunitDh/TicTacToeRuby).
+```
 https://github.com/PunitDh/TicTacToeRuby
+
 https://replit.com/@PunitDh/TicTacToeRuby
+```
+The Replit version allows the user to play the game directly from the browser without having to install anything. However, it does not support gems and therefore certain functionalities are unavailable.
 
 ## **Purpose and Scope**
-The application is a TicTacToe board game. The player places either an 'X' or and 'O' on a standard 3x3 square grid. The goal is to get three in a row, either horizontally, vertically or diagonally. It is possible to block an opponent's win. If no winners are declared, the game results in a draw..
-The game allows both single-player and multi-player modes (locally). Both modes are quite straightforward. In either mode, the player is asked to enter their name. The computer then 'tosses a coin' (generates a random number) to determine who goes first.
-The game then begins. The player is asked to enter inputs 
+### **What will this application do?**
+The application is a TicTacToe board game. The player places either an 'X' or and 'O' on a standard 3x3 square grid. The goal is to get three in a row, either horizontally, vertically or diagonally. It is possible to block an opponent's win by stopping them getting three in a row. If no winners are declared, the game results in a draw.
+
+When the application starts, the main menu is displayed. When the player selects the `New Game` option, the player is then asked to choose between single- and multi-player mode. The player then enters their name  and the computer then 'tosses a coin' (generates a random number) to determine who goes first.
+ 
+The game then begins with the board being displayed initially. The player is asked to enter inputs in the form of "A1", "A2", "A3", etc. which correspond to grid positions on the board, as shown below.
+
+![TicTacToe Board](docs/tictactoe-board.png)
+
+The game ends when either a win position or a draw position is reached.
+
+Every game is also automatically saved in a JSON format into a savefile. It is possible to view any previously saved game via the main menu (as long as a valid JSON file exists and is not corrupt and/or tampered with).
+
+It is also possible to use the application in a simulation mode, where the player can set up Computer vs Computer simulations. This was initially only a testing feature developed by me to test whether or not the AI is indeed unbeatable, but later on I decided to include it in the final version of the game.
+
+### **What problem is the application solving?**
+The main objective of the development of this TicTacToe game was to demonstrate the extensive capabilities of something as simple as a Ruby-based terminal-based application. Even though Ruby is a 25-year old language, its functionality allows for the development of relatively complex applications processes, such as artificial intelligence. Whenever it is the computer's turn to play, it calls a special algorithm called the "Minimax" that iterates through all possible options on the board and find the "best" possible move. It does this in a matter of milliseconds. In the above example, it has performed 59,704 iterations to find the best move to play. Although this is quite a brute-force approach of finding the best move to play, it still works and makes the computer "unbeatable". So far, after several attempts at play and even after doing over 1,000 simulations, I have failed at beating the AI even once.
+
+### **Who is the target audience?**
+Anyone who loves a good TicTacToe game is the target audience of this project. The game is suitable for anyone looking to either play with a friend locally, or to play with the computer's AI. However, this application is also a good framework for a developer who wants to learn from it build upon it. The Ruby code is written as best as possible in a modular, readable, and modifiable fashion. So if a developer wants to add to it by creating, for example, a 4x4 TicTacToe game, it makes it easier for them to do that.
+
+### **How will the target audience use it?**
+Users are required to access the terminal application. This can be different depending on the operating system. In Mac or Unix-based operating systems, it is fairly straightforward. In Windows, however, the user may need to install WSL (Windows Subsystem for Linux) and/or Ubuntu in order to run the application. Users will also need to have Ruby installed. Detailed instructions are available at the end of this document, but users are encouraged to do an internet search and find the instructions that best suit the. Once the application is running, however, many helpful hints are instructions are available to guide the user through the process.
+
+Alternatively, an "install-free" version can be played directly from the browser at my [Replit repository](https://replit.com/@PunitDh/TicTacToeRuby). This version does not include ruby gems, however.
+
 
 ## **Features**
+The game has several features that make it stand out.
+
 ### **Choosing between (1)-Player and (2)-Player Mode**
-Ability to choose between 1 or 2 player mode
+Most TicTacToe games I have seen have only been two-player mode, where there are two human players who play against each other. I also decided to add a single-player mode, where the user can play with a computer if there are no human players around. The user(s) can also enter their names before playing. 
 
 ### **Artificial Intelligence and Simulation Mode**
+The purpose of the application was to make an AI that was unbeatable. Initially the application was only playable with another human player. A feature to generate a random move by the computer was later added. This feature was then refined and improved upon, and later versions of the game included the "Minimax" algorithm to find the best possible move. The minimax is an algorithm used in chess engines to find the best possible move, but can also be used for TicTacToe or any turn-based game.
 
+The simulation mode was initially only created as a testing feature, to test whether or not the AI was actually unbeatable. It was used to perform Computer vs Computer simulations to try and get the computer to beat itself. Eventually this testing feature made its way into the final version of the game. The user can specify the number of simulations it wants the game to perform (capped at 1000 to prevent crashes and memory leaks), and the computer automatically plays the given number of games against itself and automatically saves the results to a JSON file.
 
 ### **Saving/Loading Games From File**
-
+Each game played on the application is saved to a local JSON file. Each game also has a unique identifier (UUID) and a timestamp. It is possible to view any game played previously, as long as a valid JSON file exists, and the data in the file is also in a valid format. If the data is corrupt, missing or unreadable by the application, it throws an exception (error message) that is handled by the game loader. The game loader performs a `rescue` operation and lets the user know that the file is corrupt.
 
 ## **User Interaction and Experience**
 ### **How the user will find out how to interact with each feature**
@@ -30,25 +62,38 @@ The user will find out how to interact with each feature of the application in s
 The TicTacToe game has three main features, and the user interacts with each feature in a different way. 
 
 #### **The ability to play single or multiplayer games**
-
 In order to choose the single or multiplayer mode, the user simply needs to select `New Game` option from the main menu. This will take the user to another menu screen that lets them choose between 1- and 2-player modes. The user can then enter their name(s) and start playing.
 
 #### **An unbeatable artificial intelligence and simulation mode**
 
+
 #### **Saving / loading games from the JSON file system**
 
-
-
-The main purpose of the game was to design 
 
 - how the user will interact with / use each feature
 
 - how errors will be handled by the application and displayed to the user
-The error system is robust:
-    - using TTY-prompt instead of command inputs wherever possible
-    - validating user input commands and taking care of all edge cases
-    - begin rescue exception handling (StandardError) in JSON file management system
-    - Preventing infinite loops, memory leaks and crashes by limiting the total number of simulations to 1,000
+I have designed a fail-proof and robust way for the application to handle errors. Several methods used for error handling are as follows.
+
+    **Using TTY-prompt instead of command inputs wherever possible**
+
+    Initially all the inputs in the application were given through command-line interface. Every input was validated through use of a method and a `while` loop to ensure it was a valid command. However, during refactoring, I realised that it is much better to simply offer the user a list of options to choose from so as to avoid any errors.
+
+    **Validating user input commands and taking care of all edge cases**
+
+    Although care has been given to limit the number of command-line inputs, it is not possible everywhere. The board game commands "A1", "A2", "B1", etc that are used during gameplay still need to be entered correctly by the user. However, functionality is still added that allows users to enter lowercase commands such as "a1" or "b1", and also commands in reverse, i.e. "1a", "2B", "3C", etc. These are checked and validated correctly by the application. Entering the command "R" during gameplay enters a random move, and "H" displays the help file.
+
+    **Exception handling for corrupt or missing JSON save file**
+
+    The game allows viewing of previously played games that can be loaded from a save file. All games are written as a Hash, have unique UUIDs and are timestamped before they are converted into a JSON format. This format is then saved to a JSON file in the local directory.
+
+    The file loader requires that any data in the JSON savefile be valid and un-corrupted. If it is missing, corrupted or tampered with, the application throws an exception. I used a `begin rescue exception` loop to handle any `StandardError` thrown by the application during the load process. The application shows an error message to the user if the file is corrupt, and asks the user to delete the savefile.
+
+    **Preventing infinite loops, memory leaks and crashes by limiting the total number of simulations to 1,000**
+
+    The game uses several loops in its processes. The most resource-consuming loop is the Minimax algorithm. The Minimax Algorithm calculates every iteration of every possible move available to it from the current board position. This is done every time it is the computer's turn to play. This process is fairly quick, even when a large number of iterations are performed.
+
+    The problem, however, lies within the simulation mode. To perform a Computer vs Computer simulation, the computer plays games against itself a specified `n` number of times. If `n` is too large, this could potentially cause the game to crash. This is limited by capping the number of possible simulations to 1,000. Upon performing 1,000 simulations during my testing phase, I found that it took around 14 mins to complete.
 
 
 ## **Flow Chart**
@@ -121,6 +166,7 @@ Or, if using Windows, WSL or Linux, enter the following commands.
     $ gem install colorize
     $ gem install uuid
     $ gem install tty-table
+    $ gem install tty-box
     ```
 3. Run the app by typing in the command line:
     If using UNIX, Mac, Linux, Ubuntu, WSL, simply run:
@@ -132,3 +178,27 @@ Or, if using Windows, WSL or Linux, enter the following commands.
     ```
     > ruby .\tictactoe
     ```
+
+### **Dependencies**
+The application uses five Ruby gems, namely:
+```
+    $ gem install tty-prompt
+    $ gem install colorize
+    $ gem install uuid
+    $ gem install tty-table
+    $ gem install tty-box
+```
+The user will have to instasll these Ruby gems before the application can be played.
+
+Alternatively, a gem-free version of the game can be played at my [Replit](https://replit.com/@PunitDh/TicTacToeRuby) repository at:
+ ```
+ https://replit.com/@PunitDh/TicTacToeRuby
+ ```
+
+ ### **Hardware Requirements**
+ It is predicted that the game should run in almost any Unix, Linux, Mac or Windows-based environments. I have personally tried running this on an Android mobile device and it has run fine (albeit with obvious screen sizing issues). If any errors are encountered while running the application, please contact me through my page: https://punitdh.github.io/contact.html
+ 
+
+## **References**
+1. He, A 2020, _Tic Tac Toe with AI that never loses (minimax algorithm)_, www.youtube.com, viewed 1 April 2021, <https://www.youtube.com/watch?v=wnL7Woqkb44>.
+1. Wikipedia Contributors 2019, _Minimax_, Wikipedia, Wikimedia Foundation, viewed 1 April 2021, <https://en.wikipedia.org/wiki/Minimax>.

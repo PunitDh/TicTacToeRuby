@@ -59,13 +59,8 @@ module AI
     end
     return best_move
   end
+  
 end
-
-
-
-
-
-##########  END OF MODULE *******************************
 
 ################################################################################################
 # A method that spits out a random square

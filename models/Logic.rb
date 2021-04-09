@@ -1,4 +1,5 @@
 module Logic
+	
 	####### Check if board has been won and return the winner ###############################################
 	def self.checkwin(board)
 		tmparray    = Array.new

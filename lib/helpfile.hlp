@@ -19,7 +19,7 @@
 
                 "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"
                                          or
-                "1A", "2A", "3A", "1B", "2B", "2C", "1C", "2C", "3C"
+                "1A", "2A", "3A", "1B", "2B", "3B", "1C", "2C", "3C"
 
       - You can enter "H" for Help at any time.
       - You can enter the "R" to enter a random move.

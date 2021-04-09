@@ -13,5 +13,11 @@ module Views
 		def self.showversion()
 			puts "\n" + $gamename + "\t" + $version.to_s + "\n"
 		end	
+
+		##### Shows some game information #################################################################
+		def self.showabout()
+			puts File.read(File.open("./lib/about.hlp"))
+			Views::Prompts::tmpgets
+		end
 	end
 end

@@ -40,7 +40,7 @@ def gamestats(filename = "gameresults.json")
 	firstmoveqty = []
 	allmoves.each { |move| firstmoveqty << [move, firstmoves.count(move)] }
 	quantities = firstmoveqty.transpose[1]
-	p Parser::arraytocmd(firstmoveqty[quantities.index(quantities.max)][0], commands).join
+	p Parser::arraytocmd(firstmoveqty[quantities.index(quantities.max)][0], commands)
 	puts ""
 	(players.uniq).each do |player|
 		print " - #{player[0][0..player[0].length-4]} started first: " + (players.count(player)).to_s + " times\n\n" 
