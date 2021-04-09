@@ -218,5 +218,13 @@ Alternatively, a gem-free version of the game can be played at my [Replit](https
  
 
 ## **References**
-1. He, A 2020, _Tic Tac Toe with AI that never loses (minimax algorithm)_, www.youtube.com, viewed 1 April 2021, <https://www.youtube.com/watch?v=wnL7Woqkb44>.
-1. Wikipedia Contributors 2019, _Minimax_, Wikipedia, Wikimedia Foundation, viewed 1 April 2021, <https://en.wikipedia.org/wiki/Minimax>.
+1. *Bundler: bundle install* n.d., bundler.io, viewed 9 April 2021, <https://bundler.io/man/bundle-install.1.html>.
+
+1. He, A 2020, *Tic Tac Toe with AI that never loses (minimax algorithm)*, www.youtube.com, viewed 1 April 2021, <https://www.youtube.com/watch?v=wnL7Woqkb44>.
+
+1. *Install Ruby on Windows: Everything You Need to Get Going* 2019, Stackify, viewed 9 April 2021, <https://stackify.com/install-ruby-on-windows-everything-you-need-to-get-going/>.
+
+1. *Installing Ruby* n.d., www.ruby-lang.org, viewed 9 April 2021, <https://www.ruby-lang.org/en/documentation/installation/>.
+
+1. Wikipedia Contributors 2019, *Minimax*, Wikipedia, Wikimedia Foundation, viewed 1 April 2021, <https://en.wikipedia.org/wiki/Minimax>.
+
