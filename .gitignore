@@ -1,4 +1,5 @@
 analysis/
 analysis/*
 gameresults.json
-gameresults.txt
+gameresults.txtdocs/*
+gameresults.json

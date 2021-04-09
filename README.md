@@ -1,5 +1,16 @@
 # **Punit Dharmadhikari T1A3 Terminal Application - Unbeatable TicTacToe in Ruby**
 
+
+## **How To Run the Applcation**
+The best way to run this application is through the a MacOSX terminal or a WSL terminal (such as Ubuntu).
+Open the terminal and run the following commands:
+```
+$ bundle update
+$ ./tictactoe
+```
+Further detailed instructions are available below.
+
+
 ## **Link to Repository**
 The Unbeatable TicTacToe project is located in two repositories: [GitHub](https://github.com/PunitDh/TicTacToeRuby) and [Replit](https://replit.com/@PunitDh/TicTacToeRuby).
 ```
