@@ -7,10 +7,10 @@ module Logic
 		tmparray[1] = Array.new
 	
 		board.map.with_index do |row,i|
-		return board.transpose[i].first if Logic::checkequal(board.transpose[i])
-		return board[i].first if Logic::checkequal(board[i])
-		tmparray[0].push(board[i][i])
-		tmparray[1].push(board[2-i][i])
+			return board.transpose[i].first if Logic::checkequal(board.transpose[i])
+			return board[i].first if Logic::checkequal(board[i])
+			tmparray[0].push(board[i][i])
+			tmparray[1].push(board[2-i][i])
 		end
 	
 		return tmparray[0].first if Logic::checkequal(tmparray.first)
@@ -25,6 +25,6 @@ module Logic
 	
 	##### Check if board is in a draw state ################################################################
 	def self.checkdraw(board)
-		return (board.flatten.compact.length == board.flatten.length)
+		return ((board.flatten.compact.length == board.flatten.length) and (not (Logic::checkwin(board))))
 	end
 end

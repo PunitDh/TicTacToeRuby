@@ -10,9 +10,5 @@ module Views
 			prompt = TTY::Prompt.new(symbols: {marker: " "})
 			prompt.select("#{question}\n".center(halign), choices, show_help: :never, cycle: true)
 		end
-
-		def self.command
-
-		end
 	end
 end

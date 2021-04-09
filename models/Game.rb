@@ -89,10 +89,10 @@ class Game
 
 	########### Draw the board ########################################################
 	def showboard()
-		@board_display.map.with_index do |row,i|
-		str = @board_display[i].split("X").join("X".light_red)
-		str = str.split("O").join("O".light_blue)
-		puts "\t\t\t\t\t" + str
+		@board_display.map do |row|
+			str = row.split("X").join("X".light_red)
+			str = str.split("O").join("O".light_blue)
+			puts "\t\t\t\t\t" + str
 		end
 	end
 
@@ -158,7 +158,7 @@ class Game
 
 		@moverecord.push(cmd_parse)
 		entermove(cmd_parse,currentplayer.val)
-		currentplayer = Player.find(swapval(currentplayer.val))
+		return Player.find(swapval(currentplayer.val))
 	end
 
 	####### Let the computer play the next move ####################################################################
@@ -222,8 +222,9 @@ class Game
 		if (winner)
 			winnername = Player.find(winner)
 			@moverecord.setwinner(winnername.name + ": " + ['O','X'][winner])
-			Views::Display::printbox((@playermode == 1) ? "You lose!" : "#{winnername.name} won!")
-		
+			Views::Display::printbox("#{winnername.name} wins!") if @playermode == 2
+			Views::Display::printbox(winner==@player[0].val ? "You win!" : "You lose!") if @playermode == 1
+
 		elsif (Logic::checkdraw(@board))
 			Views::Display::printbox("Game is a draw!")
 			@moverecord.setwinner("Draw")

@@ -15,7 +15,7 @@ module Views
 		###### Print a message inside a box #############################################################################
 		def self.printbox(message, width: 25, height: 3, border: :thick)
 			box = (TTY::Box.frame message, width: width, height: height, border: border, align: :center).split("\n")
-		box.each { |line| print line.center(100)+"\n" }
+			box.each { |line| print line.center(100)+"\n" }
 		end
 
 		###### Prints the title screen #################################################################################
