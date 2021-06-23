@@ -1,0 +1,36 @@
+      ------------------------------------------------------------------------------------
+      INSTRUCTIONS
+      ------------------------------------------------------------------------------------
+      This is the tic-tac-toe board.
+                                    1   2   3
+                                  ┌───┬───┬───┐
+                                A │   │   │   │
+                                  ├───┼───┼───┤
+                                B │   │   │   │
+                                  ├───┼───┼───┤
+                                C │   │   │   │
+                                  └───┴───┴───┘
+      RULES:
+      ------------------------------------------------------------------------------------
+      - 'X' always goes first.
+      - Who gets 'X' and who gets 'O' is determined by a coin toss.
+      - Get three in a row: horizontally, vertically or diagonally to win.
+      - Play by giving the following text commands:
+
+                "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"
+                                         or
+                "1A", "2A", "3A", "1B", "2B", "3B", "1C", "2C", "3C"
+
+      - You can enter "H" for Help at any time.
+      - You can enter the "R" to enter a random move.
+      - Press Ctrl+C or Cmd+C to exit the game at any time.
+      
+      COMMAND LINE:
+      ------------------------------------------------------------------------------------
+      - To view help file       => ./tictactoe --h, -h, --help, -help                    
+      - To view game version    => ./tictactoe --v, -v, --ver, -ver, --version, -version
+      - Detailed description    => ./tictactoe --a, -a, --about, -about      
+      - Open a gamestats file   => ./tictactoe --gs, -stats, --gamestats "filename.json",
+                                   ./tictactoe -gs, --stats, -gamestats "filename.json"
+                                     Example: ./tictactoe --gs "filename.json"
+      ------------------------------------------------------------------------------------

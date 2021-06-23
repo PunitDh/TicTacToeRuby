@@ -1,0 +1,343 @@
+commit f7eb07f72e16620533f91bf4216bff21739db68d
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Sat Apr 10 02:36:34 2021 +1000
+
+    Fix major bug in endgame where proper win/loss/draw messages were not displayed correctly
+
+commit b89c08f9c07bd18171c1e157849c92e78651ba20
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Sat Apr 10 01:44:58 2021 +1000
+
+    Update references in README.md
+
+commit 836c1236dc4eac293c695e3f5a594b09fcbf4c6f
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Sat Apr 10 01:37:54 2021 +1000
+
+    Update README.md
+
+commit f6672285df4adb8cb59ec748ae0318bbf776aa5a
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Sat Apr 10 01:34:06 2021 +1000
+
+    Update README.md
+
+commit 57746a23409bddc62eb6dd5c4c184f0fb7553bae
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Sat Apr 10 01:07:03 2021 +1000
+
+    Update .gitignore file
+
+commit 4664785dddeb5ab29269173e661597d29dbc3eb7
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Sat Apr 10 00:45:50 2021 +1000
+
+    Update about.hlp help file
+
+commit ebcaf17fffbf3be33b374bf760eb752c2dfac023
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Sat Apr 10 00:41:41 2021 +1000
+
+    Update README.MD file, update help file, ready for final commit
+
+commit 7c11cbd5650b612e67fd02a392a0e59f363ec324
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Thu Apr 8 18:08:40 2021 +1000
+
+    Add Logic module
+
+commit 2c434874dd0b971310f00c25e7dec44e300072ed
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Thu Apr 8 17:50:02 2021 +1000
+
+    Further update MVC Model to include Parser module, AI Module.
+
+commit 76ac8c986c241750b0aa50de5a23603878746390
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Thu Apr 8 16:37:43 2021 +1000
+
+    Further update MVC Model. Add Modules in Views for Display, GameHelp, Prompts
+
+commit 6b399706d524bc79902e6e239ed23d9279eea0ff
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Thu Apr 8 15:35:58 2021 +1000
+
+    Implement MVC Model for Game, Player, MoveRecord. Add Modules for TitleScreen and DisplayBoard.
+
+commit 0cf844cb444d43b226b6efd3e6adfaadcc21178d
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Wed Apr 7 23:32:05 2021 +1000
+
+    Add bash file, update cover image, minor edits, ready for final version
+
+commit 7b5dd3444dd35916284dda504fa03d2f386371ee
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Apr 6 21:25:08 2021 +1000
+
+    Add and update help file documentation
+
+commit f5191156b779095e7559a37aa123b81771a6bd7c
+Merge: 418d699 95ba0f5
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Apr 6 20:25:05 2021 +1000
+
+    Resolve merge conflict
+
+commit 418d699e8be9e041e7d226c83e9349f9ad29a169
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Apr 6 20:23:23 2021 +1000
+
+    Add ARGV functionality
+
+commit 95ba0f5a3320a59d9e47942f04aa3b6ede77ab60
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Apr 6 13:58:03 2021 +1000
+
+    Add Quit Game confirmation, fixed rspec bugs
+
+commit 45c7289a6d5e67afac312a5eb82b3068a3614423
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Apr 6 13:39:45 2021 +1000
+
+    Add date/time logging feature to game saves
+
+commit d45ad32f9114f5ac54444b2d54247b9d9fb5e6c9
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Apr 6 13:24:26 2021 +1000
+
+    Add new version V1.5
+
+commit 56e1eb4e4ff3c6ca6eb9e533974cd61e0a257317
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Apr 6 13:21:35 2021 +1000
+
+    Added error and exception handling to File management system
+
+commit a242f1b373c771ce9a01a4e429ae4febf870c1d8
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Apr 6 13:00:24 2021 +1000
+
+    Add load game ability, JSON parse ability, UUID ability
+
+commit f39e2ac4cc1239b15111ea867174c883e219c3ee
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Apr 6 10:56:06 2021 +1000
+
+    Add rspec spec_helper, bundle gems, and start implementation of game-load feature
+
+commit dba30d0e773a1f10c53ea28f0ac3f95682fcdc06
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Apr 6 03:30:01 2021 +1000
+
+    Modify artificial intelligence and refactor code in game-display.rb
+
+commit 5a01f86993f068e17e2e0f306881bdfef4381c58
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Apr 5 17:15:55 2021 +1000
+
+    Refactor code to prevent player bugs
+
+commit f65b947f2341ba0348a511919f9d4b8d09423188
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Apr 5 16:46:20 2021 +1000
+
+    Debugging error where players and board were not reset at the end of each game
+
+commit 4cfb8514b5240e291614b1471faaec734a6959fd
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Apr 5 15:50:31 2021 +1000
+
+    Add rspec tests
+
+commit 7d0bd69de6976569ee1bef7806e05a5525b06eda
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Sat Apr 3 15:51:23 2021 +1100
+
+    Add game-help.rb file, add Instructions option in the main menu
+
+commit 989e613a2711a2b5cb426f53fc988d0f4bc6c7c2
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Sat Apr 3 08:32:07 2021 +1100
+
+    Refactor code in game-setup, cointoss()
+
+commit 9a45d627ba11d72c1d38b1e2804753f5be79fabd
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Fri Apr 2 17:49:36 2021 +1100
+
+    Add game simulation functionality, refactor cointoss code and classes
+
+commit 0f28ebba7889bceba5133df48d696ab74eb6556a
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Wed Mar 31 23:39:18 2021 +1100
+
+    Use MVC model, clean up interface, add TTY Prompt
+
+commit dc7a4eb0631913c429ef849c1566f16d7a2833df
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Wed Mar 31 21:20:58 2021 +1100
+
+    WORKING COPY - Refactor code, add game.playmove() function, fixed Random move bug
+
+commit bbaa41864c85aa1facc25ae4a013408d8d0c7027
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Wed Mar 31 21:19:13 2021 +1100
+
+    BROKEN COPY - Attempt to create Board class, but have to modify entire structure of game
+
+commit 9085e57e22906099ec6f004b49a438d137c41599
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Thu Mar 25 03:17:31 2021 +1100
+
+    Add Game Class, Player Class, MoveRecord Class, Board Class (not yet functional), GameController (not yet functional)
+
+commit f8e1e9555e3e6f46b0b0b86180ae20385596f3a0
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Mar 23 09:58:09 2021 +1100
+
+    Clean up the folder tree
+
+commit 3c165b33fe2698ee0982feff145a34b183283030
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Tue Mar 23 00:28:52 2021 +1100
+
+    Re-ordered requires
+
+commit 5a04b972b5d66cb406de064041675283f8f1c6de
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Tue Mar 23 00:25:41 2021 +1100
+
+    Refactor further, V1.2 Complete
+
+commit 82a9c289b88c10093e43cad867eec14761f80592
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Mon Mar 22 22:26:36 2021 +1100
+
+    Refactor all loops with |iterator| commands
+
+commit f1f4b7701558dcea3c904b51e8a989fd7184ed7f
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Mon Mar 22 21:50:55 2021 +1100
+
+    Refactor findemptysquares function with |iterator| functionality
+
+commit 1ed2e8d6fd487cec1cb21e2ee56d1f2cc6182b58
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Mar 22 16:44:40 2021 +1100
+
+    Minor edits V1.2
+
+commit 06bfe3ee90c41349189e1a3ffd154f5b9139ecc3
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Mar 22 16:35:30 2021 +1100
+
+    Updated final version 1.2
+
+commit 45c5f0728209dee3b9002acf23f2daa72d9ab18f
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Mar 22 16:23:07 2021 +1100
+
+    Final version V1.2
+
+commit feb470474f8888d19cd754a4a223e16cc1776c4f
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Mar 22 16:20:29 2021 +1100
+
+    All code refactored
+
+commit b00435c8814a2d43aa4352de0b87fc67bfc47ce3
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Mon Mar 22 11:10:28 2021 +1100
+
+    Update tictactoeclass code
+
+commit f16545428214f91484a56b92b6e4d671c4bb9d00
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Sun Mar 21 21:15:22 2021 +1100
+
+    Major code refactored. Still debugging left to do.
+
+commit 3c92af8cc916d206eb7c93b38c70b02937973ef3
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Sun Mar 21 14:39:00 2021 +1100
+
+    Refactor code in game_end scenarios
+
+commit 6593464abd5f3c267680fed6e3d0ea8b5b775be4
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Sun Mar 21 04:03:53 2021 +1100
+
+    Refactor much of the main code
+
+commit 2ab733f6b3ef1c6a53b557f425b3d022d63ef26f
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Sun Mar 21 02:38:47 2021 +1100
+
+    Added minimax recursive algorithm, from YouTube tutorial https://www.youtube.com/watch?v=wnL7Woqkb44
+
+commit c435176c8a0ec847cc804333957ff4f8e0adf16c
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Sat Mar 20 21:41:25 2021 +1100
+
+    Fixed AI bug where it was not recognising opponent wins, e.g. A1,B2,C3,A3??
+
+commit 0166fd432dd2ca3e782e764b63df6f5a3d0da8f3
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Fri Mar 19 17:57:36 2021 +1100
+
+    Add Advanced AI Functionality, functional behaviour tree. Still not perfect.
+
+commit 12f61f0136db43a5daf6e6663376a1cafbd4a553
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Fri Mar 19 12:22:21 2021 +1100
+
+    Create fully functioning checkfork functionality
+
+commit 495f64c1f8f5879fdf05e65f49fb34767ecfd2d4
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Fri Mar 19 00:26:16 2021 +1100
+
+    Refactor code, add ability to save games, improve AI functionality, add ability to recognise forks
+
+commit ac93fe99285c25116e1e2ce3b28ee401ab80927b
+Merge: 1b4c89d 441ef4c
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Wed Mar 17 17:28:41 2021 +1100
+
+    fixing merge
+
+commit 1b4c89d5f8f83a720b1a3322803d7b146d51e552
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Wed Mar 17 17:20:04 2021 +1100
+
+    Refactor code
+
+commit 1a11d53e11ce202abbc2b0ecc3be6f6bc84b71b9
+Author: PunitDh <cas012115@coderacademy.edu.au>
+Date:   Wed Mar 17 14:10:38 2021 +1100
+
+    Add michael's tictactoe, refactor code
+
+commit 441ef4ca58f01dccf36c04a3441284e5de2d4b6d
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Wed Mar 17 00:28:27 2021 +1100
+
+    Attempt to create behaviour tree AI
+
+commit 89b3fc594826169b8357db9a42e085d06b17ad07
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Tue Mar 16 22:32:11 2021 +1100
+
+    Add brute force AI capabilities: predict immediate loss and win
+
+commit b55a171a5cb929cd592dc425ba6e171d3d77514f
+Author: PunitDh <root@Punit-BeastPC.localdomain>
+Date:   Tue Mar 16 19:57:56 2021 +1100
+
+    Add readme
+
+commit 67e628f020623317936ca5ba711a647d0f8d746a
+Author: root <root@Punit-BeastPC.localdomain>
+Date:   Tue Mar 16 19:44:38 2021 +1100
+
+    Create Tic-tac-toe Version 1.0, 1-player 2-player working, only random moves by computer
