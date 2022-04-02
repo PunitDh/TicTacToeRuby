@@ -104,11 +104,10 @@ describe Game do
 	end
 
 	it 'should allow a smooth changing of turns' do
-		game = Game.new
 		player1 = Player.new("Player 1", 1, 'X')
-        player2 = Player.new("Player 2", 0, 'O')
+    player2 = Player.new("Player 2", 0, 'O')
         
 		expect(Player.find(swapval(player1.val))).to be(player2)
-        expect(Player.find(swapval(player2.val))).to be(player1)
+    expect(Player.find(swapval(player2.val))).to be(player1)
 	end	
 end

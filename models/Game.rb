@@ -117,7 +117,9 @@ class Game
 
 	########## Generate a cointoss, assign X and O ###################################
 	def cointoss()
-		ctoss = rand().round
+		c_toss = rand()
+		# puts c_toss
+		ctoss = c_toss.round
 		@player.each do |player|
 			player.setval(ctoss)
 			ctoss = swapval(ctoss)
@@ -132,6 +134,7 @@ class Game
 		print "\n\n\t\tTossing coin now...(Press ENTER to see coin toss results)"
 		Views::Prompts::tmpgets
 		currentplayer = cointoss()
+
 		puts "\n\t\tThe result of the coin toss is: \n\n"
 		puts "\t\t\t\t\t\t\t  -------  "
 		puts "\t\t\t\t\t\t\t/         \\"
@@ -188,12 +191,13 @@ class Game
 		File.foreach(@filename).with_index do |line,i|
 			begin
 				eachline = JSON.parse(line)
-			rescue StandardError => exception
+				lines << eachline
+				linesUUIDs << {("Game ID: " + eachline["UUID"][0..7].to_s + " @ " + eachline["DateTime"]).center(@halign) => i}
+		 		nlines += 1
+			rescue StandardError
 				return puts "\t\t"+"-"*75+"\n\t\tUnable to load game save file.\n\n\t\tThe game save file \"#{@filename}\" is either corrupt or appears to have been tampered with.\n\n\t\tPlease delete the file \"#{@filename}\" and create a new one.\n\t\t"+"-"*75
 			end
-			lines << eachline
-			linesUUIDs << {("Game ID: " + eachline["UUID"][0..7].to_s + " @ " + eachline["DateTime"]).center(@halign) => i}
-		 nlines += 1
+			
 		end
 		file.close
 

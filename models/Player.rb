@@ -18,7 +18,7 @@ class Player
 	end
 
 	def self.names
-		[Player.find(1).name + ": " + Player.find(1).str, Player.find(0).name + ": " +Player.find(0).str]
+		[Player.find(1).name + ": " + Player.find(1).str, Player.find(0).name + ": " + Player.find(0).str]
 	end
 
 	def requestname(index)

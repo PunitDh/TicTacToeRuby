@@ -26,13 +26,12 @@ if not ARGV[0]
 	begin
 		puts "\n"
 		
-		choices = 
-		{
-			"New Game".center(halign)				=> 1,
-			"Simulation Mode".center(halign)		=> 2,
-			"Instructions".center(halign)			=> 3,
+		choices = {
+			"New Game".center(halign)							=> 1,
+			"Simulation Mode".center(halign)			=> 2,
+			"Instructions".center(halign)					=> 3,
 			"Load Previous Games".center(halign)	=> 4,
-			"Quit Game".center(halign)				=> 5
+			"Quit Game".center(halign)						=> 5
 		}
 		
 		request = Views::Prompts::prompt("Choose from below: (Use ↑↓ arrow keys to select)", choices)
